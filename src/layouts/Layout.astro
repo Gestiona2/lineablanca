@@ -11,7 +11,7 @@ const { titulo, descripcion = sitio.descripcion } = Astro.props;
     <meta name="theme-color" content="#f4f8fc" />
     <meta name="description" content={descripcion} />
     <title>{titulo}</title>
-    <link rel="icon" href="/brand/logo-linea-blanca.png" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} />
     <meta property="og:title" content={titulo} />
     <meta property="og:description" content={descripcion} />
   </head>
@@ -21,7 +21,7 @@ const { titulo, descripcion = sitio.descripcion } = Astro.props;
         <a href={`${import.meta.env.BASE_URL}`} class="nav-logo"><img src={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a>
         <button id="botonMenu" class="menu-button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
         <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-          <a href="#servicios">Servicios</a><a href="#proceso">Cómo funciona</a><a href="#cobertura">Cobertura</a><a href="#preguntas">Preguntas</a>
+          <a href={`${import.meta.env.BASE_URL}#servicios`}>Servicios</a><a href={`${import.meta.env.BASE_URL}#proceso`}>Cómo funciona</a><a href={`${import.meta.env.BASE_URL}#cobertura`}>Cobertura</a><a href={`${import.meta.env.BASE_URL}#preguntas`}>Preguntas</a>
           <a href="https://wa.me/573123410405" class="nav-cta" target="_blank" rel="noopener">Agendar servicio <span>↗</span></a>
         </nav>
       </div>

@@ -14,7 +14,7 @@ const wa = `https://wa.me/${datos.contacto.whatsapp}`;
       <p class="hero-copy">{datos.portada.texto}</p>
       <div class="hero-actions">
         <a class="button button-blue" href={`${wa}?text=${encodeURIComponent("Hola, necesito servicio técnico para un electrodoméstico.")}`} target="_blank" rel="noopener">{datos.portada.cta}<span aria-hidden="true">↗</span></a>
-        <a class="button button-quiet" href="#servicios">{datos.portada.ctaSecundario}<span aria-hidden="true">↓</span></a>
+        <a class="button button-quiet" href={`${import.meta.env.BASE_URL}#servicios`}>{datos.portada.ctaSecundario}<span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-note"><span class="note-mark">LB</span><span>Atención para electrodomésticos<br />de tu hogar</span></div>
     </div>

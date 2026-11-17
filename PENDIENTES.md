@@ -1,9 +1,10 @@
 # Pendientes de Línea Blanca
 
-- [ ] Confirmar que el logo horizontal es el logo principal autorizado para uso web.
+- [ ] Confirmar que el logo horizontal es el logo principal autorizado para uso web. Se comprobó que el fondo es transparente.
 - [ ] Confirmar correo corporativo, razón social y NIT (no visibles en el contenido consultado).
 - [ ] Confirmar si la cobertura y el horario publicados siguen vigentes en todas las ciudades.
 - [ ] Confirmar la lista completa de equipos; el sitio actual menciona 13 especialidades en navegación y páginas internas.
+- [ ] Completar y probar en navegador las páginas enlazadas del sitio anterior (servicios por equipo); esta primera propuesta implementa el home informativo.
 - [ ] Reemplazar la foto provisional de Unsplash por fotografía propia o acordar mantenerla; no representa un trabajo real de Línea Blanca.
 - [ ] Probar en navegador a 1440, 768 y 390 px antes de enseñar al cliente.
 - [ ] Asignar el repositorio aislado de la demo `demos.emp2web.com/lineablanca` y configurar publicación. El destino de publicación no se ha modificado todavía.

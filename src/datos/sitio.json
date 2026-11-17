@@ -1,5 +1,5 @@
 {
-  "_comentario": "Datos que se repiten en todas las páginas: menú, pie, contacto. El contenido de cada página va en su propio archivo (inicio.json, servicios.json...).",
+  "_comentario": "Datos generales de Línea Blanca. Los textos de la página principal viven en inicio.json.",
 
   "nombre": "Línea Blanca",
   "razonSocial": "Línea Blanca",
