@@ -9,6 +9,7 @@
 - [ ] Probar en navegador a 1440, 768 y 390 px antes de enseñar al cliente.
 - [x] Repositorio aislado y demo publicados en `Gestiona2/lineablanca` y `demos.emp2web.com/lineablanca`.
 - [ ] Revisar el aviso legal completo, privacidad y tratamiento de datos con el cliente antes de añadir formularios.
+- [ ] Confirmar las condiciones vigentes de la garantía de seis meses que se menciona en la página actual de neveras; en la propuesta se atribuye a esa página y se pide verificar el alcance.
 
 ## Datos que deben confirmarse
 

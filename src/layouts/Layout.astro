@@ -21,8 +21,8 @@ const { titulo, descripcion = sitio.descripcion } = Astro.props;
         <a href={`${import.meta.env.BASE_URL}`} class="nav-logo"><img src={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a>
         <button id="botonMenu" class="menu-button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
         <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-          <a href={`${import.meta.env.BASE_URL}#servicios`}>Servicios</a><a href={`${import.meta.env.BASE_URL}#proceso`}>Cómo funciona</a><a href={`${import.meta.env.BASE_URL}#cobertura`}>Cobertura</a><a href={`${import.meta.env.BASE_URL}#preguntas`}>Preguntas</a>
-          <a href="https://wa.me/573123410405" class="nav-cta" target="_blank" rel="noopener">Agendar servicio <span>↗</span></a>
+          <a href={`${import.meta.env.BASE_URL}#servicios`}>Servicios</a><a href={`${import.meta.env.BASE_URL}#atencion`}>Atención</a><a href={`${import.meta.env.BASE_URL}#cobertura`}>Cobertura</a><a href={`${import.meta.env.BASE_URL}#marcas`}>Marcas</a>
+          <a href={`${import.meta.env.BASE_URL}#solicitud`} class="nav-cta">Solicitar atención <span>↗</span></a>
         </nav>
       </div>
     </header>
@@ -41,6 +41,21 @@ const { titulo, descripcion = sitio.descripcion } = Astro.props;
         boton.setAttribute("aria-expanded", "false");
         boton.setAttribute("aria-label", "Abrir menú");
       }));
+      const solicitud = document.querySelector("#solicitudServicio");
+      solicitud?.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+        const datos = new FormData(solicitud);
+        const ciudad = datos.get("ciudad");
+        const servicio = datos.get("servicio");
+        const problema = String(datos.get("problema") || "").trim();
+        const mensaje = [
+          "Hola, quiero solicitar atención para un electrodoméstico.",
+          `Ciudad o municipio: ${ciudad}`,
+          `Equipo: ${servicio}`,
+          problema ? `Falla: ${problema}` : "",
+        ].filter(Boolean).join("\n");
+        window.open(`https://wa.me/573123410405?text=${encodeURIComponent(mensaje)}`, "_blank", "noopener,noreferrer");
+      });
     </script>
   </body>
 </html>

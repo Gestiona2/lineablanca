@@ -14,17 +14,42 @@
   },
   "servicios": {
     "titulo": "Un equipo para cada necesidad",
-    "texto": "Atención técnica para los electrodomésticos más importantes de tu hogar.",
-    "items": [
-      {"nombre":"Lavadoras","detalle":"Reparación y mantenimiento para recuperar el lavado de cada día."},
-      {"nombre":"Neveras y nevecones","detalle":"Revisión y mantenimiento para conservar tus alimentos correctamente."},
-      {"nombre":"Secadoras","detalle":"Servicio técnico para ciclos de secado que no terminan o no calientan."},
-      {"nombre":"Calentadores","detalle":"Mantenimiento y reparación de calentadores a gas."},
-      {"nombre":"Estufas y hornos","detalle":"Reparación, instalación y mantenimiento preventivo."},
-      {"nombre":"Lavavajillas","detalle":"Revisión de fallas y mantenimiento del equipo."},
-      {"nombre":"Campanas y aspiradoras","detalle":"Servicio para extracción, limpieza y cuidado del hogar."},
-      {"nombre":"Cafeteras y televisores","detalle":"Cuéntanos la marca y el problema para orientarte."}
+    "texto": "Reparación y mantenimiento de los equipos que aparecen en su sitio, con atención técnica por tipo de electrodoméstico.",
+    "grupos": [
+      {"nombre":"Lavado y frío","items":[
+        {"nombre":"Lavadoras","detalle":"Reparación, instalación y mantenimiento preventivo."},
+        {"nombre":"Neveras y nevecones","detalle":"Reparación y mantenimiento preventivo para conservar el frío y cuidar el consumo de energía."},
+        {"nombre":"Secadoras","detalle":"Servicio técnico y mantenimiento de secadoras."},
+        {"nombre":"Lavavajillas","detalle":"Reparación y mantenimiento a domicilio."}
+      ]},
+      {"nombre":"Cocina y agua caliente","items":[
+        {"nombre":"Estufas","detalle":"Reparación, instalación y mantenimiento preventivo."},
+        {"nombre":"Estufas de inducción","detalle":"Servicio para estufas de inducción, listado por separado en su sitio."},
+        {"nombre":"Hornos","detalle":"Reparación y mantenimiento de hornos."},
+        {"nombre":"Calentadores","detalle":"Mantenimiento de calentadores a gas; el sitio destaca la atención en Bogotá."},
+        {"nombre":"Campanas extractoras","detalle":"Reparación y mantenimiento de campanas extractoras."},
+        {"nombre":"Freidoras","detalle":"Servicio técnico para freidoras."}
+      ]},
+      {"nombre":"Otros equipos","items":[
+        {"nombre":"Aspiradoras","detalle":"Servicio de reparación y mantenimiento."},
+        {"nombre":"Cafeteras","detalle":"Reparación y mantenimiento de cafeteras."},
+        {"nombre":"Televisores","detalle":"Servicio técnico para televisores."}
+      ]}
     ]
+  },
+  "atencion": {
+    "titulo":"Una atención clara, desde el primer mensaje",
+    "texto":"El sitio de Línea Blanca presenta un equipo técnico especializado y asesoría para coordinar visitas.",
+    "puntos":[
+      {"titulo":"Mantenimiento preventivo","texto":"Recomendaciones para cuidar el equipo y alargar su vida útil."},
+      {"titulo":"Uso eficiente","texto":"Orientación para optimizar el consumo de energía del electrodoméstico."},
+      {"titulo":"Atención por equipo","texto":"Cuéntanos qué aparato tienes y cuál es el problema para dirigir tu solicitud."}
+    ]
+  },
+  "marcas": {
+    "titulo":"Marcas mencionadas en sus servicios",
+    "texto":"La web publica páginas de servicio para varias marcas. Se nombran solo para identificar los equipos atendidos; sus marcas pertenecen a sus respectivos titulares.",
+    "items":["Abba","Black+Decker","Bosch","Centrales","Challenger","Cimsa","Clasic","Electrolux","Frigidaire","General Electric","Haceb","Kenmore","KitchenAid","LG","Mabe","Oster","Samsung","Sueco","Whirlpool"]
   },
   "proceso": {
     "titulo": "Así comienza la atención",
@@ -36,18 +61,41 @@
   },
   "cobertura": {
     "titulo":"Atención en distintas ciudades",
-    "texto":"La web actual anuncia cobertura en Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. Para confirmar disponibilidad en tu zona, consúltanos.",
-    "zonas":"Bogotá · Barranquilla · Ibagué · Medellín · Cartagena · Cali · Santa Marta"
+    "texto":"Línea Blanca anuncia técnicos en estas ciudades. La disponibilidad puede variar según el equipo y la zona; confírmala al solicitar tu servicio.",
+    "ciudades":["Bogotá","Barranquilla","Ibagué","Medellín","Cartagena","Cali","Santa Marta"],
+    "municipiosTitulo":"También aparecen zonas cercanas a Bogotá",
+    "municipios":["La Calera","Funza","Madrid","Mosquera","Cota","Chía","Cajicá"],
+    "barriosTitulo":"Zonas de Bogotá mencionadas en el sitio",
+    "barrios":["Bosques de Medina","San Patricio","Chicó","Colina Campestre","Gratamira","Bella Suiza","Aposentos","Quinta Paredes","La Felicidad","Cedritos","Mazurén","San Cristóbal Norte","Sindamanoy"]
+  },
+  "solicitud": {
+    "titulo":"Cuéntanos qué equipo necesita atención",
+    "texto":"Completa estos datos y prepararemos un mensaje para WhatsApp. Tú revisas y decides si lo envías.",
+    "ciudadLabel":"Ciudad o municipio",
+    "ciudadPlaceholder":"Elige tu zona",
+    "servicioLabel":"Electrodoméstico",
+    "servicioPlaceholder":"Elige el equipo",
+    "problemaLabel":"¿Qué está pasando?",
+    "problemaPlaceholder":"Describe brevemente la falla (opcional)",
+    "boton":"Continuar por WhatsApp",
+    "aviso":"El formulario no reserva una visita ni envía datos automáticamente; abre WhatsApp con el mensaje listo.",
+    "ciudades":["Bogotá","Barranquilla","Ibagué","Medellín","Cartagena","Cali","Santa Marta","La Calera","Funza","Madrid","Mosquera","Cota","Chía","Cajicá"]
   },
   "faq": [
     {"pregunta":"¿Cómo solicito una visita?","respuesta":"Escríbenos al WhatsApp +57 312 341 0405. Cuéntanos qué electrodoméstico tienes, su marca y qué falla presenta."},
-    {"pregunta":"¿En qué ciudades atienden?","respuesta":"La cobertura publicada incluye Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. Confirma por WhatsApp si tu barrio o municipio está cubierto."},
+    {"pregunta":"¿En qué ciudades atienden?","respuesta":"La cobertura publicada incluye Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. También aparecen La Calera, Funza, Madrid, Mosquera, Cota, Chía y Cajicá. Confirma si tu equipo y dirección están dentro de la ruta."},
+    {"pregunta":"¿Qué información debo enviar?","respuesta":"Indica el electrodoméstico, la marca, la ciudad y la falla. Si tienes el modelo o una foto de la placa, puedes compartirla en el chat."},
+    {"pregunta":"¿Hacen mantenimiento además de reparaciones?","respuesta":"Sí. El sitio actual anuncia mantenimiento preventivo y recomendaciones para el uso y el ahorro de energía."},
+    {"pregunta":"¿La reparación tiene garantía?","respuesta":"La página de neveras del sitio actual menciona garantía de reparación por seis meses. Confirma con el asesor las condiciones y el alcance para tu equipo antes de agendar."},
+    {"pregunta":"¿Trabajan con repuestos originales?","respuesta":"La página de neveras menciona repuestos originales. Confirma disponibilidad para la marca y el modelo de tu equipo al solicitar el servicio."},
+    {"pregunta":"¿Qué marcas atienden?","respuesta":"La web publica servicios para marcas como Samsung, LG, Whirlpool, Haceb, Mabe, Electrolux, Bosch y otras. Mira el listado completo; los nombres se usan solo para identificar equipos y no implican representación oficial."},
     {"pregunta":"¿Atienden los domingos?","respuesta":"El horario publicado indica que no se trabaja domingos ni festivos. De lunes a viernes la atención se anuncia de 6:00 a. m. a 6:00 p. m., con horario extendido hasta las 10:00 p. m.; sábados de 7:00 a. m. a 5:00 p. m."},
-    {"pregunta":"¿Son el servicio oficial de las marcas?","respuesta":"No. Las marcas se mencionan únicamente con fines informativos y son propiedad de sus titulares. Línea Blanca no es el servicio técnico oficial de las marcas expuestas."}
+    {"pregunta":"¿Son el servicio oficial de las marcas?","respuesta":"No. La web aclara que las marcas se mencionan con fines informativos y que Línea Blanca no es el servicio técnico oficial de ninguna de ellas."}
   ],
   "contacto": {
     "titulo":"Cuéntanos qué necesita tu equipo",
-    "texto":"Escríbenos y un asesor te ayudará a coordinar la atención.",
+    "texto":"Un asesor recibirá tu solicitud y podrá ayudarte a coordinar la atención.",
+    "horario":"Lunes a viernes, 6:00 a. m. – 6:00 p. m. · Horario extendido hasta 10:00 p. m. · Sábados, 7:00 a. m. – 5:00 p. m. · Domingos y festivos: no se trabaja.",
     "whatsapp":"573123410405",
     "telefonoVisible":"312 341 0405"
   }
