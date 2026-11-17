@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import datos from "../datos/inicio.json";
 const wa = `https://wa.me/${datos.contacto.whatsapp}`;
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const listaServicios = datos.servicios.grupos.flatMap((grupo) => grupo.items);
 ---
 
@@ -14,8 +15,8 @@ const listaServicios = datos.servicios.grupos.flatMap((grupo) => grupo.items);
       <h1>{datos.portada.titulo}</h1>
       <p class="hero-copy">{datos.portada.texto}</p>
       <div class="hero-actions">
-        <a class="button button-blue" href={`${import.meta.env.BASE_URL}#solicitud`}>{datos.portada.cta}<span aria-hidden="true">↗</span></a>
-        <a class="button button-quiet" href={`${import.meta.env.BASE_URL}#servicios`}>{datos.portada.ctaSecundario}<span aria-hidden="true">↓</span></a>
+        <a class="button button-blue" href={`${base}#solicitud`}>{datos.portada.cta}<span aria-hidden="true">↗</span></a>
+        <a class="button button-quiet" href={`${base}#servicios`}>{datos.portada.ctaSecundario}<span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-note"><span class="note-mark">LB</span><span>Atención para electrodomésticos<br />de tu hogar</span></div>
     </div>
@@ -30,7 +31,7 @@ const listaServicios = datos.servicios.grupos.flatMap((grupo) => grupo.items);
     <div class="container">
       <div class="section-heading"><div><p class="eyebrow">LO QUE REPARAMOS</p><h2>{datos.servicios.titulo}</h2></div><p>{datos.servicios.texto}</p></div>
       <div class="service-groups">
-        {datos.servicios.grupos.map((grupo) => <div class="service-group"><h3>{grupo.nombre}</h3><div class="service-grid">{grupo.items.map((servicio) => <a class="service-item" href={`${import.meta.env.BASE_URL}#solicitud`}><div><h4>{servicio.nombre}</h4><p>{servicio.detalle}</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>)}</div></div>)}
+        {datos.servicios.grupos.map((grupo) => <div class="service-group"><h3>{grupo.nombre}</h3><div class="service-grid">{grupo.items.map((servicio) => <a class="service-item" href={`${base}#solicitud`}><div><h4>{servicio.nombre}</h4><p>{servicio.detalle}</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>)}</div></div>)}
       </div>
     </div>
   </section>
@@ -62,5 +63,5 @@ const listaServicios = datos.servicios.grupos.flatMap((grupo) => grupo.items);
     <div class="container request-layout"><div class="request-copy"><p class="eyebrow">SOLICITUD DIRECTA</p><h2>{datos.solicitud.titulo}</h2><p>{datos.solicitud.texto}</p><a class="text-link" href={`tel:+${datos.contacto.whatsapp}`}>Llamar al +57 {datos.contacto.telefonoVisible} <span>↗</span></a></div><form class="request-form" id="solicitudServicio"><label for="ciudad">{datos.solicitud.ciudadLabel}</label><select id="ciudad" name="ciudad" required><option value="" disabled selected>{datos.solicitud.ciudadPlaceholder}</option>{datos.solicitud.ciudades.map((ciudad) => <option value={ciudad}>{ciudad}</option>)}</select><label for="servicio">{datos.solicitud.servicioLabel}</label><select id="servicio" name="servicio" required><option value="" disabled selected>{datos.solicitud.servicioPlaceholder}</option>{listaServicios.map((servicio) => <option value={servicio.nombre}>{servicio.nombre}</option>)}</select><label for="problema">{datos.solicitud.problemaLabel}</label><textarea id="problema" name="problema" rows="3" placeholder={datos.solicitud.problemaPlaceholder}></textarea><button class="button button-blue" type="submit">{datos.solicitud.boton}<span aria-hidden="true">↗</span></button><p class="form-note">{datos.solicitud.aviso}</p></form></div>
   </section>
 
-  <footer class="site-footer"><div class="container footer-top"><a class="footer-logo" href={`${import.meta.env.BASE_URL}#inicio`}><img src={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a><p>Servicio técnico y mantenimiento<br />de electrodomésticos.<br /><span>{datos.contacto.horario}</span></p><a class="footer-phone" href={wa} target="_blank" rel="noopener">+57 {datos.contacto.telefonoVisible} <span>↗</span></a></div><div class="container footer-bottom"><span>© {new Date().getFullYear()} Línea Blanca. Todos los derechos reservados.</span><span>Las marcas se mencionan solo con fines informativos. No somos el servicio oficial de ninguna marca.</span></div></footer>
+  <footer class="site-footer"><div class="container footer-top"><a class="footer-logo" href={`${base}#inicio`}><img src={`${base}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a><p>Servicio técnico y mantenimiento<br />de electrodomésticos.<br /><span>{datos.contacto.horario}</span></p><a class="footer-phone" href={wa} target="_blank" rel="noopener">+57 {datos.contacto.telefonoVisible} <span>↗</span></a></div><div class="container footer-bottom"><span>© {new Date().getFullYear()} Línea Blanca. Todos los derechos reservados.</span><span>Las marcas se mencionan solo con fines informativos. No somos el servicio oficial de ninguna marca.</span></div></footer>
 </Layout>
