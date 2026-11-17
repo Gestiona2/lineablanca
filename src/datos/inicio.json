@@ -1,102 +1,547 @@
 {
+  "_comentario": "Textos de la portada de Línea Blanca. Contenido tomado de lineablanca.co (cobertura, horario, marcas, equipos) y, donde esa web no lo dice, de la empresa hermana Arreglo de Lavadoras (fallas por equipo, proceso, compromisos). Lo marcado en PENDIENTES.md debe confirmarlo el cliente.",
   "meta": {
-    "titulo": "Línea Blanca | Reparación de electrodomésticos",
-    "descripcion": "Servicio técnico y mantenimiento de electrodomésticos. Atención en Bogotá y otras ciudades. Agenda por WhatsApp al +57 312 341 0405."
+    "titulo": "Línea Blanca | Servicio técnico de electrodomésticos",
+    "descripcion": "Reparación y mantenimiento de lavadoras, neveras, estufas, calentadores y más. Atención en Bogotá y otras seis ciudades. Escríbenos por WhatsApp al +57 312 341 0405."
   },
   "portada": {
-    "etiqueta": "Servicio técnico para el hogar",
-    "titulo": "Tu casa no se detiene.",
-    "texto": "Reparamos y mantenemos los electrodomésticos que hacen funcionar tu día. Cuéntanos qué ocurre y coordinamos tu atención por WhatsApp.",
-    "imagen": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=85",
-    "imagenAlt": "Cocina contemporánea con electrodomésticos integrados",
-    "cta": "Solicitar servicio",
-    "ctaSecundario": "Ver qué reparamos"
+    "titulo": "Arreglamos tu electrodoméstico.",
+    "texto": "Servicio técnico y mantenimiento de línea blanca en Bogotá y en seis ciudades más. Cuéntanos qué pasa y coordinamos la visita por WhatsApp.",
+    "cta": "Escribir por WhatsApp",
+    "ctaSecundario": "Elegir mi equipo",
+    "ciudadesEtiqueta": "Atendemos en",
+    "imagen": "img/portada.jpg",
+    "imagenAlt": "Cuarto de lavado luminoso con lavadora y secadora blancas junto a una ventana grande",
+    "placaTitulo": "Atendemos de lunes a sábado",
+    "placaTexto": "Lunes a viernes desde las 6:00 a. m. Sábados de 7:00 a. m. a 5:00 p. m."
   },
   "servicios": {
-    "titulo": "Un equipo para cada necesidad",
-    "texto": "Reparación y mantenimiento de los equipos que aparecen en su sitio, con atención técnica por tipo de electrodoméstico.",
+    "titulo": "Elige tu equipo y mira qué podemos arreglar.",
+    "texto": "Estas son las fallas más frecuentes por tipo de electrodoméstico. Si la tuya no aparece, escríbenos igual: el técnico la revisa en la visita.",
+    "cta": "Pedir servicio para este equipo",
+    "etiquetaFallas": "Fallas que atendemos",
     "grupos": [
-      {"nombre":"Lavado y frío","items":[
-        {"nombre":"Lavadoras","detalle":"Reparación, instalación y mantenimiento preventivo."},
-        {"nombre":"Neveras y nevecones","detalle":"Reparación y mantenimiento preventivo para conservar el frío y cuidar el consumo de energía."},
-        {"nombre":"Secadoras","detalle":"Servicio técnico y mantenimiento de secadoras."},
-        {"nombre":"Lavavajillas","detalle":"Reparación y mantenimiento a domicilio."}
-      ]},
-      {"nombre":"Cocina y agua caliente","items":[
-        {"nombre":"Estufas","detalle":"Reparación, instalación y mantenimiento preventivo."},
-        {"nombre":"Estufas de inducción","detalle":"Servicio para estufas de inducción, listado por separado en su sitio."},
-        {"nombre":"Hornos","detalle":"Reparación y mantenimiento de hornos."},
-        {"nombre":"Calentadores","detalle":"Mantenimiento de calentadores a gas; el sitio destaca la atención en Bogotá."},
-        {"nombre":"Campanas extractoras","detalle":"Reparación y mantenimiento de campanas extractoras."},
-        {"nombre":"Freidoras","detalle":"Servicio técnico para freidoras."}
-      ]},
-      {"nombre":"Otros equipos","items":[
-        {"nombre":"Aspiradoras","detalle":"Servicio de reparación y mantenimiento."},
-        {"nombre":"Cafeteras","detalle":"Reparación y mantenimiento de cafeteras."},
-        {"nombre":"Televisores","detalle":"Servicio técnico para televisores."}
-      ]}
+      {
+        "nombre": "Lavado y frío",
+        "items": [
+          {
+            "id": "lavadoras",
+            "nombre": "Lavadoras",
+            "resumen": "No centrifuga, no carga, vibra o deja la ropa mojada. Revisamos motor, bomba, sensores y tablero.",
+            "fallas": [
+              "No centrifuga o deja la ropa escurriendo agua",
+              "No carga agua, la deja llena o no desagua",
+              "Vibra, golpea o hace ruido metálico en el tambor",
+              "No enciende o el tablero muestra error y parpadea",
+              "Fuga de agua por la puerta, la bomba o las mangueras",
+              "Se detiene a mitad del ciclo o reinicia sola"
+            ],
+            "slug": "reparacion-de-lavadoras",
+            "titulo": "Reparación de lavadoras",
+            "marcas": [
+              "Samsung",
+              "LG",
+              "Whirlpool",
+              "Haceb",
+              "Mabe",
+              "Frigidaire",
+              "Electrolux",
+              "Kenmore",
+              "Centrales"
+            ],
+            "imagen": "img/portada.jpg",
+            "imagenAlt": "Lavadora blanca de carga frontal en un cuarto de lavado luminoso"
+          },
+          {
+            "id": "neveras",
+            "nombre": "Neveras y nevecones",
+            "resumen": "No enfría, congela de más, gotea o el compresor no arranca. Revisamos el sistema completo y te explicamos qué falla.",
+            "fallas": [
+              "No enfría o enfría solo una parte del equipo",
+              "Congela de más y forma escarcha o hielo",
+              "Compresor que no arranca, se calienta o hace ruido",
+              "Fuga de agua al piso o acumulación en el fondo",
+              "Empaques vencidos: la puerta no sella y se pierde el frío",
+              "Termostato, timer o resistencia dañados"
+            ],
+            "slug": "reparacion-de-neveras",
+            "titulo": "Reparación de neveras",
+            "marcas": [
+              "Samsung",
+              "LG",
+              "Whirlpool",
+              "Haceb",
+              "Mabe",
+              "Frigidaire",
+              "Electrolux"
+            ],
+            "imagen": "img/nevera.jpg",
+            "imagenAlt": "Nevera de dos puertas en una cocina luminosa"
+          },
+          {
+            "id": "secadoras",
+            "nombre": "Secadoras",
+            "resumen": "No seca, no calienta o el tambor no gira. Revisamos resistencia, sensor de humedad, correa y ducto de ventilación.",
+            "fallas": [
+              "La ropa sale húmeda después de un ciclo completo",
+              "No calienta o calienta solo al principio",
+              "El tambor no gira o gira con ruido",
+              "Se detiene sola a mitad del ciclo",
+              "Tarda el doble de lo normal",
+              "Ducto o filtro obstruido y olor a quemado"
+            ],
+            "slug": "reparacion-de-secadoras",
+            "titulo": "Reparación de secadoras",
+            "marcas": [
+              "Samsung",
+              "LG",
+              "Whirlpool",
+              "Haceb",
+              "Mabe",
+              "Frigidaire",
+              "Electrolux"
+            ]
+          },
+          {
+            "id": "lavavajillas",
+            "nombre": "Lavavajillas",
+            "resumen": "Deja residuos, no desagua o gotea. Revisamos bomba, válvulas, resistencia y dosificación.",
+            "fallas": [
+              "Deja residuos o la vajilla sale grasosa",
+              "No desagua o deja agua en el fondo",
+              "No calienta el agua del ciclo",
+              "Fuga por la puerta o por debajo del equipo",
+              "Brazo aspersor tapado o sin presión",
+              "Errores de tablero y ciclos que no inician"
+            ],
+            "slug": "reparacion-de-lavavajillas",
+            "titulo": "Reparación de lavavajillas",
+            "marcas": [
+              "Whirlpool",
+              "Bosch",
+              "Electrolux",
+              "Samsung",
+              "LG"
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Cocina",
+        "items": [
+          {
+            "id": "estufas",
+            "nombre": "Estufas e inducción",
+            "resumen": "Un quemador o una zona no calienta, la llama es amarilla o hay olor a gas. Estufas a gas, eléctricas, de inducción y vitrocerámicas.",
+            "fallas": [
+              "Un quemador no enciende o la chispa es débil",
+              "Llama amarilla, desprendida o con hollín",
+              "Olor a gas o fuga en la conexión",
+              "Perillas duras, válvulas que no cierran bien",
+              "Eléctricas e inducción: una zona no calienta o se apaga sola",
+              "Instalación a gas y conversión de gas natural"
+            ],
+            "slug": "reparacion-de-estufas",
+            "titulo": "Reparación de estufas",
+            "marcas": [
+              "Whirlpool",
+              "Samsung",
+              "KitchenAid",
+              "General Electric",
+              "Challenger"
+            ]
+          },
+          {
+            "id": "hornos",
+            "nombre": "Hornos",
+            "resumen": "No calienta, calienta de más o la puerta no sella. Revisamos resistencia, termostato y control de temperatura.",
+            "fallas": [
+              "No calienta o tarda demasiado en llegar a temperatura",
+              "Calienta de más y quema la comida",
+              "Resistencia partida o con puntos calientes",
+              "La puerta no sella y se escapa el calor",
+              "Ventilador de convección ruidoso o detenido",
+              "Tablero, perillas o selector de funciones sin respuesta"
+            ],
+            "slug": "reparacion-de-hornos",
+            "titulo": "Reparación de hornos",
+            "marcas": [
+              "Black+Decker",
+              "Challenger",
+              "Electrolux",
+              "Haceb",
+              "General Electric",
+              "Oster"
+            ]
+          },
+          {
+            "id": "microondas",
+            "nombre": "Microondas",
+            "resumen": "No calienta, hace chispas o la puerta no cierra bien. Revisamos magnetrón, condensador, seguro de puerta y tablero.",
+            "fallas": [
+              "No calienta aunque la luz enciende y el plato gira",
+              "Chispas o ruidos fuertes dentro de la cavidad",
+              "La puerta no cierra bien o no activa el seguro",
+              "El plato no gira o hace ruido al girar",
+              "El tablero no responde o los botones fallan",
+              "Se apaga solo o hace saltar el breaker"
+            ],
+            "slug": "reparacion-de-microondas",
+            "titulo": "Reparación de microondas",
+            "marcas": []
+          },
+          {
+            "id": "campanas",
+            "nombre": "Campanas extractoras",
+            "resumen": "Motor sin fuerza, ruido, filtros saturados o luz dañada. Campanas de cocina, de restaurante y hongos.",
+            "fallas": [
+              "El motor no gira o gira sin fuerza",
+              "Ruido o vibración al encender",
+              "No extrae el humo ni el vapor",
+              "Filtros de grasa saturados: limpieza o cambio",
+              "Luz, interruptor o control sin respuesta",
+              "Instalación, ducto y reubicación"
+            ],
+            "slug": "reparacion-de-campanas-extractoras",
+            "titulo": "Reparación de campanas extractoras",
+            "marcas": []
+          },
+          {
+            "id": "freidoras",
+            "nombre": "Freidoras",
+            "resumen": "No calienta, no sostiene la temperatura o pierde aceite. Freidoras domésticas e industriales.",
+            "fallas": [
+              "No calienta o tarda demasiado en llegar a temperatura",
+              "La temperatura no se estabiliza",
+              "Termostato o sensor que corta antes de tiempo",
+              "Resistencia dañada o con depósitos",
+              "Fuga de aceite por la válvula o las juntas",
+              "Tablero o temporizador sin respuesta"
+            ],
+            "slug": "reparacion-de-freidoras",
+            "titulo": "Reparación de freidoras",
+            "marcas": []
+          }
+        ]
+      },
+      {
+        "nombre": "Agua caliente",
+        "items": [
+          {
+            "id": "calentadores",
+            "nombre": "Calentadores",
+            "resumen": "No calienta, se apaga solo o gotea. Revisamos encendido, presión y conexiones de gas con protocolo de seguridad.",
+            "fallas": [
+              "No calienta o el agua sale fría de un momento a otro",
+              "Se apaga a los pocos segundos de encender",
+              "Fuga de agua en conexiones, válvula o cuerpo",
+              "No enciende: chispa, batería o encendido electrónico",
+              "Presión inestable o agua que sale muy caliente",
+              "Mantenimiento, purga y revisión de ventilación"
+            ],
+            "slug": "reparacion-de-calentadores",
+            "titulo": "Reparación de calentadores",
+            "marcas": [
+              "Cimsa",
+              "Clasic",
+              "Mabe",
+              "Abba",
+              "Challenger",
+              "Bosch",
+              "Sueco",
+              "Haceb"
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Otros equipos",
+        "items": [
+          {
+            "id": "cafeteras",
+            "nombre": "Cafeteras",
+            "resumen": "No calienta, no bombea, gotea o sale muy lento. Cafeteras automáticas, de molino, industriales y de goteo.",
+            "fallas": [
+              "No calienta el agua o el café sale tibio",
+              "No bombea o no sale agua por el grupo",
+              "Gotea por la base, el depósito o las mangueras",
+              "Sale muy lento por cal acumulada",
+              "Molino atascado, ruidoso o que no muele parejo",
+              "No enciende o el panel no responde"
+            ],
+            "slug": "reparacion-de-cafeteras",
+            "titulo": "Reparación de cafeteras",
+            "marcas": []
+          },
+          {
+            "id": "aspiradoras",
+            "nombre": "Aspiradoras",
+            "resumen": "Perdió succión, el motor se calienta o hace ruido. Aspiradoras de varias marcas, excepto robóticas.",
+            "fallas": [
+              "Perdió succión aunque el filtro está limpio",
+              "El motor no enciende o se calienta",
+              "Ruido o vibración anormal",
+              "Cable enrollable o interruptor dañado",
+              "Mangueras y accesorios rotos u obstruidos",
+              "Se apaga sola por sobrecalentamiento"
+            ],
+            "slug": "reparacion-de-aspiradoras",
+            "titulo": "Reparación de aspiradoras",
+            "marcas": []
+          },
+          {
+            "id": "televisores",
+            "nombre": "Televisores",
+            "resumen": "No enciende, no hay imagen o sonido, o se apaga solo. Revisamos fuente, tarjetas y retroiluminación.",
+            "fallas": [
+              "No enciende o se queda en la luz de espera",
+              "Hay sonido pero la pantalla está oscura",
+              "Imagen con líneas, manchas o sin color",
+              "Se apaga solo o se reinicia",
+              "Puertos HDMI, WiFi o control remoto sin respuesta",
+              "Retroiluminación dañada"
+            ],
+            "slug": "reparacion-de-televisores",
+            "titulo": "Reparación de televisores",
+            "marcas": []
+          }
+        ]
+      },
+      {
+        "nombre": "Servicio completo",
+        "items": [
+          {
+            "id": "instalacion",
+            "nombre": "Instalación y mantenimiento",
+            "resumen": "Instalamos, damos mantenimiento y reparamos tus electrodomésticos en casa.",
+            "fallas": [
+              "Lavadoras y secadoras: nivelación, conexiones y desagüe",
+              "Estufas, hornos y calentadores: conexión a gas y prueba de llama",
+              "Neveras, nevecones y lavavajillas: calibración y conexión hidráulica",
+              "Mantenimiento: limpieza, revisión de piezas de desgaste y ajustes",
+              "Reparación: diagnóstico de la falla y cambio del repuesto correcto",
+              "Retiro del equipo anterior y aseo del espacio"
+            ],
+            "slug": "servicio-de-instalacion",
+            "titulo": "Instalación y mantenimiento",
+            "marcas": []
+          }
+        ]
+      }
+    ],
+    "verPagina": "Ver la página de este equipo",
+    "indice": {
+      "titulo": "Todos los equipos que atendemos.",
+      "texto": "Elige tu electrodoméstico para ver sus fallas más comunes y pedir tu servicio."
+    }
+  },
+  "compromisos": {
+    "titulo": "Una visita clara, sin sorpresas.",
+    "texto": "Así trabajamos desde el primer mensaje hasta que tu equipo queda funcionando.",
+    "imagen": "img/nevera.jpg",
+    "imagenAlt": "Nevera de dos puertas en una cocina luminosa con piso de madera",
+    "items": [
+      {
+        "titulo": "Diagnóstico antes de reparar",
+        "texto": "El técnico revisa, te explica la falla y te da el valor. Solo reparamos si tú lo autorizas."
+      },
+      {
+        "titulo": "Visita en tu casa",
+        "texto": "No cargas el equipo ni lo dejas en un taller: el técnico llega con las herramientas."
+      },
+      {
+        "titulo": "Repuestos originales o equivalentes",
+        "texto": "Instalamos el repuesto correcto para tu marca y modelo, y lo probamos contigo."
+      },
+      {
+        "titulo": "Garantía por escrito",
+        "texto": "Cada reparación queda con su garantía en papel. El alcance se acuerda con el asesor antes de agendar."
+      }
     ]
   },
-  "atencion": {
-    "titulo":"Una atención clara, desde el primer mensaje",
-    "texto":"El sitio de Línea Blanca presenta un equipo técnico especializado y asesoría para coordinar visitas.",
-    "puntos":[
-      {"titulo":"Mantenimiento preventivo","texto":"Recomendaciones para cuidar el equipo y alargar su vida útil."},
-      {"titulo":"Uso eficiente","texto":"Orientación para optimizar el consumo de energía del electrodoméstico."},
-      {"titulo":"Atención por equipo","texto":"Cuéntanos qué aparato tienes y cuál es el problema para dirigir tu solicitud."}
+  "proceso": {
+    "titulo": "Cuatro pasos, y tú decides en cada uno.",
+    "pasos": [
+      {
+        "titulo": "Escríbenos",
+        "texto": "Cuéntanos el equipo, la marca y qué está pasando. Si tienes una foto o el código de error, mejor."
+      },
+      {
+        "titulo": "Agendamos",
+        "texto": "Confirmamos día, franja y valor del diagnóstico. Te avisamos antes de la visita."
+      },
+      {
+        "titulo": "Diagnóstico",
+        "texto": "El técnico revisa, te explica la falla y te da el valor de la reparación."
+      },
+      {
+        "titulo": "Reparación",
+        "texto": "Instalamos el repuesto, probamos el equipo contigo y dejamos la garantía por escrito."
+      }
     ]
   },
   "marcas": {
-    "titulo":"Marcas mencionadas en sus servicios",
-    "texto":"La web publica páginas de servicio para varias marcas. Se nombran solo para identificar los equipos atendidos; sus marcas pertenecen a sus respectivos titulares.",
-    "items":["Abba","Black+Decker","Bosch","Centrales","Challenger","Cimsa","Clasic","Electrolux","Frigidaire","General Electric","Haceb","Kenmore","KitchenAid","LG","Mabe","Oster","Samsung","Sueco","Whirlpool"]
-  },
-  "proceso": {
-    "titulo": "Así comienza la atención",
-    "pasos": [
-      {"titulo":"Cuéntanos qué sucede","texto":"Escríbenos por WhatsApp e indica el tipo de equipo, la marca y la falla."},
-      {"titulo":"Coordinamos la visita","texto":"Un asesor recibe tu solicitud y coordina contigo la atención técnica."},
-      {"titulo":"Recibe recomendaciones","texto":"Además de la reparación, el equipo comparte recomendaciones de mantenimiento y uso eficiente."}
+    "titulo": "Atendemos las marcas que tienes en casa.",
+    "texto": "Samsung, LG, Whirlpool y las demás que ves aquí. Los nombres se usan solo para identificar los equipos; Línea Blanca no es el servicio técnico oficial de ninguna marca.",
+    "items": [
+      "Samsung",
+      "LG",
+      "Whirlpool",
+      "Haceb",
+      "Mabe",
+      "Electrolux",
+      "Frigidaire",
+      "Kenmore",
+      "Centrales",
+      "Bosch",
+      "KitchenAid",
+      "General Electric",
+      "Challenger",
+      "Black+Decker",
+      "Oster",
+      "Cimsa",
+      "Clasic",
+      "Abba",
+      "Sueco"
     ]
   },
   "cobertura": {
-    "titulo":"Atención en distintas ciudades",
-    "texto":"Línea Blanca anuncia técnicos en estas ciudades. La disponibilidad puede variar según el equipo y la zona; confírmala al solicitar tu servicio.",
-    "ciudades":["Bogotá","Barranquilla","Ibagué","Medellín","Cartagena","Cali","Santa Marta"],
-    "municipiosTitulo":"También aparecen zonas cercanas a Bogotá",
-    "municipios":["La Calera","Funza","Madrid","Mosquera","Cota","Chía","Cajicá"],
-    "barriosTitulo":"Zonas de Bogotá mencionadas en el sitio",
-    "barrios":["Bosques de Medina","San Patricio","Chicó","Colina Campestre","Gratamira","Bella Suiza","Aposentos","Quinta Paredes","La Felicidad","Cedritos","Mazurén","San Cristóbal Norte","Sindamanoy"]
+    "titulo": "Dónde atendemos.",
+    "texto": "La disponibilidad puede variar según el equipo y la zona; confírmala al pedir tu servicio.",
+    "ciudadesTitulo": "Ciudades",
+    "ciudades": [
+      "Bogotá",
+      "Barranquilla",
+      "Ibagué",
+      "Medellín",
+      "Cartagena",
+      "Cali",
+      "Santa Marta"
+    ],
+    "municipiosTitulo": "Municipios cerca de Bogotá",
+    "municipios": [
+      "La Calera",
+      "Funza",
+      "Madrid",
+      "Mosquera",
+      "Cota",
+      "Chía",
+      "Cajicá"
+    ],
+    "barriosTitulo": "Zonas de Bogotá",
+    "barrios": [
+      "Bosques de Medina",
+      "San Patricio",
+      "Chicó",
+      "Colina Campestre",
+      "Gratamira",
+      "Bella Suiza",
+      "Aposentos",
+      "Quinta Paredes",
+      "La Felicidad",
+      "Cedritos",
+      "Mazurén",
+      "San Cristóbal Norte",
+      "Sindamanoy"
+    ]
+  },
+  "faq": {
+    "titulo": "Antes de escribirnos.",
+    "items": [
+      {
+        "pregunta": "¿Cómo solicito una visita?",
+        "respuesta": "Escríbenos al WhatsApp +57 312 341 0405 o usa el formulario de esta página. Cuéntanos qué electrodoméstico tienes, su marca, tu ciudad y qué falla presenta."
+      },
+      {
+        "pregunta": "¿Qué información debo enviar?",
+        "respuesta": "El equipo, la marca, la ciudad y la falla. Si tienes el modelo, una foto de la placa o el código de error que muestra el tablero, compártelo en el chat."
+      },
+      {
+        "pregunta": "¿Cuánto cuesta la revisión?",
+        "respuesta": "El asesor te confirma el valor del diagnóstico al agendar. En la visita, el técnico te explica la falla y te da el valor de la reparación antes de intervenir."
+      },
+      {
+        "pregunta": "¿Hacen mantenimiento además de reparaciones?",
+        "respuesta": "Sí. Hacemos mantenimiento preventivo, con recomendaciones de uso y de ahorro de energía para que el equipo dure más."
+      },
+      {
+        "pregunta": "¿La reparación tiene garantía?",
+        "respuesta": "Sí, cada reparación se entrega con garantía por escrito. El plazo y el alcance se acuerdan con el asesor antes de agendar."
+      },
+      {
+        "pregunta": "¿Qué repuestos usan?",
+        "respuesta": "Originales o equivalentes. Confirmamos la disponibilidad para la marca y el modelo de tu equipo al pedir el servicio."
+      },
+      {
+        "pregunta": "¿En qué horario atienden?",
+        "respuesta": "De lunes a viernes desde las 6:00 a. m. hasta las 6:00 p. m., con horario extendido hasta las 10:00 p. m. Los sábados de 7:00 a. m. a 5:00 p. m. Domingos y festivos no trabajamos."
+      },
+      {
+        "pregunta": "¿Son el servicio técnico oficial de las marcas?",
+        "respuesta": "No. Las marcas se mencionan solo para identificar los equipos que atendemos; Línea Blanca no es el servicio técnico oficial de ninguna de ellas."
+      }
+    ]
   },
   "solicitud": {
-    "titulo":"Cuéntanos qué equipo necesita atención",
-    "texto":"Completa estos datos y prepararemos un mensaje para WhatsApp. Tú revisas y decides si lo envías.",
-    "ciudadLabel":"Ciudad o municipio",
-    "ciudadPlaceholder":"Elige tu zona",
-    "servicioLabel":"Electrodoméstico",
-    "servicioPlaceholder":"Elige el equipo",
-    "problemaLabel":"¿Qué está pasando?",
-    "problemaPlaceholder":"Describe brevemente la falla (opcional)",
-    "boton":"Continuar por WhatsApp",
-    "aviso":"El formulario no reserva una visita ni envía datos automáticamente; abre WhatsApp con el mensaje listo.",
-    "ciudades":["Bogotá","Barranquilla","Ibagué","Medellín","Cartagena","Cali","Santa Marta","La Calera","Funza","Madrid","Mosquera","Cota","Chía","Cajicá"]
+    "titulo": "Cuéntanos qué equipo necesita atención.",
+    "texto": "Completa tres datos y se abre WhatsApp con el mensaje listo. Tú lo revisas y decides si lo envías.",
+    "ciudadLabel": "Ciudad o municipio",
+    "ciudadPlaceholder": "Elige tu zona",
+    "servicioLabel": "Electrodoméstico",
+    "servicioPlaceholder": "Elige el equipo",
+    "problemaLabel": "¿Qué está pasando?",
+    "problemaPlaceholder": "Describe brevemente la falla (opcional)",
+    "boton": "Continuar por WhatsApp",
+    "aviso": "Este formulario no reserva la visita ni envía datos por sí solo: solo abre WhatsApp con el mensaje escrito.",
+    "ciudades": [
+      "Bogotá",
+      "Barranquilla",
+      "Ibagué",
+      "Medellín",
+      "Cartagena",
+      "Cali",
+      "Santa Marta",
+      "La Calera",
+      "Funza",
+      "Madrid",
+      "Mosquera",
+      "Cota",
+      "Chía",
+      "Cajicá"
+    ]
   },
-  "faq": [
-    {"pregunta":"¿Cómo solicito una visita?","respuesta":"Escríbenos al WhatsApp +57 312 341 0405. Cuéntanos qué electrodoméstico tienes, su marca y qué falla presenta."},
-    {"pregunta":"¿En qué ciudades atienden?","respuesta":"La cobertura publicada incluye Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. También aparecen La Calera, Funza, Madrid, Mosquera, Cota, Chía y Cajicá. Confirma si tu equipo y dirección están dentro de la ruta."},
-    {"pregunta":"¿Qué información debo enviar?","respuesta":"Indica el electrodoméstico, la marca, la ciudad y la falla. Si tienes el modelo o una foto de la placa, puedes compartirla en el chat."},
-    {"pregunta":"¿Hacen mantenimiento además de reparaciones?","respuesta":"Sí. El sitio actual anuncia mantenimiento preventivo y recomendaciones para el uso y el ahorro de energía."},
-    {"pregunta":"¿La reparación tiene garantía?","respuesta":"La página de neveras del sitio actual menciona garantía de reparación por seis meses. Confirma con el asesor las condiciones y el alcance para tu equipo antes de agendar."},
-    {"pregunta":"¿Trabajan con repuestos originales?","respuesta":"La página de neveras menciona repuestos originales. Confirma disponibilidad para la marca y el modelo de tu equipo al solicitar el servicio."},
-    {"pregunta":"¿Qué marcas atienden?","respuesta":"La web publica servicios para marcas como Samsung, LG, Whirlpool, Haceb, Mabe, Electrolux, Bosch y otras. Mira el listado completo; los nombres se usan solo para identificar equipos y no implican representación oficial."},
-    {"pregunta":"¿Atienden los domingos?","respuesta":"El horario publicado indica que no se trabaja domingos ni festivos. De lunes a viernes la atención se anuncia de 6:00 a. m. a 6:00 p. m., con horario extendido hasta las 10:00 p. m.; sábados de 7:00 a. m. a 5:00 p. m."},
-    {"pregunta":"¿Son el servicio oficial de las marcas?","respuesta":"No. La web aclara que las marcas se mencionan con fines informativos y que Línea Blanca no es el servicio técnico oficial de ninguna de ellas."}
-  ],
   "contacto": {
-    "titulo":"Cuéntanos qué necesita tu equipo",
-    "texto":"Un asesor recibirá tu solicitud y podrá ayudarte a coordinar la atención.",
-    "horario":"Lunes a viernes, 6:00 a. m. – 6:00 p. m. · Horario extendido hasta 10:00 p. m. · Sábados, 7:00 a. m. – 5:00 p. m. · Domingos y festivos: no se trabaja.",
-    "whatsapp":"573123410405",
-    "telefonoVisible":"312 341 0405"
+    "whatsapp": "573123410405",
+    "telefonoVisible": "312 341 0405",
+    "horarioLineas": [
+      "Lunes a viernes, 6:00 a. m. a 6:00 p. m.",
+      "Horario extendido hasta las 10:00 p. m.",
+      "Sábados, 7:00 a. m. a 5:00 p. m.",
+      "Domingos y festivos: no trabajamos"
+    ]
+  },
+  "creditos": [
+    {
+      "texto": "portada de PlanetCare en Unsplash"
+    },
+    {
+      "texto": "nevera de Lisa Anna en Unsplash"
+    }
+  ],
+  "equipoPagina": {
+    "etiquetaMarcas": "Marcas que atendemos en este equipo",
+    "textoMarcas": "Los nombres se usan solo para identificar el equipo; Línea Blanca no es el servicio técnico oficial de ninguna marca.",
+    "otrosTitulo": "Otros equipos que atendemos.",
+    "cta": "Escribir por WhatsApp",
+    "ctaSecundario": "Ver todos los equipos"
+  },
+  "contactoPagina": {
+    "titulo": "Hablemos de tu equipo.",
+    "texto": "Escríbenos por WhatsApp o usa el formulario. Un asesor coordina la visita contigo."
+  },
+  "pagina404": {
+    "titulo": "Esta página no existe.",
+    "texto": "Puede que el enlace haya cambiado. Vuelve al inicio o mira los equipos que atendemos.",
+    "cta": "Volver al inicio"
   }
 }

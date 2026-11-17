@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Solicitud from "../components/Solicitud.astro";
+import Pie from "../components/Pie.astro";
+import datos from "../datos/inicio.json";
+const c = datos.contactoPagina;
+---
+<Layout titulo="Contacto | Línea Blanca" descripcion={c.texto}>
+  <section class="pagina-hero pagina-hero-corta">
+    <div class="container">
+      <h1>{c.titulo}</h1>
+      <p class="lead">{c.texto}</p>
+    </div>
+  </section>
+  <Solicitud />
+  <section class="section cobertura">
+    <div class="container">
+      <div class="section-head"><h2>{datos.cobertura.titulo}</h2><p>{datos.cobertura.texto}</p></div>
+      <div class="cobertura-grid">
+        <div class="cobertura-bloque cobertura-ciudades"><h3>{datos.cobertura.ciudadesTitulo}</h3><ul>{datos.cobertura.ciudades.map((x) => <li>{x}</li>)}</ul></div>
+        <div class="cobertura-bloque"><h3>{datos.cobertura.municipiosTitulo}</h3><ul class="chips">{datos.cobertura.municipios.map((x) => <li>{x}</li>)}</ul></div>
+        <div class="cobertura-bloque"><h3>{datos.cobertura.barriosTitulo}</h3><ul class="chips">{datos.cobertura.barrios.map((x) => <li>{x}</li>)}</ul></div>
+      </div>
+    </div>
+  </section>
+  <Pie />
+</Layout>

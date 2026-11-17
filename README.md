@@ -12,7 +12,7 @@ La página se construye con Astro y CSS propio. Ejecuta `npm install` una vez y 
 
 ## Contenido editable
 
-- `src/datos/inicio.json`: portada, servicios, proceso, cobertura, preguntas y contacto.
+- `src/datos/inicio.json`: portada, equipos (cada uno con su página, fallas y marcas), compromisos, proceso, cobertura, preguntas, contacto y textos de las páginas interiores.
 - `src/datos/sitio.json`: nombre, teléfono y horario.
 - `MARCA.md`: identidad visual de Línea Blanca.
 
@@ -22,6 +22,8 @@ El script `scripts/publicar-demo.sh` compila solo `/lineablanca` y publica en la
 
 ## Imágenes y contenido
 
-La fotografía de portada apunta a Unsplash (foto de cocina editorial, endpoint de imagen `photo-1556911220-bff31c812dba`). Se usa provisionalmente desde su CDN; no se ha copiado al proyecto. El logo local es el archivo entregado para la marca.
+Las fotografías (`public/img/portada.jpg` y `nevera.jpg`) son de Unsplash, con licencia libre y crédito en el pie: PlanetCare (lavadora, foto 5cpBWEl6y6c) y Lisa Anna (nevera, foto ZkWMfHPNWpw). Son provisionales. La tipografía Manrope (OFL, subconjunto latino) está en `public/fonts/`. El logo local es el archivo entregado para la marca.
+
+El tema es claro por defecto; el visitante puede activar el oscuro con el botón de la barra y queda guardado en su navegador.
 
 El teléfono, horarios, ciudades, lista de servicios y aviso sobre marcas se tomaron del sitio actual `https://www.lineablanca.co/`. No se incluyeron cifras de experiencia, certificaciones ni testimonios.
