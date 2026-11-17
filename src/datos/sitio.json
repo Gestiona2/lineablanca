@@ -1,0 +1,39 @@
+{
+  "_comentario": "Datos que se repiten en todas las páginas: menú, pie, contacto. El contenido de cada página va en su propio archivo (inicio.json, servicios.json...).",
+
+  "nombre": "Línea Blanca",
+  "razonSocial": "Línea Blanca",
+  "nit": "",
+  "descripcion": "Servicio técnico y mantenimiento de electrodomésticos en Bogotá y otras ciudades de Colombia.",
+
+  "whatsapp": "573123410405",
+  "correo": "",
+  "correoLegal": "",
+  "direccion": "",
+  "horario": "Lunes a viernes 6:00–18:00; extendido 6:00–22:00; sábados 7:00–17:00. Domingos y festivos no se trabaja.",
+
+  "claveTema": "lineablanca-tema",
+
+  "menu": [
+    { "id": "inicio", "texto": "Inicio", "href": "/" },
+    { "id": "servicios", "texto": "Servicios", "href": "/#servicios" },
+    { "id": "nosotros", "texto": "Nosotros", "href": "/#nosotros" },
+    { "id": "contacto", "texto": "Contacto", "href": "/#contacto" }
+  ],
+
+  "ctaPrincipal": {
+    "texto": "Escríbenos",
+    "href": "#contacto"
+  },
+
+  "redes": [
+    { "nombre": "Facebook", "icono": "facebook", "href": "" },
+    { "nombre": "Instagram", "icono": "instagram", "href": "" }
+  ],
+
+  "legales": [
+    { "texto": "Política de privacidad", "href": "/politica-privacidad" },
+    { "texto": "Tratamiento de datos", "href": "/tratamiento-datos" },
+    { "texto": "Términos y condiciones", "href": "/terminos" }
+  ]
+}

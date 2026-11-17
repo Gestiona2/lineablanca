@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import sitio from "../datos/sitio.json";
+const { titulo, descripcion = sitio.descripcion } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f8fc" />
+    <meta name="description" content={descripcion} />
+    <title>{titulo}</title>
+    <link rel="icon" href="/brand/logo-linea-blanca.png" />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+  </head>
+  <body>
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a href={`${import.meta.env.BASE_URL}`} class="nav-logo"><img src={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a>
+        <button id="botonMenu" class="menu-button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+        <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a><a href="#proceso">Cómo funciona</a><a href="#cobertura">Cobertura</a><a href="#preguntas">Preguntas</a>
+          <a href="https://wa.me/573123410405" class="nav-cta" target="_blank" rel="noopener">Agendar servicio <span>↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <a href="https://wa.me/573123410405" class="floating-contact" target="_blank" rel="noopener" aria-label="Escribir a Línea Blanca por WhatsApp">WhatsApp <span>↗</span></a>
+    <script is:inline>
+      const boton = document.querySelector("#botonMenu");
+      const menu = document.querySelector("#navLinks");
+      boton?.addEventListener("click", () => {
+        const abierto = menu.classList.toggle("abierto");
+        boton.setAttribute("aria-expanded", String(abierto));
+        boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+      });
+      menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+        menu.classList.remove("abierto");
+        boton.setAttribute("aria-expanded", "false");
+        boton.setAttribute("aria-label", "Abrir menú");
+      }));
+    </script>
+  </body>
+</html>

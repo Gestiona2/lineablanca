@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "titulo": "Línea Blanca | Reparación de electrodomésticos",
+    "descripcion": "Servicio técnico y mantenimiento de electrodomésticos. Atención en Bogotá y otras ciudades. Agenda por WhatsApp al +57 312 341 0405."
+  },
+  "portada": {
+    "etiqueta": "Servicio técnico para el hogar",
+    "titulo": "Tu casa no se detiene.",
+    "texto": "Reparamos y mantenemos los electrodomésticos que hacen funcionar tu día. Cuéntanos qué ocurre y coordinamos tu atención por WhatsApp.",
+    "imagen": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=85",
+    "imagenAlt": "Cocina contemporánea con electrodomésticos integrados",
+    "cta": "Solicitar servicio",
+    "ctaSecundario": "Ver qué reparamos"
+  },
+  "servicios": {
+    "titulo": "Un equipo para cada necesidad",
+    "texto": "Atención técnica para los electrodomésticos más importantes de tu hogar.",
+    "items": [
+      {"nombre":"Lavadoras","detalle":"Reparación y mantenimiento para recuperar el lavado de cada día."},
+      {"nombre":"Neveras y nevecones","detalle":"Revisión y mantenimiento para conservar tus alimentos correctamente."},
+      {"nombre":"Secadoras","detalle":"Servicio técnico para ciclos de secado que no terminan o no calientan."},
+      {"nombre":"Calentadores","detalle":"Mantenimiento y reparación de calentadores a gas."},
+      {"nombre":"Estufas y hornos","detalle":"Reparación, instalación y mantenimiento preventivo."},
+      {"nombre":"Lavavajillas","detalle":"Revisión de fallas y mantenimiento del equipo."},
+      {"nombre":"Campanas y aspiradoras","detalle":"Servicio para extracción, limpieza y cuidado del hogar."},
+      {"nombre":"Cafeteras y televisores","detalle":"Cuéntanos la marca y el problema para orientarte."}
+    ]
+  },
+  "proceso": {
+    "titulo": "Así comienza la atención",
+    "pasos": [
+      {"titulo":"Cuéntanos qué sucede","texto":"Escríbenos por WhatsApp e indica el tipo de equipo, la marca y la falla."},
+      {"titulo":"Coordinamos la visita","texto":"Un asesor recibe tu solicitud y coordina contigo la atención técnica."},
+      {"titulo":"Recibe recomendaciones","texto":"Además de la reparación, el equipo comparte recomendaciones de mantenimiento y uso eficiente."}
+    ]
+  },
+  "cobertura": {
+    "titulo":"Atención en distintas ciudades",
+    "texto":"La web actual anuncia cobertura en Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. Para confirmar disponibilidad en tu zona, consúltanos.",
+    "zonas":"Bogotá · Barranquilla · Ibagué · Medellín · Cartagena · Cali · Santa Marta"
+  },
+  "faq": [
+    {"pregunta":"¿Cómo solicito una visita?","respuesta":"Escríbenos al WhatsApp +57 312 341 0405. Cuéntanos qué electrodoméstico tienes, su marca y qué falla presenta."},
+    {"pregunta":"¿En qué ciudades atienden?","respuesta":"La cobertura publicada incluye Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta. Confirma por WhatsApp si tu barrio o municipio está cubierto."},
+    {"pregunta":"¿Atienden los domingos?","respuesta":"El horario publicado indica que no se trabaja domingos ni festivos. De lunes a viernes la atención se anuncia de 6:00 a. m. a 6:00 p. m., con horario extendido hasta las 10:00 p. m.; sábados de 7:00 a. m. a 5:00 p. m."},
+    {"pregunta":"¿Son el servicio oficial de las marcas?","respuesta":"No. Las marcas se mencionan únicamente con fines informativos y son propiedad de sus titulares. Línea Blanca no es el servicio técnico oficial de las marcas expuestas."}
+  ],
+  "contacto": {
+    "titulo":"Cuéntanos qué necesita tu equipo",
+    "texto":"Escríbenos y un asesor te ayudará a coordinar la atención.",
+    "whatsapp":"573123410405",
+    "telefonoVisible":"312 341 0405"
+  }
+}

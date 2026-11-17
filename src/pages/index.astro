@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import datos from "../datos/inicio.json";
+const wa = `https://wa.me/${datos.contacto.whatsapp}`;
+---
+
+<Layout titulo={datos.meta.titulo} descripcion={datos.meta.descripcion} activa="inicio">
+  <section class="hero" id="inicio">
+    <div class="hero-image" role="img" aria-label={datos.portada.imagenAlt}></div>
+    <div class="hero-wash"></div>
+    <div class="container hero-content">
+      <p class="hero-kicker"><span></span>{datos.portada.etiqueta}</p>
+      <h1>{datos.portada.titulo}</h1>
+      <p class="hero-copy">{datos.portada.texto}</p>
+      <div class="hero-actions">
+        <a class="button button-blue" href={`${wa}?text=${encodeURIComponent("Hola, necesito servicio técnico para un electrodoméstico.")}`} target="_blank" rel="noopener">{datos.portada.cta}<span aria-hidden="true">↗</span></a>
+        <a class="button button-quiet" href="#servicios">{datos.portada.ctaSecundario}<span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-note"><span class="note-mark">LB</span><span>Atención para electrodomésticos<br />de tu hogar</span></div>
+    </div>
+    <div class="hero-caption">LÍNEA BLANCA <span>·</span> SERVICIO TÉCNICO</div>
+  </section>
+
+  <section class="intro-band">
+    <div class="container intro-inner"><p>Un buen diagnóstico.<br /><strong>Una casa que vuelve a funcionar.</strong></p><a href={wa} target="_blank" rel="noopener">Hablar con un asesor <span>↗</span></a></div>
+  </section>
+
+  <section class="services section-pad" id="servicios">
+    <div class="container">
+      <div class="section-heading"><div><p class="eyebrow">LO QUE REPARAMOS</p><h2>{datos.servicios.titulo}</h2></div><p>{datos.servicios.texto}</p></div>
+      <div class="service-grid">
+        {datos.servicios.items.map((servicio, index) => <a class="service-item" href={`${wa}?text=${encodeURIComponent(`Hola, necesito servicio para ${servicio.nombre.toLowerCase()}.`)}`} target="_blank" rel="noopener"><span class="service-index">{String(index + 1).padStart(2, "0")}</span><div><h3>{servicio.nombre}</h3><p>{servicio.detalle}</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section section-pad" id="proceso">
+    <div class="container process-layout">
+      <div class="process-lead"><p class="eyebrow">SIN COMPLICACIONES</p><h2>{datos.proceso.titulo}</h2><p>El primer paso es contarnos qué está pasando. Te ayudamos a coordinar la atención.</p><a class="text-link" href={wa} target="_blank" rel="noopener">Iniciar por WhatsApp <span>↗</span></a></div>
+      <div class="process-list">{datos.proceso.pasos.map((paso, index) => <article class="process-step"><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{paso.titulo}</h3><p>{paso.texto}</p></div></article>)}</div>
+    </div>
+  </section>
+
+  <section class="coverage section-pad" id="cobertura">
+    <div class="container coverage-layout"><div><p class="eyebrow">COBERTURA</p><h2>{datos.cobertura.titulo}</h2></div><div><p>{datos.cobertura.texto}</p><p class="cities">{datos.cobertura.zonas}</p></div></div>
+  </section>
+
+  <section class="faq-section section-pad" id="preguntas"><div class="container faq-layout"><div><p class="eyebrow">ANTES DE ESCRIBIRNOS</p><h2>Resolvemos tus dudas.</h2><a class="text-link" href={wa} target="_blank" rel="noopener">Preguntar por WhatsApp <span>↗</span></a></div><div class="faq-list">{datos.faq.map((item) => <details><summary>{item.pregunta}<span aria-hidden="true">+</span></summary><p>{item.respuesta}</p></details>)}</div></div></section>
+
+  <section class="contact-section" id="contacto"><div class="container contact-inner"><div><p class="eyebrow">LÍNEA BLANCA · SERVICIO TÉCNICO</p><h2>{datos.contacto.titulo}</h2><p>{datos.contacto.texto}</p></div><a class="button button-white" href={`${wa}?text=${encodeURIComponent("Hola, quiero solicitar un servicio técnico.")}`} target="_blank" rel="noopener">Escribir al {datos.contacto.telefonoVisible}<span aria-hidden="true">↗</span></a></div></section>
+
+  <footer class="site-footer"><div class="container footer-top"><a class="footer-logo" href={`${import.meta.env.BASE_URL}#inicio`}><img src={`${import.meta.env.BASE_URL}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" /></a><p>Servicio técnico y mantenimiento<br />de electrodomésticos.</p><a class="footer-phone" href={wa} target="_blank" rel="noopener">+57 {datos.contacto.telefonoVisible} <span>↗</span></a></div><div class="container footer-bottom"><span>© {new Date().getFullYear()} Línea Blanca. Todos los derechos reservados.</span><span>Las marcas se mencionan solo con fines informativos. No somos el servicio oficial de ninguna marca.</span></div></footer>
+</Layout>
