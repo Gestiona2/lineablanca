@@ -16,4 +16,4 @@ Lee `MARCA.md`, `PENDIENTES.md` y `README.md`. El contenido editable de la pági
 
 ## Publicación
 
-La demo prevista es `https://demos.emp2web.com/lineablanca/`. La publicación requiere el repositorio aislado asignado y autenticación configurada; `scripts/publicar-demo.sh` falla de forma segura si no se indicó `LINEABLANCA_DEMO_REPO`.
+La demo es `https://demos.emp2web.com/lineablanca/`. La publicación usa el repositorio aislado `Gestiona2/lineablanca` y requiere GitHub CLI autenticado. No apuntes el script a otro demo.

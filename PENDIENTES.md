@@ -7,7 +7,7 @@
 - [ ] Completar y probar en navegador las páginas enlazadas del sitio anterior (servicios por equipo); esta primera propuesta implementa el home informativo.
 - [ ] Reemplazar la foto provisional de Unsplash por fotografía propia o acordar mantenerla; no representa un trabajo real de Línea Blanca.
 - [ ] Probar en navegador a 1440, 768 y 390 px antes de enseñar al cliente.
-- [ ] Asignar el repositorio aislado de la demo `demos.emp2web.com/lineablanca` y configurar publicación. El destino de publicación no se ha modificado todavía.
+- [x] Repositorio aislado y demo publicados en `Gestiona2/lineablanca` y `demos.emp2web.com/lineablanca`.
 - [ ] Revisar el aviso legal completo, privacidad y tratamiento de datos con el cliente antes de añadir formularios.
 
 ## Datos que deben confirmarse

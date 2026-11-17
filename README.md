@@ -18,7 +18,7 @@ La página se construye con Astro y CSS propio. Ejecuta `npm install` una vez y 
 
 ## Publicar la demo
 
-El script `scripts/publicar-demo.sh` compila solo `/lineablanca` y publica en una rama `gh-pages` de un repositorio aislado. Antes de usarlo, Emp2Web debe asignar explícitamente el repositorio de destino y configurar la autenticación; el script se detiene si `LINEABLANCA_DEMO_REPO` no está definido.
+El script `scripts/publicar-demo.sh` compila solo `/lineablanca` y publica en la rama `gh-pages` del repositorio aislado `Gestiona2/lineablanca`. Requiere GitHub CLI autenticado como miembro de la organización.
 
 ## Imágenes y contenido
 
