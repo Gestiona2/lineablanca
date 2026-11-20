@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Formulario from "../components/Formulario.astro";
+import Icon from "../components/Icon.astro";
+import Pie from "../components/Pie.astro";
+import { sitio, ciudades, ciudadesData, ruta, rutaCiudad, wa, reemplazar, serviciosDeCiudad } from "../lib/sitio.js";
+import d from "../datos/ciudades.json";
+
+export function getStaticPaths() {
+  return ciudades.map((c) => ({ params: { ciudad: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const v = { ciudad: c.nombre, horario: sitio.horarioCorto };
+const servs = serviciosDeCiudad(c);
+const cercanas = ciudades.filter((x) => x.slug !== c.slug).sort((a, b) => Number(b.grupo === c.grupo) - Number(a.grupo === c.grupo));
+const jsonld = { "@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", name: `${sitio.nombre} — ${c.nombre}`, telephone: `+${sitio.whatsapp}`, areaServed: c.nombre, url: sitio.dominio };
+---
+<Layout titulo={reemplazar(d.meta.titulo, v)} descripcion={reemplazar(d.meta.descripcion, v)} jsonld={jsonld}>
+  <section class="equipo-hero">
+    <div class="container">
+      <nav class="migas" aria-label="Ruta"><a href={ruta("")}>Inicio</a><span aria-hidden="true">/</span><span>{d.migas}</span><span aria-hidden="true">/</span><span>{c.nombre}</span></nav>
+      <div class="equipo-hero-grid">
+        <div>
+          <h1>{reemplazar(d.hero.titulo, v)}</h1>
+          <p class="lead">{reemplazar(d.hero.texto, v)}</p>
+          <div class="hero-actions">
+            <a class="btn btn-wa btn-lg" href={wa(reemplazar(sitio.mensajes.ciudad, v))} target="_blank" rel="noopener">{reemplazar(d.hero.boton, v)}<span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost btn-lg" href={ruta("servicios/")}>Ver todos los servicios</a>
+          </div>
+          <p class="donde-acciones-txt">{sitio.grupos[c.grupo].acciones}</p>
+        </div>
+        <div class="equipo-card">
+          <h2>{reemplazar(d.aside.titulo, v)}</h2>
+          <p class="equipo-resumen">{reemplazar(d.aside.texto, v)}</p>
+          <ul class="horario horario-claro">{sitio.horarioLineas.map((l) => <li>{l}</li>)}</ul>
+          <a class="solicitud-tel solicitud-tel-claro" href={`tel:+${sitio.whatsapp}`}>+57 {sitio.telefono}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{reemplazar(d.servicios.titulo, v)}</h2><p>{d.servicios.texto}</p></div>
+      <ul class="marcas-indice">
+        {servs.map((s) => (
+          <li><a href={ruta(`${s.slug}/`)}>
+            <span class="indice-nombre"><span class="icono-burbuja"><Icon nombre={s.icono} tamano={24} /></span>{s.nombre}</span>
+            <span class="indice-resumen">{s.resumen}</span>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section class="section proceso">
+    <div class="container">
+      <div class="section-head"><h2>{d.pasos.titulo}</h2></div>
+      <ol class="pasos">{d.pasos.items.map((p) => <li><h3>{p.titulo}</h3><p>{p.texto}</p></li>)}</ol>
+    </div>
+  </section>
+  <section class="section faq">
+    <div class="container faq-grid">
+      <div class="faq-intro"><h2>{reemplazar(d.faq.titulo, v)}</h2></div>
+      <div class="faq-lista">
+        {d.faq.items.map((f) => (<details><summary>{reemplazar(f.pregunta, v)}<span class="mas" aria-hidden="true"></span></summary><p>{reemplazar(f.respuesta, v)}</p></details>))}
+      </div>
+    </div>
+  </section>
+  <section class="section otros">
+    <div class="container">
+      <div class="section-head"><h2>{d.cercanas.titulo}</h2></div>
+      <ul class="otros-lista">{cercanas.map((x) => <li><a href={rutaCiudad(x)}>{x.nombre}</a></li>)}</ul>
+    </div>
+  </section>
+  <Formulario ciudadPre={c.nombre} titulo={reemplazar(d.aside.titulo, v)} texto={reemplazar(d.aside.texto, v)} />
+  <Pie />
+</Layout>

@@ -1,74 +1,116 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Solicitud from "../components/Solicitud.astro";
+import Formulario from "../components/Formulario.astro";
 import Pie from "../components/Pie.astro";
-import datos from "../datos/inicio.json";
-const wa = `https://wa.me/${datos.contacto.whatsapp}`;
-const mensajeInicial = encodeURIComponent("Hola, quiero solicitar un servicio técnico.");
-const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const equipos = datos.servicios.grupos.flatMap((g) => g.items);
+import Icon from "../components/Icon.astro";
+import { sitio, ruta, recurso, wa, reemplazar, categorias, ciudades, marcas, rutaCiudad, serviciosDeCiudad, servicioPor } from "../lib/sitio.js";
+import d from "../datos/inicio.json";
+
+const equipos = categorias.flatMap((c) => c.items);
+const archivos = { lg: "lg.svg", samsung: "samsung.svg", haceb: "haceb.jpg", whirlpool: "whirlpool.svg", mabe: "mabe.svg", electrolux: "electrolux.svg", challenger: "challenger.jpg", bosch: "bosch.svg", frigidaire: "frigidaire.svg", "general-electric": "general-electric.svg", kitchenaid: "kitchenaid.svg", kenmore: "kenmore.svg" };
+const todasMarcas = marcas.map((m) => ({ ...m, logo: m.logo }));
+const marcasInicio = d.marcasInicio.map((s) => marcas.find((m) => m.slug === s)).filter(Boolean).map((m) => ({ ...m, logo: archivos[m.slug] }));
+const jsonld = {
+  "@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", name: sitio.nombre,
+  description: sitio.descripcion, telephone: `+${sitio.whatsapp}`, url: sitio.dominio,
+  areaServed: ciudades.map((c) => c.nombre), openingHours: "Mo-Fr 06:00-18:00, Sa 07:00-17:00",
+};
 ---
 
-<Layout titulo={datos.meta.titulo} descripcion={datos.meta.descripcion}>
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} jsonld={jsonld}>
   <section class="hero" id="inicio">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <h1>{datos.portada.titulo}</h1>
-        <p class="lead">{datos.portada.texto}</p>
+        <h1>{d.portada.titulo}</h1>
+        <p class="lead">{d.portada.texto}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href={`${wa}?text=${mensajeInicial}`} target="_blank" rel="noopener">{datos.portada.cta}<span class="btn-arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost btn-lg" href={`${base}#servicios`}>{datos.portada.ctaSecundario}</a>
+          <a class="btn btn-wa btn-lg" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={22} />{d.portada.cta}</a>
+          <a class="btn btn-ghost btn-lg" href="#servicios">{d.portada.ctaSecundario}</a>
         </div>
+        <ul class="hechos">{d.portada.hechos.map((h) => <li><strong>{h.valor}</strong><span>{h.texto}</span></li>)}</ul>
       </div>
       <figure class="hero-media">
-        <img src={`${base}${datos.portada.imagen}`} alt={datos.portada.imagenAlt} width="1200" height="1400" fetchpriority="high" />
+        <img src={recurso(d.portada.imagen)} alt={d.portada.imagenAlt} width="1400" height="933" fetchpriority="high" />
         <figcaption class="hero-placa">
-          <strong>{datos.portada.placaTitulo}</strong>
-          <span>{datos.portada.placaTexto}</span>
+          <span class="placa-tit">{d.portada.placaTitulo}</span>
+          <a class="placa-tel" href={`tel:+${sitio.whatsapp}`}>+57 {sitio.telefono}</a>
+          <span class="placa-nota">{d.portada.placaNota}</span>
+          <span class="placa-botones">
+            <a class="btn btn-primary btn-sm" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={16} />{d.portada.llamar}</a>
+            <a class="btn btn-wa btn-sm" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={16} />WhatsApp</a>
+          </span>
         </figcaption>
       </figure>
-    </div>
-    <div class="container hero-ciudades">
-      <p>{datos.portada.ciudadesEtiqueta}</p>
-      <ul>{datos.cobertura.ciudades.map((c) => <li>{c}</li>)}</ul>
     </div>
   </section>
 
   <section class="section servicios" id="servicios">
     <div class="container">
       <div class="section-head">
-        <h2>{datos.servicios.titulo}</h2>
-        <p>{datos.servicios.texto}</p>
+        <h2>{d.servicios.titulo}</h2>
+        <p>{d.servicios.texto}</p>
       </div>
       <div class="equipos">
         <div class="equipos-lista" role="tablist" aria-orientation="vertical" aria-label="Electrodomésticos" data-equipos>
-          {datos.servicios.grupos.map((grupo) => (
+          {categorias.map((cat, ci) => (
             <div class="equipos-grupo" role="presentation">
-              <p class="equipos-grupo-nombre" role="presentation">{grupo.nombre}</p>
-              {grupo.items.map((item, i) => (
-                <button class="equipo-tab" type="button" role="tab" id={`tab-${item.id}`} aria-controls={`panel-${item.id}`} aria-selected={grupo === datos.servicios.grupos[0] && i === 0 ? "true" : "false"} data-id={item.id} data-nombre={item.nombre}>
-                  <span>{item.nombre}</span>
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <p class="equipos-grupo-nombre" role="presentation">{cat.titulo}</p>
+              {cat.items.map((it, i) => (
+                <button class="equipo-tab" type="button" role="tab" id={`tab-${it.slug}`} aria-controls={`panel-${it.slug}`} aria-selected={ci === 0 && i === 0 ? "true" : "false"} data-id={it.slug} data-nombre={it.nombre}>
+                  <Icon nombre={it.icono} tamano={22} /><span>{it.nombre}</span>
+                  <Icon nombre="arrow-right" tamano={18} clase="tab-flecha" />
                 </button>
               ))}
             </div>
           ))}
         </div>
         <div class="equipos-detalle">
-          {equipos.map((item) => (
-            <article class="equipo-panel" role="tabpanel" id={`panel-${item.id}`} aria-labelledby={`tab-${item.id}`} data-panel={item.id} hidden={item.id !== equipos[0].id ? true : undefined}>
-              <h3>{item.nombre}</h3>
-              <p class="equipo-resumen">{item.resumen}</p>
-              <h4>{datos.servicios.etiquetaFallas}</h4>
-              <ul class="fallas">
-                {item.fallas.map((falla) => <li>{falla}</li>)}
-              </ul>
+          {equipos.map((it) => (
+            <article class="equipo-panel" role="tabpanel" id={`panel-${it.slug}`} aria-labelledby={`tab-${it.slug}`} data-panel={it.slug} hidden={it.slug !== equipos[0].slug ? true : undefined}>
+              <span class="icono-burbuja"><Icon nombre={it.icono} tamano={28} /></span>
+              <h3>{it.nombre}</h3>
+              <p class="equipo-resumen">{it.resumen}</p>
+              <h4>{d.servicios.etiquetaFallas}</h4>
+              <ul class="fallas">{it.fallas.map((f) => <li>{f}</li>)}</ul>
               <div class="equipo-acciones">
-                <a class="btn btn-primary" href={`${base}#solicitud`} data-pedir>{datos.servicios.cta}<span class="btn-arrow" aria-hidden="true">→</span></a>
-                <a class="btn btn-ghost" href={`${base}${item.slug}/`}>{datos.servicios.verPagina}</a>
+                <a class="btn btn-primary" href="#agendar" data-pedir>{d.servicios.ctaPedir}<span class="btn-arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn-ghost" href={ruta(`${it.slug}/`)}>{d.servicios.verPagina}</a>
               </div>
             </article>
           ))}
+        </div>
+      </div>
+      <p class="ver-todos"><a class="btn btn-ghost" href={ruta("servicios/")}>{d.servicios.cta}<span class="btn-arrow" aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <section class="section donde" id="donde">
+    <div class="container">
+      <div class="section-head">
+        <h2>{d.donde.titulo}</h2>
+        <p>{d.donde.texto}</p>
+      </div>
+      <div class="donde-grid">
+        <div class="donde-lista" role="tablist" aria-label="Ciudades" data-ciudades>
+          {ciudades.map((c, i) => (
+            <button class="ciudad-tab" type="button" role="tab" id={`ct-${c.slug}`} aria-controls={`cp-${c.slug}`} aria-selected={i === 0 ? "true" : "false"} data-id={c.slug}>{c.nombre}</button>
+          ))}
+        </div>
+        <div class="donde-paneles">
+          {ciudades.map((c, i) => (
+            <div class="ciudad-panel" role="tabpanel" id={`cp-${c.slug}`} aria-labelledby={`ct-${c.slug}`} data-cpanel={c.slug} hidden={i !== 0 ? true : undefined}>
+              <h3>{reemplazar(d.donde.tituloPanel, { ciudad: c.nombre })}</h3>
+              <p class="donde-acciones-txt">{sitio.grupos[c.grupo].acciones}</p>
+              <ul class="lista-iconos">
+                {serviciosDeCiudad(c).map((s) => <li><a href={ruta(`${s.slug}/`)}><Icon nombre={s.icono} tamano={20} />{s.nombre}</a></li>)}
+              </ul>
+              <div class="equipo-acciones">
+                <a class="btn btn-wa" href={wa(reemplazar(sitio.mensajes.ciudad, { ciudad: c.nombre }))} target="_blank" rel="noopener">{reemplazar(d.donde.boton, { ciudad: c.nombre })}<span class="btn-arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn-ghost" href={rutaCiudad(c)}>{reemplazar(d.donde.paginaCiudad, { ciudad: c.nombre })}</a>
+              </div>
+            </div>
+          ))}
+          <p class="donde-nota">{d.donde.nota} <a href={wa(sitio.mensajes.general)} target="_blank" rel="noopener">{d.donde.notaEnlace}</a></p>
         </div>
       </div>
     </div>
@@ -77,12 +119,12 @@ const equipos = datos.servicios.grupos.flatMap((g) => g.items);
   <section class="section compromisos" id="compromisos">
     <div class="container compromisos-grid">
       <div class="compromisos-intro">
-        <h2>{datos.compromisos.titulo}</h2>
-        <p>{datos.compromisos.texto}</p>
-        <img class="compromisos-foto" src={`${base}${datos.compromisos.imagen}`} alt={datos.compromisos.imagenAlt} width="1000" height="667" loading="lazy" />
+        <h2>{d.compromisos.titulo}</h2>
+        <p>{d.compromisos.texto}</p>
+        <img class="compromisos-foto" src={recurso(d.compromisos.imagen)} alt={d.compromisos.imagenAlt} width="1000" height="667" loading="lazy" />
       </div>
       <ul class="compromisos-lista">
-        {datos.compromisos.items.map((c) => <li><h3>{c.titulo}</h3><p>{c.texto}</p></li>)}
+        {d.compromisos.items.map((c) => <li><h3>{c.titulo}</h3><p>{c.texto}</p></li>)}
       </ul>
     </div>
   </section>
@@ -90,57 +132,96 @@ const equipos = datos.servicios.grupos.flatMap((g) => g.items);
   <section class="section proceso" id="proceso">
     <div class="container">
       <div class="section-head">
-        <h2>{datos.proceso.titulo}</h2>
+        <h2>{d.proceso.titulo}</h2>
+        <p>{d.proceso.texto}</p>
       </div>
       <ol class="pasos">
-        {datos.proceso.pasos.map((paso) => <li><h3>{paso.titulo}</h3><p>{paso.texto}</p></li>)}
+        {d.proceso.pasos.map((p) => <li><h3>{p.titulo}</h3><p>{p.texto}</p></li>)}
       </ol>
     </div>
   </section>
 
-  <section class="section marcas" id="marcas">
-    <div class="container marcas-grid">
-      <div>
-        <h2>{datos.marcas.titulo}</h2>
-        <p>{datos.marcas.texto}</p>
+  <section class="section marcas-muro" id="marcas-logos" aria-labelledby="t-marcas">
+    <div class="container muro-grid">
+      <div class="muro-intro">
+        <h2 id="t-marcas">{d.marcas.titulo}</h2>
+        <p>{d.marcas.texto}</p>
+        <a class="btn btn-ghost" href={ruta("marcas/")}>{d.marcas.verTodas}<Icon nombre="arrow-right" tamano={18} /></a>
+        <p class="marcas-nota">{d.marcas.nota}</p>
       </div>
-      <ul class="marcas-lista">
-        {datos.marcas.items.map((m) => <li>{m}</li>)}
+      <ul class="muro">
+        {todasMarcas.map((m) => (
+          <li>
+            <a href={ruta(`marcas/${m.slug}/`)} aria-label={`Reparación de ${m.nombre}`}>
+              <span class="muro-logo">{m.logo ? <img src={recurso(`brand/marcas/${m.logo}`)} alt="" loading="lazy" /> : <b>{m.nombre}</b>}</span>
+              <span class="muro-nombre">{m.nombre}</span>
+              <span class="muro-tipos">{m.tipos.slice(0, 2).map((t) => servicioPor(t).nombre).join(" · ")}{m.tipos.length > 2 ? ` +${m.tipos.length - 2}` : ""}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
 
-  <section class="section cobertura" id="cobertura">
+  <section class="section garantia" id="garantia">
+    <div class="container garantia-grid">
+      <div>
+        <p class="garantia-cifra">{d.garantia.cifra}</p>
+        <p class="garantia-unidad">{d.garantia.unidad}</p>
+      </div>
+      <div>
+        <h2>{d.garantia.titulo}</h2>
+        <p class="garantia-texto">{d.garantia.texto}</p>
+        <ul class="garantia-items">{d.garantia.items.map((g) => <li><h3>{g.titulo}</h3><p>{g.texto}</p></li>)}</ul>
+        <ul class="checks">{d.agendar.puntos.map((x) => <li><Icon nombre="check-circle" tamano={22} />{x}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonios" id="testimonios">
     <div class="container">
       <div class="section-head">
-        <h2>{datos.cobertura.titulo}</h2>
-        <p>{datos.cobertura.texto}</p>
+        <h2>{d.testimonios.titulo}</h2>
+        <p>{d.testimonios.texto}</p>
       </div>
-      <div class="cobertura-grid">
-        <div class="cobertura-bloque cobertura-ciudades">
-          <h3>{datos.cobertura.ciudadesTitulo}</h3>
-          <ul>{datos.cobertura.ciudades.map((c) => <li>{c}</li>)}</ul>
-        </div>
-        <div class="cobertura-bloque">
-          <h3>{datos.cobertura.municipiosTitulo}</h3>
-          <ul class="chips">{datos.cobertura.municipios.map((c) => <li>{c}</li>)}</ul>
-        </div>
-        <div class="cobertura-bloque">
-          <h3>{datos.cobertura.barriosTitulo}</h3>
-          <ul class="chips">{datos.cobertura.barrios.map((c) => <li>{c}</li>)}</ul>
-        </div>
+      <ul class="testimonios-lista">
+        {d.testimonios.items.map((t) => (
+          <li>
+            <blockquote>{t.texto}</blockquote>
+            <p class="testimonio-autor"><strong>{t.nombre}</strong><span>{t.equipo} · {t.ciudad}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section pagos" id="pagos">
+    <div class="container pagos-grid">
+      <div>
+        <h2>{d.pagos.titulo}</h2>
+        <p>{d.pagos.texto}</p>
+        <p class="pagos-nota">{d.pagos.nota}</p>
       </div>
+      <ul class="pagos-lista">
+        {d.pagos.medios.map((m) => (
+          <li>
+            <div><h3>{m.nombre}</h3><p>{m.tipo}</p>{m.titular && <p>{m.titular}</p>}</div>
+            <div class="pago-num"><strong>{m.numero}</strong><button type="button" class="btn btn-ghost btn-sm" data-copiar={m.copiar} data-ok={d.pagos.copiado}>{d.pagos.copiar}</button></div>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
   <section class="section faq" id="preguntas">
     <div class="container faq-grid">
       <div class="faq-intro">
-        <h2>{datos.faq.titulo}</h2>
-        <a class="btn btn-ghost" href={`${wa}?text=${mensajeInicial}`} target="_blank" rel="noopener">Preguntar por WhatsApp<span class="btn-arrow" aria-hidden="true">→</span></a>
+        <h2>{d.faq.titulo}</h2>
+        <p>{d.faq.ayudaTexto}</p>
+        <a class="btn btn-ghost" href={wa(sitio.mensajes.general)} target="_blank" rel="noopener">{d.faq.ayudaBoton}<span class="btn-arrow" aria-hidden="true">→</span></a>
       </div>
       <div class="faq-lista">
-        {datos.faq.items.map((item) => (
+        {d.faq.items.map((item) => (
           <details>
             <summary>{item.pregunta}<span class="mas" aria-hidden="true"></span></summary>
             <p>{item.respuesta}</p>
@@ -150,7 +231,58 @@ const equipos = datos.servicios.grupos.flatMap((g) => g.items);
     </div>
   </section>
 
-  <Solicitud />
-
+  <Formulario />
   <Pie />
+
+  <script is:inline>
+    (() => {
+      // Selector de equipos
+      const lista = document.querySelector("[data-equipos]");
+      if (lista) {
+        const tabs = [...lista.querySelectorAll('[role="tab"]')];
+        const paneles = [...document.querySelectorAll("[data-panel]")];
+        const activar = (id, enfocar) => {
+          tabs.forEach((t) => { const on = t.dataset.id === id; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; if (on && enfocar) t.focus(); });
+          paneles.forEach((p) => { p.hidden = p.dataset.panel !== id; });
+        };
+        tabs.forEach((t, i) => {
+          t.addEventListener("click", () => activar(t.dataset.id, false));
+          t.addEventListener("keydown", (e) => {
+            const s = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+            if (s) { e.preventDefault(); activar(tabs[(i + s + tabs.length) % tabs.length].dataset.id, true); }
+          });
+        });
+        document.querySelectorAll("[data-pedir]").forEach((a) => a.addEventListener("click", () => {
+          const id = a.closest("[data-panel]")?.dataset.panel;
+          const nombre = tabs.find((t) => t.dataset.id === id)?.dataset.nombre;
+          const sel = document.querySelector("#f-servicio");
+          if (sel && nombre) sel.value = nombre;
+        }));
+        activar(tabs[0].dataset.id, false);
+      }
+      // Selector de ciudades
+      const ciu = document.querySelector("[data-ciudades]");
+      if (ciu) {
+        const tabs = [...ciu.querySelectorAll('[role="tab"]')];
+        const paneles = [...document.querySelectorAll("[data-cpanel]")];
+        const activar = (id, enfocar) => {
+          tabs.forEach((t) => { const on = t.dataset.id === id; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; if (on && enfocar) t.focus(); });
+          paneles.forEach((p) => { p.hidden = p.dataset.cpanel !== id; });
+        };
+        tabs.forEach((t, i) => {
+          t.addEventListener("click", () => activar(t.dataset.id, false));
+          t.addEventListener("keydown", (e) => {
+            const s = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+            if (s) { e.preventDefault(); activar(tabs[(i + s + tabs.length) % tabs.length].dataset.id, true); }
+          });
+        });
+        activar(tabs[0].dataset.id, false);
+      }
+      // Copiar datos de pago
+      document.querySelectorAll("[data-copiar]").forEach((b) => b.addEventListener("click", async () => {
+        const texto = b.dataset.copiar; const antes = b.textContent;
+        try { await navigator.clipboard.writeText(texto); b.textContent = b.dataset.ok; setTimeout(() => { b.textContent = antes; }, 1800); } catch (e) {}
+      }));
+    })();
+  </script>
 </Layout>

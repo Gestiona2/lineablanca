@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "titulo": "Reparación de electrodomésticos en {ciudad} | Línea Blanca",
+    "descripcion": "Técnicos a domicilio en {ciudad}: reparación, mantenimiento e instalación de electrodomésticos con garantía por escrito. {horario}."
+  },
+  "hero": {
+    "titulo": "Reparación de electrodomésticos en {ciudad}",
+    "texto": "Vamos hasta tu casa en {ciudad}: revisamos el equipo, te explicamos la falla y lo arreglamos con garantía por escrito.",
+    "boton": "Agendar en {ciudad}"
+  },
+  "servicios": {
+    "titulo": "Lo que arreglamos en {ciudad}",
+    "texto": "Elige tu equipo para ver las fallas más comunes y qué incluye la visita."
+  },
+  "pasos": {
+    "titulo": "Así es la visita",
+    "items": [
+      {
+        "titulo": "Nos escribes",
+        "texto": "Cuéntanos por WhatsApp qué equipo es, de qué marca y qué falla tiene."
+      },
+      {
+        "titulo": "Agendamos",
+        "texto": "Acordamos el día y la franja según la disponibilidad de la ruta."
+      },
+      {
+        "titulo": "Revisamos y te explicamos",
+        "texto": "Diagnóstico en tu casa y opciones claras antes de reparar."
+      },
+      {
+        "titulo": "Reparamos con garantía",
+        "texto": "El equipo queda probado y con garantía por escrito."
+      }
+    ]
+  },
+  "cercanas": {
+    "titulo": "También atendemos en"
+  },
+  "aside": {
+    "titulo": "Agenda en {ciudad}",
+    "texto": "Escríbenos con la marca, el modelo y la falla."
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes en {ciudad}",
+    "items": [
+      {
+        "pregunta": "¿Van hasta mi casa en {ciudad}?",
+        "respuesta": "Sí. Escríbenos por WhatsApp y confirmamos disponibilidad y franja en tu zona de {ciudad}."
+      },
+      {
+        "pregunta": "¿Cuándo se paga?",
+        "respuesta": "Al terminar, cuando el equipo ya quedó probado. Al agendar te confirmamos los medios de pago."
+      },
+      {
+        "pregunta": "¿La reparación tiene garantía?",
+        "respuesta": "Sí, por escrito. Si la misma falla reaparece, volvemos sin costo."
+      }
+    ]
+  },
+  "migas": "Dónde atendemos",
+  "_comentario": "Textos de /atendemos-en-<ciudad>/. {ciudad} se reemplaza por el nombre. Qué se atiende en cada ciudad sale de sitio.json (grupos).",
+  "slugs": {
+    "Bogotá": "bogota",
+    "Chía": "chia",
+    "Cajicá": "cajica",
+    "Cota": "cota",
+    "La Calera": "la-calera",
+    "Funza": "funza",
+    "Madrid": "madrid",
+    "Mosquera": "mosquera",
+    "Barranquilla": "barranquilla",
+    "Ibagué": "ibague"
+  }
+}

@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Formulario from "../../components/Formulario.astro";
+import Icon from "../../components/Icon.astro";
+import Pie from "../../components/Pie.astro";
+import { ruta, recurso, wa, sitio, marcas, servicioPor } from "../../lib/sitio.js";
+import d from "../../datos/marcas.json";
+---
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} activa="marcas">
+  <section class="pagina-hero">
+    <div class="container">
+      <h1>{d.titulo}</h1>
+      <p class="lead">{d.texto}</p>
+      <p class="marcas-nota">{d.nota}</p>
+    </div>
+  </section>
+  <section class="indice">
+    <div class="container">
+      <ul class="marcas-indice">
+        {marcas.map((m) => (
+          <li>
+            <a href={ruta(`marcas/${m.slug}/`)}>
+              <span class="indice-nombre">{m.logo ? <span class="logo-tile"><img src={recurso(`brand/marcas/${m.logo}`)} alt="" loading="lazy" /></span> : null}{m.nombre}</span>
+              <span class="indice-resumen">{m.nota}<small>{m.tipos.map((t) => servicioPor(t).nombre).join(" · ")}</small></span>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="ver-todos"><a class="btn btn-wa btn-lg" href={wa(sitio.mensajes.marca)} target="_blank" rel="noopener">{d.preguntar}<span class="btn-arrow" aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+  <Formulario />
+  <Pie />
+</Layout>

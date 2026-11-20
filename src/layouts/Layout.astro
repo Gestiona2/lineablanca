@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
-import sitio from "../datos/sitio.json";
-import inicio from "../datos/inicio.json";
-const { titulo, descripcion = sitio.descripcion } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const wa = `https://wa.me/${inicio.contacto.whatsapp}`;
+import Icon from "../components/Icon.astro";
+import { sitio, ruta, recurso, wa, categorias } from "../lib/sitio.js";
+const { titulo, descripcion = sitio.descripcion, activa = "", jsonld = null } = Astro.props;
+const demo = String(Astro.site ?? "").includes("demos.");
+const canonica = new URL(Astro.url.pathname, Astro.site ?? sitio.dominio).href;
 const claveTema = sitio.claveTema;
 ---
 <!doctype html>
@@ -15,12 +15,17 @@ const claveTema = sitio.claveTema;
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="description" content={descripcion} />
+    <meta name="robots" content={demo ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonica} />
     <title>{titulo}</title>
-    <link rel="icon" href={`${base}brand/logo-linea-blanca.png`} />
-    <style is:inline set:html={`@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:local("Manrope"),url(${base}fonts/manrope-variable.woff2) format("woff2")}`}></style>
+    <link rel="icon" href={recurso("brand/logo-linea-blanca.png")} />
+    <style is:inline set:html={`@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:local("Manrope"),url(${recurso("fonts/manrope-variable.woff2")}) format("woff2")}`}></style>
     <meta property="og:title" content={titulo} />
     <meta property="og:description" content={descripcion} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content={canonica} />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)}></script>}
     <script is:inline define:vars={{ claveTema }}>
       // Claro por defecto. Solo se pasa a oscuro si la persona lo eligió con el botón.
       try { if (localStorage.getItem(claveTema) === "oscuro") document.documentElement.dataset.theme = "dark"; } catch (e) {}
@@ -31,17 +36,44 @@ const claveTema = sitio.claveTema;
     <a class="skip" href="#contenido">Saltar al contenido</a>
     <header class="nav" id="nav">
       <div class="container nav-inner">
-        <a href={base} class="nav-logo" aria-label="Línea Blanca, inicio">
-          <span class="logo-plate"><img src={`${base}brand/logo-linea-blanca.png`} alt="Línea Blanca — Servicio técnico de electrodomésticos" width="208" height="52" /></span>
+        <a href={ruta("")} class="nav-logo" aria-label="Línea Blanca, inicio">
+          <span class="logo-plate"><img src={recurso("brand/logo-linea-blanca.png")} alt="Línea Blanca — Servicio técnico de electrodomésticos" width="208" height="52" /></span>
         </a>
         <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-          <a href={`${base}servicios/`}>Equipos</a>
-          <a href={`${base}#proceso`}>Cómo trabajamos</a>
-          <a href={`${base}#cobertura`}>Cobertura</a>
-          <a href={`${base}#preguntas`}>Preguntas</a>
-          <a href={`${base}contacto/`}>Contacto</a>
-          <a href={`${base}#solicitud`} class="btn btn-primary nav-cta">Solicitar servicio</a>
+          {sitio.menu.map((m) => m.id === "servicios" ? (
+            <div class="nav-item">
+              <a href={ruta(m.href)} class="nav-con-menu" aria-current={activa === m.id ? "page" : undefined} aria-haspopup="true">{m.texto}<Icon nombre="chevron-down" tamano={16} /></a>
+              <div class="mega" role="group" aria-label="Servicios">
+                <div class="mega-lateral">
+                  <p class="mega-t">¿Qué se te dañó?</p>
+                  <p class="mega-p">Elige tu equipo y mira qué arreglamos en tu casa.</p>
+                  <a class="btn btn-wa" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={20} />Escribir por WhatsApp</a>
+                  <a class="mega-todos" href={ruta("servicios/")}>Ver todos los servicios<Icon nombre="arrow-right" tamano={18} /></a>
+                </div>
+                <div class="mega-principal">
+                  <div class="mega-tabs" role="tablist" aria-label="Categorías">
+                    {categorias.map((c, i) => <button type="button" role="tab" class="mega-tab" data-cat={c.id} aria-selected={i === 0 ? "true" : "false"}>{c.titulo}</button>)}
+                  </div>
+                  {categorias.map((c) => (
+                    <ul class="mega-lista" role="tabpanel" data-cat={c.id}>
+                      {c.items.map((it) => <li><a href={ruta(`${it.slug}/`)}><strong>{it.nombre}</strong><span>{it.subtitulo}</span></a></li>)}
+                    </ul>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={ruta(m.href)} aria-current={activa === m.id ? "page" : undefined}>{m.texto}</a>
+          ))}
+          <div class="nav-movil-acciones">
+            <a class="btn btn-wa" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={20} />WhatsApp</a>
+            <a class="btn btn-ghost" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={20} />Llamar {sitio.telefono}</a>
+          </div>
         </nav>
+        <div class="nav-contacto">
+          <a class="nav-tel" href={`tel:+${sitio.whatsapp}`} aria-label={`Llamar al ${sitio.telefono}`}><Icon nombre="phone" tamano={18} /><span>{sitio.telefono}</span></a>
+          <a class="btn btn-wa nav-wa" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={18} />WhatsApp</a>
+        </div>
         <div class="nav-tools">
           <button id="botonTema" class="icon-btn" type="button" aria-pressed="false" aria-label="Activar tema oscuro" title="Tema oscuro">
             <svg class="i-luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -54,11 +86,14 @@ const claveTema = sitio.claveTema;
       </div>
     </header>
     <main id="contenido"><slot /></main>
-    <a href={wa} class="floating-contact" target="_blank" rel="noopener" aria-label="Escribir a Línea Blanca por WhatsApp">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.4l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/></svg>
-      <span>WhatsApp</span>
+    <a href={ruta("contacto/#agendar")} class="floating-contact" aria-label="Agendar un servicio">
+      <Icon nombre="calendar-check" tamano={20} /><span>Agendar</span>
     </a>
-    <script is:inline define:vars={{ claveTema, numero: inicio.contacto.whatsapp }}>
+    <div class="barra-movil" role="group" aria-label="Contacto rápido">
+      <a class="btn btn-ghost" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={20} />Llamar</a>
+      <a class="btn btn-wa" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={20} />WhatsApp</a>
+    </div>
+    <script is:inline define:vars={{ claveTema }}>
       const raiz = document.documentElement;
       const botonTema = document.querySelector("#botonTema");
       const pintarTema = () => {
@@ -75,7 +110,6 @@ const claveTema = sitio.claveTema;
         try { localStorage.setItem(claveTema, oscuro ? "oscuro" : "claro"); } catch (e) {}
         pintarTema();
       });
-
       const boton = document.querySelector("#botonMenu");
       const menu = document.querySelector("#navLinks");
       const cerrar = () => {
@@ -90,64 +124,28 @@ const claveTema = sitio.claveTema;
       });
       menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", cerrar));
       document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrar(); });
-
+      // Menú de servicios: pestañas por categoría
+      const megaTabs = [...document.querySelectorAll(".mega-tab")];
+      const megaListas = [...document.querySelectorAll(".mega-lista")];
+      const verCat = (id) => { megaTabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.cat === id))); megaListas.forEach((l) => { l.hidden = l.dataset.cat !== id; }); };
+      megaTabs.forEach((t) => { ["mouseenter", "focus", "click"].forEach((ev) => t.addEventListener(ev, () => verCat(t.dataset.cat))); });
+      if (megaTabs[0]) verCat(megaTabs[0].dataset.cat);
       const nav = document.querySelector("#nav");
       const marcarScroll = () => nav?.classList.toggle("con-scroll", window.scrollY > 8);
       marcarScroll();
       window.addEventListener("scroll", marcarScroll, { passive: true });
 
-      // Selector de equipos
-      const lista = document.querySelector("[data-equipos]");
-      if (lista) {
-        const pestanas = [...lista.querySelectorAll('[role="tab"]')];
-        const paneles = [...document.querySelectorAll("[data-panel]")];
-        const activar = (id, enfocar, fijar = true) => {
-          pestanas.forEach((p) => {
-            const on = p.dataset.id === id;
-            p.setAttribute("aria-selected", String(on));
-            p.tabIndex = on ? 0 : -1;
-            if (on && enfocar) p.focus();
-          });
-          paneles.forEach((p) => { p.hidden = p.dataset.panel !== id; });
-          if (!fijar) return;
-          const selector = document.querySelector("#servicio");
-          const nombre = pestanas.find((p) => p.dataset.id === id)?.dataset.nombre;
-          if (selector && nombre) selector.value = nombre;
-        };
-        pestanas.forEach((p, i) => {
-          p.addEventListener("click", () => activar(p.dataset.id, false));
-          p.addEventListener("keydown", (e) => {
-            const salto = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-            if (salto) {
-              e.preventDefault();
-              const sig = pestanas[(i + salto + pestanas.length) % pestanas.length];
-              activar(sig.dataset.id, true);
-            }
-          });
+      // Aparición suave al desplazarse. Sin script o con "reducir movimiento", todo se ve desde el principio.
+      const quiereMovimiento = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (quiereMovimiento && "IntersectionObserver" in window) {
+        const objetivos = document.querySelectorAll(".section-head, .pasos > li, .compromisos-lista > li, .testimonios-lista > li, .pagos-lista > li, .logos-marcas a, .garantia-grid > *, .faq-lista details, .indice-grupo, .marcas-indice > li, .equipo-card, .incluye > li, .cifras > li");
+        const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+        objetivos.forEach((el, i) => {
+          const r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight) return; // lo que ya se ve no se anima
+          el.classList.add("rv"); el.style.setProperty("--rv-d", `${(i % 4) * 60}ms`); io.observe(el);
         });
-        document.querySelectorAll("[data-pedir]").forEach((a) => a.addEventListener("click", () => {
-          const id = a.closest("[data-panel]")?.dataset.panel;
-          const nombre = pestanas.find((p) => p.dataset.id === id)?.dataset.nombre;
-          const selector = document.querySelector("#servicio");
-          if (selector && nombre) selector.value = nombre;
-        }));
-        activar(pestanas[0].dataset.id, false, false);
       }
-
-      // Formulario: abre WhatsApp con el mensaje escrito; no envía nada por sí solo.
-      const solicitud = document.querySelector("#solicitudServicio");
-      solicitud?.addEventListener("submit", (evento) => {
-        evento.preventDefault();
-        const datos = new FormData(solicitud);
-        const problema = String(datos.get("problema") || "").trim();
-        const mensaje = [
-          "Hola, quiero solicitar atención para un electrodoméstico.",
-          `Ciudad o municipio: ${datos.get("ciudad")}`,
-          `Equipo: ${datos.get("servicio")}`,
-          problema ? `Falla: ${problema}` : "",
-        ].filter(Boolean).join("\n");
-        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank", "noopener,noreferrer");
-      });
     </script>
   </body>
 </html>

@@ -1,17 +1,46 @@
 ---
-import datos from "../datos/inicio.json";
-const wa = `https://wa.me/${datos.contacto.whatsapp}`;
-const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+import { sitio, servicios, marcas, ciudades, ruta, rutaCiudad, recurso, wa } from "../lib/sitio.js";
+import inicio from "../datos/inicio.json";
+const destacadas = inicio.marcasInicio.map((s) => marcas.find((m) => m.slug === s)).filter(Boolean).slice(0, 8);
 ---
-  <footer class="footer">
-    <div class="container footer-grid">
-      <a class="footer-logo" href={`${base}#inicio`} aria-label="Línea Blanca, volver arriba"><span class="logo-plate"><img src={`${base}brand/logo-linea-blanca.png`} alt="Línea Blanca" width="208" height="52" loading="lazy" /></span></a>
-      <nav class="footer-links" aria-label="Pie"><a href={`${base}servicios/`}>Equipos</a><a href={`${base}contacto/`}>Contacto</a><a href={`${base}#preguntas`}>Preguntas</a></nav>
-      <a class="footer-tel" href={wa} target="_blank" rel="noopener">+57 {datos.contacto.telefonoVisible}</a>
+<footer class="footer">
+  <div class="container footer-top">
+    <div class="footer-marca">
+      <a class="footer-logo" href={ruta("")} aria-label="Línea Blanca, inicio"><span class="logo-plate"><img src={recurso("brand/logo-linea-blanca.png")} alt="Línea Blanca" width="208" height="52" loading="lazy" /></span></a>
+      <p>{sitio.pie.descripcion}</p>
+      <a class="footer-tel" href={wa()} target="_blank" rel="noopener">+57 {sitio.telefono}</a>
+      <ul class="footer-horario">{sitio.horarioLineas.map((l) => <li>{l}</li>)}</ul>
     </div>
-    <div class="container footer-legal">
-      <p>© {new Date().getFullYear()} Línea Blanca. Todos los derechos reservados.</p>
-      <p>Las marcas se mencionan solo con fines informativos. Línea Blanca no es el servicio técnico oficial de ninguna marca.</p>
-      {datos.creditos.length > 0 && <p>Fotografías: {datos.creditos.map((c) => c.texto).join(" · ")}</p>}
+    <nav class="footer-col" aria-label="Servicios">
+      <h2>Servicios</h2>
+      <ul>
+        {servicios.map((s) => <li><a href={ruta(`${s.slug}/`)}>{s.nombre}</a></li>)}
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Marcas">
+      <h2>Marcas</h2>
+      <ul>
+        {destacadas.map((m) => <li><a href={ruta(`marcas/${m.slug}/`)}>{m.nombre}</a></li>)}
+        <li><a href={ruta("marcas/")}>Ver todas las marcas</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Dónde atendemos">
+      <h2>Dónde atendemos</h2>
+      <ul>
+        {ciudades.map((c) => <li><a href={rutaCiudad(c)}>{c.nombre}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer-legal">
+    <p class="footer-aviso">{sitio.pie.aviso}</p>
+    <div class="footer-fila">
+      <p>© {new Date().getFullYear()} Línea Blanca. {sitio.pie.derechos}</p>
+      <ul class="footer-legales">
+        <li><a href={ruta("nosotros/")}>Nosotros</a></li>
+        <li><a href={ruta("contacto/")}>Contacto</a></li>
+        {sitio.legales.map((l) => <li><a href={ruta(l.href)}>{l.texto}</a></li>)}
+      </ul>
     </div>
-  </footer>
+    <p class="footer-creditos">Fotografías: Brian Zajac y Lisa Anna en Unsplash.</p>
+  </div>
+</footer>

@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "titulo": "Marcas que reparamos | Línea Blanca",
+    "descripcion": "Reparamos electrodomésticos LG, Samsung, Haceb, Whirlpool, Mabe, Electrolux, Challenger, Bosch, Frigidaire y más, en tu casa."
+  },
+  "encabezado": "Marcas",
+  "titulo": "Arreglamos la marca que tienes en casa.",
+  "texto": "Cada marca falla a su manera y usa sus propios repuestos. Conocemos los modelos más comunes y buscamos la pieza que corresponde a cada uno.",
+  "nota": "Trabajamos con repuestos originales o equivalentes certificados. Si una referencia no se consigue, te lo decimos antes de abrir el equipo. Los nombres de marca se usan solo para identificar los equipos; Línea Blanca no es el servicio técnico oficial de ninguna de ellas.",
+  "verPagina": "Ver la marca",
+  "preguntar": "Preguntar por mi marca",
+  "detalle": {
+    "titulo": "Reparación de equipos {marca} a domicilio",
+    "focosTitulo": "Qué revisamos más en equipos {marca}",
+    "serviciosTitulo": "Servicios para {marca}",
+    "otrasTitulo": "Otras marcas que atendemos",
+    "ctaMarca": "Agendar revisión de mi equipo {marca}"
+  },
+  "_comentario": "Marcas que atendemos. Cada una tiene su página en /marcas/<slug>/.",
+  "items": [
+    {
+      "nombre": "LG",
+      "slug": "lg",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas"
+      ],
+      "nota": "Lavadoras de carga frontal y superior, neveras inverter, secadoras y lavavajillas. Atendemos sus líneas de lavado y de refrigeración.",
+      "focos": [
+        "Tarjetas y tableros de control",
+        "Sistemas inverter",
+        "Bombas de desagüe",
+        "Sensores de nivel y de temperatura"
+      ],
+      "logo": "lg.svg"
+    },
+    {
+      "nombre": "Samsung",
+      "slug": "samsung",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas",
+        "reparacion-de-estufas"
+      ],
+      "nota": "Línea blanca con mucha electrónica. Revisamos tarjeta, sensores y sistema inverter antes de cambiar cualquier pieza.",
+      "focos": [
+        "Tarjetas y códigos de error en pantalla",
+        "Motores inverter",
+        "Sensores de humedad",
+        "Válvulas de llenado"
+      ],
+      "logo": "samsung.svg"
+    },
+    {
+      "nombre": "Haceb",
+      "slug": "haceb",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-calentadores",
+        "reparacion-de-estufas",
+        "reparacion-de-secadoras",
+        "reparacion-de-hornos"
+      ],
+      "nota": "Marca colombiana de línea blanca y gas, con buena disponibilidad de repuestos en el país.",
+      "focos": [
+        "Neveras y nevecones",
+        "Calentadores a gas",
+        "Estufas y hornos",
+        "Lavadoras automáticas"
+      ],
+      "logo": "haceb.jpg"
+    },
+    {
+      "nombre": "Whirlpool",
+      "slug": "whirlpool",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-estufas",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas",
+        "reparacion-de-hornos"
+      ],
+      "nota": "Línea blanca de origen estadounidense. Según el modelo revisamos transmisión, bomba y control.",
+      "focos": [
+        "Transmisión y motor",
+        "Bombas",
+        "Controles mecánicos y electrónicos",
+        "Empaques de puerta"
+      ],
+      "logo": "whirlpool.svg"
+    },
+    {
+      "nombre": "Mabe",
+      "slug": "mabe",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-calentadores",
+        "reparacion-de-estufas",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas"
+      ],
+      "nota": "Lavadoras, neveras, estufas y calentadores. Usamos repuesto certificado para cada referencia.",
+      "focos": [
+        "Sistema de frío",
+        "Válvulas y bombas",
+        "Encendido de estufas",
+        "Tarjetas de control"
+      ],
+      "logo": "mabe.svg"
+    },
+    {
+      "nombre": "Electrolux",
+      "slug": "electrolux",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-hornos",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas",
+        "reparacion-de-estufas"
+      ],
+      "nota": "Hornos, lavavajillas y lavadoras con piezas muy específicas. Confirmamos la referencia exacta antes de pedir el repuesto.",
+      "focos": [
+        "Resistencias y termostatos",
+        "Electrónica de lavado",
+        "Sistemas de secado",
+        "Bombas de lavavajillas"
+      ],
+      "logo": "electrolux.svg"
+    },
+    {
+      "nombre": "Challenger",
+      "slug": "challenger",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-calentadores",
+        "reparacion-de-estufas",
+        "reparacion-de-hornos",
+        "reparacion-de-secadoras",
+        "reparacion-de-neveras"
+      ],
+      "nota": "Marca colombiana de línea blanca y gas, con repuestos fáciles de conseguir y reparaciones directas.",
+      "focos": [
+        "Calentadores a gas",
+        "Estufas y hornos",
+        "Lavadoras",
+        "Encendido electrónico"
+      ],
+      "logo": "challenger.jpg"
+    },
+    {
+      "nombre": "Bosch",
+      "slug": "bosch",
+      "tipos": [
+        "reparacion-de-calentadores",
+        "reparacion-de-lavavajillas",
+        "reparacion-de-hornos",
+        "reparacion-de-lavadoras",
+        "reparacion-de-secadoras",
+        "reparacion-de-estufas"
+      ],
+      "nota": "Equipos de electrónica muy precisa. Hacemos un diagnóstico fino para no cambiar piezas que están bien.",
+      "focos": [
+        "Calentadores de paso",
+        "Lavavajillas",
+        "Hornos y convección",
+        "Sensores de presión"
+      ],
+      "logo": "bosch.svg"
+    },
+    {
+      "nombre": "Frigidaire",
+      "slug": "frigidaire",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas"
+      ],
+      "nota": "Lavadoras, neveras y secadoras fáciles de reparar. Revisamos el sistema de frío y la transmisión.",
+      "focos": [
+        "Compresores y sistema de frío",
+        "Motores de lavadora",
+        "Resistencias de secadora",
+        "Bombas"
+      ],
+      "logo": "frigidaire.svg"
+    },
+    {
+      "nombre": "General Electric",
+      "slug": "general-electric",
+      "tipos": [
+        "reparacion-de-estufas",
+        "reparacion-de-hornos",
+        "reparacion-de-neveras",
+        "reparacion-de-lavavajillas",
+        "reparacion-de-lavadoras"
+      ],
+      "nota": "Estufas, hornos y refrigeración. Atendemos modelos residenciales y algunas referencias importadas.",
+      "focos": [
+        "Quemadores y válvulas",
+        "Hornos eléctricos",
+        "Refrigeración",
+        "Lavavajillas"
+      ],
+      "logo": "general-electric.svg"
+    },
+    {
+      "nombre": "KitchenAid",
+      "slug": "kitchenaid",
+      "tipos": [
+        "reparacion-de-estufas",
+        "reparacion-de-hornos",
+        "reparacion-de-neveras",
+        "reparacion-de-lavavajillas"
+      ],
+      "nota": "Gama alta de cocina. Cuidamos los acabados y los componentes importados.",
+      "focos": [
+        "Hornos y estufas",
+        "Lavavajillas",
+        "Refrigeración",
+        "Controles electrónicos"
+      ],
+      "logo": "kitchenaid.svg"
+    },
+    {
+      "nombre": "Kenmore",
+      "slug": "kenmore",
+      "tipos": [
+        "reparacion-de-lavadoras",
+        "reparacion-de-neveras",
+        "reparacion-de-secadoras",
+        "reparacion-de-lavavajillas"
+      ],
+      "nota": "Referencias importadas. Cuando el repuesto original escasea, buscamos uno equivalente.",
+      "focos": [
+        "Lavadoras",
+        "Secadoras",
+        "Neveras",
+        "Lavavajillas"
+      ],
+      "logo": "kenmore.svg"
+    },
+    {
+      "nombre": "Centrales",
+      "slug": "centrales",
+      "tipos": [
+        "reparacion-de-lavadoras"
+      ],
+      "nota": "Lavadoras semiautomáticas y de uso intensivo.",
+      "focos": [
+        "Lavadoras semiautomáticas",
+        "Lavadoras de uso intensivo",
+        "Instalación y mantenimiento"
+      ]
+    },
+    {
+      "nombre": "Oster",
+      "slug": "oster",
+      "tipos": [
+        "reparacion-de-hornos",
+        "reparacion-de-estufas"
+      ],
+      "nota": "Hornos y electrodomésticos pequeños de cocina.",
+      "focos": [
+        "Hornos de cocina",
+        "Estufas",
+        "Electrodomésticos pequeños de cocina"
+      ]
+    },
+    {
+      "nombre": "Black+Decker",
+      "slug": "black-and-decker",
+      "tipos": [
+        "reparacion-de-hornos",
+        "reparacion-de-estufas"
+      ],
+      "nota": "Hornos de mesa y electrodomésticos de cocina.",
+      "focos": [
+        "Hornos de mesa",
+        "Estufas",
+        "Electrodomésticos de cocina"
+      ]
+    },
+    {
+      "nombre": "Sueco",
+      "slug": "sueco",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores a gas muy presentes en Colombia.",
+      "focos": [
+        "Calentadores a gas",
+        "Revisión de gas y ventilación",
+        "Mantenimiento preventivo"
+      ]
+    },
+    {
+      "nombre": "Cimsa",
+      "slug": "cimsa",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores y equipos de agua caliente.",
+      "focos": [
+        "Calentadores de agua",
+        "Equipos de agua caliente",
+        "Mantenimiento preventivo"
+      ]
+    },
+    {
+      "nombre": "Clasic",
+      "slug": "clasic",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores a gas para uso residencial.",
+      "focos": [
+        "Calentadores a gas residenciales",
+        "Revisión de gas y ventilación",
+        "Mantenimiento preventivo"
+      ]
+    },
+    {
+      "nombre": "Abba",
+      "slug": "abba",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores de paso.",
+      "focos": [
+        "Calentadores de paso",
+        "Revisión de gas y ventilación",
+        "Mantenimiento preventivo"
+      ]
+    },
+    {
+      "nombre": "Tramontina",
+      "slug": "tramontina",
+      "tipos": [
+        "reparacion-de-estufas"
+      ],
+      "nota": "Estufas de inducción y a gas.",
+      "focos": [
+        "Estufas a gas",
+        "Estufas de inducción",
+        "Instalación y ajuste"
+      ]
+    },
+    {
+      "nombre": "Rheem",
+      "slug": "rheem",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores y sistemas de agua caliente.",
+      "focos": [
+        "Calentadores de agua",
+        "Sistemas de agua caliente",
+        "Mantenimiento preventivo"
+      ]
+    },
+    {
+      "nombre": "Ariston",
+      "slug": "ariston",
+      "tipos": [
+        "reparacion-de-calentadores"
+      ],
+      "nota": "Calentadores de acumulación y de paso.",
+      "focos": [
+        "Calentadores de paso",
+        "Calentadores de acumulación",
+        "Mantenimiento preventivo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Formulario from "../components/Formulario.astro";
+import Pie from "../components/Pie.astro";
+import { ruta, recurso } from "../lib/sitio.js";
+import d from "../datos/nosotros.json";
+---
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} activa="nosotros">
+  <section class="pagina-hero">
+    <div class="container">
+      <h1>{d.hero.titulo}</h1>
+      <p class="lead">{d.hero.texto}</p>
+      <ul class="cifras">{d.cifras.map((c) => <li><strong>{c.valor}</strong><span>{c.texto}</span></li>)}</ul>
+    </div>
+  </section>
+  <section class="section historia">
+    <div class="container marcas-grid">
+      <div><h2>{d.historia.titulo}</h2></div>
+      <div class="intro-texto">{d.historia.parrafos.map((p) => <p>{p}</p>)}</div>
+    </div>
+  </section>
+  <section class="section compromisos">
+    <div class="container">
+      <div class="section-head"><h2>{d.principios.titulo}</h2></div>
+      <ul class="compromisos-lista compromisos-tres">{d.principios.items.map((p) => <li><h3>{p.titulo}</h3><p>{p.texto}</p></li>)}</ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container marcas-grid">
+      <div><h2>{d.equipo.titulo}</h2><p class="marcas-nota">{d.equipo.texto}</p></div>
+      <div class="intro-texto"><p>{d.equipo.nota}</p></div>
+    </div>
+  </section>
+  <section class="section proceso">
+    <div class="container marcas-grid">
+      <div><h2>{d.compromiso.titulo}</h2></div>
+      <ul class="fallas fallas-una lista-grande">{d.compromiso.items.map((i) => <li>{i}</li>)}</ul>
+    </div>
+  </section>
+  <Formulario titulo={d.cierre.titulo} texto={d.cierre.texto} />
+  <Pie />
+</Layout>

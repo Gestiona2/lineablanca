@@ -1,26 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Solicitud from "../components/Solicitud.astro";
+import Formulario from "../components/Formulario.astro";
+import Icon from "../components/Icon.astro";
 import Pie from "../components/Pie.astro";
-import datos from "../datos/inicio.json";
-const c = datos.contactoPagina;
+import { sitio, wa, ciudades, rutaCiudad } from "../lib/sitio.js";
+import d from "../datos/contacto.json";
 ---
-<Layout titulo="Contacto | Línea Blanca" descripcion={c.texto}>
-  <section class="pagina-hero pagina-hero-corta">
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} activa="contacto">
+  <section class="pagina-hero">
     <div class="container">
-      <h1>{c.titulo}</h1>
-      <p class="lead">{c.texto}</p>
+      <h1>{d.hero.titulo}</h1>
+      <p class="lead">{d.hero.texto}</p>
+      <p class="canales-titulo">{d.canalesTitulo}</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa btn-lg" href={wa(sitio.mensajes.general)} target="_blank" rel="noopener">WhatsApp {sitio.telefono}</a>
+        <a class="btn btn-ghost btn-lg" href={`tel:+${sitio.whatsapp}`}>Llamar {sitio.telefono}</a>
+      </div>
     </div>
   </section>
-  <Solicitud />
-  <section class="section cobertura">
+  <Formulario titulo={d.formulario.titulo} texto={d.formulario.texto} />
+  <section class="section faq">
+    <div class="container faq-grid">
+      <div class="faq-intro"><h2>{d.faq.titulo}</h2></div>
+      <div class="faq-lista">{d.faq.items.map((f) => (<details><summary>{f.pregunta}<span class="mas" aria-hidden="true"></span></summary><p>{f.respuesta}</p></details>))}</div>
+    </div>
+  </section>
+  <section class="section">
     <div class="container">
-      <div class="section-head"><h2>{datos.cobertura.titulo}</h2><p>{datos.cobertura.texto}</p></div>
-      <div class="cobertura-grid">
-        <div class="cobertura-bloque cobertura-ciudades"><h3>{datos.cobertura.ciudadesTitulo}</h3><ul>{datos.cobertura.ciudades.map((x) => <li>{x}</li>)}</ul></div>
-        <div class="cobertura-bloque"><h3>{datos.cobertura.municipiosTitulo}</h3><ul class="chips">{datos.cobertura.municipios.map((x) => <li>{x}</li>)}</ul></div>
-        <div class="cobertura-bloque"><h3>{datos.cobertura.barriosTitulo}</h3><ul class="chips">{datos.cobertura.barrios.map((x) => <li>{x}</li>)}</ul></div>
-      </div>
+      <div class="section-head"><h2>{d.cobertura.titulo}</h2><p>{d.cobertura.texto}</p></div>
+      <ul class="chips chips-lg">{ciudades.map((c) => <li><a href={rutaCiudad(c)}>{c.nombre}</a></li>)}</ul>
     </div>
   </section>
   <Pie />

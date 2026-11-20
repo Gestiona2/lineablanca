@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "titulo": "Contacto y agendamiento | Línea Blanca",
+    "descripcion": "Agenda tu visita por WhatsApp. Reparación de electrodomésticos a domicilio en Bogotá, Chía, Cajicá, Cota, La Calera, Funza, Madrid, Mosquera, Barranquilla e Ibagué."
+  },
+  "hero": {
+    "titulo": "Agenda en dos minutos.",
+    "texto": "Completa el formulario y se abre WhatsApp con el mensaje listo para enviar. No necesitas crear cuenta ni esperar un correo de confirmación."
+  },
+  "canalesTitulo": "También puedes escribirnos por",
+  "formulario": {
+    "titulo": "Solicita tu agendamiento",
+    "texto": "Estos datos van únicamente a nuestro WhatsApp. No se guardan en el sitio.",
+    "campos": {
+      "nombre": [
+        "Nombre completo",
+        "Ej. Ana Rodríguez"
+      ],
+      "telefono": [
+        "Número de celular",
+        "Ej. 312 341 0405"
+      ],
+      "ciudad": [
+        "Ciudad",
+        "Elige tu ciudad"
+      ],
+      "servicio": [
+        "Equipo a revisar",
+        "Elige el servicio"
+      ],
+      "marca": [
+        "Marca del equipo",
+        "Opcional. Ej. LG, Haceb, Samsung"
+      ],
+      "franja": [
+        "Franja preferida",
+        "Elige una franja"
+      ],
+      "problema": [
+        "¿Qué está pasando?",
+        "Cuéntanos la falla: no centrifuga, no enfría, hace ruido…"
+      ]
+    },
+    "franjas": [
+      "Mañana (hasta las 12:00 m.)",
+      "Tarde (desde las 12:00 m.)",
+      "Me adapto a la disponibilidad"
+    ],
+    "consentimiento": "Autorizo que me contacten por WhatsApp sobre esta solicitud, según la política de tratamiento de datos.",
+    "boton": "Enviar por WhatsApp",
+    "aviso": "Al enviar se abre WhatsApp con tus datos escritos. Revisa el mensaje y pulsa enviar.",
+    "exito": "Abrimos WhatsApp con tu solicitud. Si no se abrió, usa el enlace de abajo.",
+    "enlaceManual": "Abrir WhatsApp manualmente",
+    "errores": {
+      "nombre": "Escribe tu nombre completo.",
+      "telefono": "Escribe un número de contacto válido.",
+      "ciudad": "Elige tu ciudad.",
+      "servicio": "Elige el equipo a revisar.",
+      "problema": "Cuéntanos brevemente la falla.",
+      "consentimiento": "Necesitamos tu autorización para contactarte."
+    }
+  },
+  "faq": {
+    "titulo": "Dudas rápidas.",
+    "items": [
+      {
+        "pregunta": "¿El formulario reserva la visita?",
+        "respuesta": "No. El formulario envía tu solicitud por WhatsApp; la visita queda confirmada cuando respondemos con el día y la franja."
+      },
+      {
+        "pregunta": "¿Puedo enviar fotos del equipo?",
+        "respuesta": "Sí. Después de enviar el mensaje, adjunta en el mismo chat una foto de la placa del modelo y del código de error, si lo hay."
+      },
+      {
+        "pregunta": "¿Atienden fines de semana?",
+        "respuesta": "Los sábados, según la ruta. Escríbenos y te confirmamos la franja más cercana."
+      }
+    ]
+  },
+  "cobertura": {
+    "titulo": "Dónde atendemos.",
+    "texto": "Todo el servicio es a domicilio. Al escribirnos confirmamos si hay ruta en tu zona y qué equipos atendemos allí."
+  }
+}

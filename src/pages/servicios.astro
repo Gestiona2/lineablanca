@@ -1,32 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Solicitud from "../components/Solicitud.astro";
+import Formulario from "../components/Formulario.astro";
+import Icon from "../components/Icon.astro";
 import Pie from "../components/Pie.astro";
-import datos from "../datos/inicio.json";
-const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const ind = datos.servicios.indice;
+import { ruta, wa, sitio, categorias, ciudadesDeServicio } from "../lib/sitio.js";
+import d from "../datos/servicios-pagina.json";
+const jsonld = {
+  "@context": "https://schema.org", "@type": "ItemList", name: d.hero.titulo,
+  itemListElement: categorias.flatMap((c) => c.items).map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s.titulo, url: new URL(ruta(`${s.slug}/`), Astro.site ?? sitio.dominio).href })),
+};
 ---
-<Layout titulo="Equipos que atendemos | Línea Blanca" descripcion={ind.texto}>
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} activa="servicios" jsonld={jsonld}>
   <section class="pagina-hero">
     <div class="container">
-      <h1>{ind.titulo}</h1>
-      <p class="lead">{ind.texto}</p>
+      <h1>{d.hero.titulo}</h1>
+      <p class="lead">{d.hero.texto}</p>
     </div>
   </section>
   <section class="indice">
     <div class="container">
-      {datos.servicios.grupos.map((g) => (
+      {categorias.map((cat) => (
         <div class="indice-grupo">
-          <h2>{g.nombre}</h2>
+          <h2>{cat.titulo}</h2>
           <ul>
-            {g.items.map((it) => (
-              <li><a href={`${base}${it.slug}/`}><span class="indice-nombre">{it.nombre}</span><span class="indice-resumen">{it.resumen}</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            {cat.items.map((it) => (
+              <li><a href={ruta(`${it.slug}/`)}>
+                <span class="indice-nombre"><span class="icono-burbuja"><Icon nombre={it.icono} tamano={24} /></span>{it.nombre}</span>
+                <span class="indice-resumen">{it.resumen}<small>{ciudadesDeServicio(it.slug).length === 10 ? "Bogotá y 9 ciudades más" : ciudadesDeServicio(it.slug).map((c) => c.nombre).slice(0, 3).join(", ") + (ciudadesDeServicio(it.slug).length > 3 ? " y más" : "")}</small></span>
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a></li>
             ))}
           </ul>
         </div>
       ))}
     </div>
   </section>
-  <Solicitud />
+  <section class="section proceso">
+    <div class="container">
+      <div class="section-head"><h2>{d.proceso.titulo}</h2></div>
+      <ol class="pasos">{d.proceso.pasos.map((p) => <li><h3>{p.titulo}</h3><p>{p.texto}</p></li>)}</ol>
+    </div>
+  </section>
+  <section class="section ayuda">
+    <div class="container ayuda-grid">
+      <div><h2>{d.ayuda.titulo}</h2><p>{d.ayuda.texto}</p></div>
+      <a class="btn btn-wa btn-lg" href={wa(sitio.mensajes.ayuda)} target="_blank" rel="noopener">{d.ayuda.boton}<span class="btn-arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  <Formulario titulo={d.cierre.titulo} texto={d.cierre.texto} />
   <Pie />
 </Layout>

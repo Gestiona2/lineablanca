@@ -1,21 +1,30 @@
 # Pendientes de Línea Blanca
 
-- [ ] Confirmar que el logo horizontal es el logo principal autorizado para uso web. Se comprobó que el fondo es transparente.
-- [ ] Confirmar correo corporativo, razón social y NIT (no visibles en el contenido consultado).
-- [ ] Confirmar si la cobertura y el horario publicados siguen vigentes en todas las ciudades.
-- [ ] Confirmar la lista completa de equipos; el sitio actual menciona 13 especialidades en navegación y páginas internas.
-- [x] Páginas nuevas: `/servicios/`, una por equipo (14, con las mismas URL de lineablanca.co, p. ej. `/reparacion-de-lavadoras/`), `/contacto/` y 404. Estufas de inducción quedó dentro de Estufas (en la web anterior tenía URL propia).
-- [ ] Faltan las páginas por marca y por zona de lineablanca.co (más de 60); decidir con el cliente si se mantienen, por el posicionamiento en buscadores.
-- [ ] Página Nosotros y legales (privacidad, tratamiento de datos, términos): no se crearon; faltan razón social, NIT y correo, y requieren revisión legal.
-- [ ] Las dos fotos del rediseño (lavadora de PlanetCare, nevera de Lisa Anna, ambas de Unsplash, guardadas en `public/img/`) son provisionales: no representan trabajos reales de Línea Blanca. Reemplazar por fotografía propia o acordar mantenerlas con crédito. En la lavadora se ve el filtro de agua de PlanetCare (marca pequeña).
-- [x] Rediseño del inicio revisado en navegador a 1440 y 390 px (claro, oscuro y selector de equipos). Falta revisar 768 px y probar en un celular real.
-- [ ] Confirmar con el cliente los textos tomados de la empresa hermana Arreglo de Lavadoras: diagnóstico antes de reparar, visita en casa, repuestos originales o equivalentes, garantía por escrito (sin plazo publicado), pasos del proceso y las fallas por equipo (incluye microondas, que no aparece en lineablanca.co).
-- [ ] La web actual se titula "Servicio Técnico Autorizado"; el rediseño no usa esa frase porque no hay una autorización de marca que la respalde. Decidir con el cliente.
-- [ ] El tema oscuro solo se activa con el botón de la barra; por defecto el sitio siempre abre en claro.
-- [x] Repositorio aislado y demo publicados en `Gestiona2/lineablanca` y `demos.emp2web.com/lineablanca`.
-- [ ] Revisar el aviso legal completo, privacidad y tratamiento de datos con el cliente antes de añadir formularios.
-- [ ] Confirmar las condiciones vigentes de la garantía de seis meses que se menciona en la página actual de neveras; en la propuesta se atribuye a esa página y se pide verificar el alcance.
+## Contexto (2026-11-19)
 
-## Datos que deben confirmarse
+Línea Blanca es la **misma empresa** que Arreglo de Lavadoras. El sitio comparte servicios, marcas, ciudades, condiciones, garantía, historia y legales; cambian el diseño, los textos (reescritos con otras palabras para no duplicar contenido ante Google) y los datos de contacto (WhatsApp 312 341 0405 y horario publicado en lineablanca.co). Las URL siguen la misma taxonomía que Arreglo de Lavadoras.
 
-El sitio original presenta algunas diferencias: el encabezado habla de reparación de lavadoras; el texto menciona varias ciudades; algunas páginas internas indican atención local en Bogotá y municipios cercanos. La nueva portada conserva el listado publicado, pero se debe confirmar disponibilidad por zona.
+## Por confirmar con el cliente
+
+- [ ] Correo corporativo, razón social y NIT (no hay; los legales remiten a WhatsApp). Los legales son plantillas: requieren revisión legal antes de publicar en el dominio real.
+- [ ] Medios de pago (Bancolombia, Nequi, Daviplata) y titular: se copiaron de Arreglo de Lavadoras. Confirmar que son los mismos para Línea Blanca; si no, editarlos en `src/datos/inicio.json` (`pagos`).
+- [ ] Testimonios (Andrea Angarita, Carlos Manosalva, Claudia Martínez): vienen de Arreglo de Lavadoras. Confirmar que se pueden mostrar también aquí.
+- [ ] Horario: se usa el publicado en lineablanca.co (lunes a viernes 6–18 con extendido hasta 22; sábados 7–17). Arreglo de Lavadoras publica lunes a sábado 7–17. Confirmar cuál aplica.
+- [ ] Confirmar que "18 años de experiencia", "10 ciudades" y "14 servicios" también valen para Línea Blanca (misma empresa).
+- [ ] La web anterior se titulaba "Servicio Técnico Autorizado"; el rediseño no usa esa frase (no hay autorización de marca que la respalde).
+- [ ] Las 12 URL por barrio de Bogotá y las páginas por marca y servicio antiguas de lineablanca.co (más de 60) no se replican uno a uno; las reemplazan `/atendemos-en-<ciudad>/` y `/marcas/<marca>/`. Decidir si hacen falta redirecciones desde las URL viejas al publicar en el dominio real.
+
+## Imágenes
+
+- [ ] Los logos de marcas (`public/brand/marcas/`) son marcas de terceros; se usan solo para identificar los equipos que se atienden, igual que en Arreglo de Lavadoras, con el aviso de que Línea Blanca no es servicio oficial. Solo 12 de las 22 marcas tienen logo; las demás se muestran en texto.
+
+- [ ] Fotos de portada y nevera (Unsplash: Brian Zajac y Lisa Anna, créditos en `creditos-imagenes.md`) y las 8 fotos de servicios (copiadas de Arreglo de Lavadoras): provisionales; ninguna es trabajo real de Línea Blanca. La portada es una cocina con lavavajillas, microondas, estufa y nevera (imagen con aspecto de render).
+- [ ] Hay servicios sin foto (microondas, campanas, freidoras, cafeteras, aspiradoras, televisores): la página se arma sin imagen.
+
+## Técnico
+
+- [x] Rediseño completo (inicio, servicios, 14 páginas de servicio, marcas y 22 páginas de marca, 10 páginas de ciudad, nosotros, contacto, legales, 404, sitemap y robots). 55 páginas.
+- [x] Enlaces internos revisados automáticamente: ninguno roto.
+- [ ] Revisar a 768 px y en celular real antes de enseñar al cliente.
+- [ ] Al pasar al dominio real: quitar `noindex` (se activa solo en demos.emp2web.com), definir `PUBLIC_SITE` y `PUBLIC_BASE`, y revisar el sitemap.
+- [ ] El tema oscuro solo se activa con el botón de la barra; por defecto el sitio abre siempre en claro.

@@ -1,0 +1,93 @@
+---
+import Icon from "./Icon.astro";
+import { sitio, servicios, ciudades, marcas, wa } from "../lib/sitio.js";
+import contacto from "../datos/contacto.json";
+import inicio from "../datos/inicio.json";
+const { servicioPre = "", ciudadPre = "", marcaPre = "", titulo = inicio.agendar.titulo, texto = inicio.agendar.texto } = Astro.props;
+const f = contacto.formulario;
+const c = f.campos;
+---
+<section class="solicitud" id="agendar">
+  <div class="container solicitud-grid">
+    <div class="solicitud-copy">
+      <h2>{titulo}</h2>
+      <p>{texto}</p>
+      <ul class="checks checks-claro">{inicio.agendar.puntos.map((x) => <li><Icon nombre="check-circle" tamano={22} />{x}</li>)}</ul>
+      <p class="solicitud-pref">{inicio.agendar.prefieres}</p>
+      <a class="solicitud-tel" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={30} />+57 {sitio.telefono}</a>
+      <ul class="horario">{sitio.horarioLineas.map((l) => <li>{l}</li>)}</ul>
+    </div>
+    <form class="form" id="formAgendar" novalidate data-numero={sitio.whatsapp}>
+      <label for="f-nombre">{c.nombre[0]}</label>
+      <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder={c.nombre[1]} required />
+      <label for="f-telefono">{c.telefono[0]}</label>
+      <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder={c.telefono[1]} required />
+      <div class="form-fila">
+        <div>
+          <label for="f-ciudad">{c.ciudad[0]}</label>
+          <select id="f-ciudad" name="ciudad" required>
+            <option value="" disabled selected={!ciudadPre}>{c.ciudad[1]}</option>
+            {ciudades.map((x) => <option value={x.nombre} selected={x.nombre === ciudadPre}>{x.nombre}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="f-servicio">{c.servicio[0]}</label>
+          <select id="f-servicio" name="servicio" required>
+            <option value="" disabled selected={!servicioPre}>{c.servicio[1]}</option>
+            {servicios.map((x) => <option value={x.nombre} selected={x.nombre === servicioPre}>{x.nombre}</option>)}
+          </select>
+        </div>
+      </div>
+      <div class="form-fila">
+        <div>
+          <label for="f-marca">{c.marca[0]}</label>
+          <input id="f-marca" name="marca" type="text" list="lista-marcas" placeholder={c.marca[1]} value={marcaPre} />
+          <datalist id="lista-marcas">{marcas.map((m) => <option value={m.nombre}></option>)}</datalist>
+        </div>
+        <div>
+          <label for="f-franja">{c.franja[0]}</label>
+          <select id="f-franja" name="franja">
+            <option value="" selected>{c.franja[1]}</option>
+            {f.franjas.map((x) => <option value={x}>{x}</option>)}
+          </select>
+        </div>
+      </div>
+      <label for="f-problema">{c.problema[0]}</label>
+      <textarea id="f-problema" name="problema" rows="3" placeholder={c.problema[1]} required></textarea>
+      <label class="check"><input type="checkbox" name="consentimiento" required /><span>{f.consentimiento}</span></label>
+      <p class="form-error" role="alert" hidden></p>
+      <button class="btn btn-wa btn-lg" type="submit"><Icon nombre="whatsapp" tamano={22} />{f.boton}</button>
+      <p class="form-note">{f.aviso}</p>
+      <p class="form-ok" hidden>{f.exito} <a href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener">{f.enlaceManual}</a></p>
+    </form>
+  </div>
+</section>
+<script is:inline define:vars={{ errores: f.errores }}>
+  (() => {
+    const form = document.querySelector("#formAgendar");
+    if (!form) return;
+    const aviso = form.querySelector(".form-error");
+    const ok = form.querySelector(".form-ok");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const v = (k) => String(d.get(k) || "").trim();
+      let error = "";
+      if (v("nombre").length < 3) error = errores.nombre;
+      else if (v("telefono").replace(/\D/g, "").length < 7) error = errores.telefono;
+      else if (!v("ciudad")) error = errores.ciudad;
+      else if (!v("servicio")) error = errores.servicio;
+      else if (v("problema").length < 3) error = errores.problema;
+      else if (!d.get("consentimiento")) error = errores.consentimiento;
+      aviso.hidden = !error; aviso.textContent = error;
+      if (error) return;
+      const lineas = [
+        `Hola, quiero agendar un servicio técnico.`,
+        `Nombre: ${v("nombre")}`, `Teléfono: ${v("telefono")}`, `Ciudad: ${v("ciudad")}`, `Equipo: ${v("servicio")}`,
+        v("marca") ? `Marca: ${v("marca")}` : "", v("franja") ? `Franja preferida: ${v("franja")}` : "", `Falla: ${v("problema")}`,
+      ].filter(Boolean).join("\n");
+      window.open(`https://wa.me/${form.dataset.numero}?text=${encodeURIComponent(lineas)}`, "_blank", "noopener,noreferrer");
+      ok.hidden = false;
+    });
+  })();
+</script>

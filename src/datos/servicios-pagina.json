@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "titulo": "Servicios | Línea Blanca",
+    "descripcion": "Reparación, mantenimiento e instalación de lavadoras, neveras, estufas, hornos, microondas, calentadores y más, en tu casa en Bogotá, Barranquilla e Ibagué."
+  },
+  "hero": {
+    "titulo": "Cada equipo tiene su diagnóstico.",
+    "texto": "Catorce servicios con el mismo protocolo: revisar, explicar, cotizar y reparar con garantía por escrito. Elige el tuyo para ver las fallas comunes, qué incluye la visita y en qué ciudades lo atendemos."
+  },
+  "ayuda": {
+    "titulo": "¿No sabes qué equipo es, o tu falla no aparece?",
+    "texto": "Escríbenos por WhatsApp con una foto del equipo y del código de error, si lo tiene. Te orientamos antes de agendar.",
+    "boton": "Preguntar por WhatsApp"
+  },
+  "cierre": {
+    "titulo": "¿Revisamos tu equipo esta semana?",
+    "texto": "Cuéntanos qué pasa y en qué ciudad estás. Te confirmamos disponibilidad, franja y valor del diagnóstico.",
+    "boton": "Agendar por WhatsApp"
+  },
+  "enlaceDetalle": "Ver detalle",
+  "detalle": {
+    "fallas": "Fallas que atendemos",
+    "incluye": "Qué incluye la visita",
+    "marcas": "Marcas que atendemos",
+    "faq": "Preguntas frecuentes",
+    "relacionados": "Otros servicios",
+    "etiquetas": {
+      "equipo": "Equipo",
+      "garantia": "Garantía",
+      "cobertura": "Cobertura"
+    },
+    "valores": {
+      "garantia": "Por escrito",
+      "cobertura": "Bogotá y 9 ciudades más"
+    },
+    "donde": "Dónde lo atendemos",
+    "agendarTitulo": "Agenda este servicio",
+    "agendarTexto": "Escríbenos con la marca, el modelo y la falla.",
+    "variantes": "Tipos que atendemos"
+  },
+  "proceso": {
+    "titulo": "Igual para una lavadora que para un calentador.",
+    "pasos": [
+      {
+        "titulo": "Revisión",
+        "texto": "Diagnóstico en tu casa, con herramientas de medición."
+      },
+      {
+        "titulo": "Explicación",
+        "texto": "Te contamos la falla y las opciones, sin tecnicismos."
+      },
+      {
+        "titulo": "Autorización",
+        "texto": "Apruebas el valor antes de que se toque el equipo."
+      },
+      {
+        "titulo": "Prueba y garantía",
+        "texto": "Probamos contigo y dejamos la garantía por escrito."
+      }
+    ]
+  }
+}

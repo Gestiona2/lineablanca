@@ -1,0 +1,1045 @@
+{
+  "_comentario": "Un objeto por servicio. De aquí salen el catálogo del inicio, /servicios/ y cada página de detalle. Dónde se atiende cada servicio sale de sitio.json (grupos).",
+  "_limite": "Entre 6 y 8 fallas por servicio.",
+  "categorias": [
+    {
+      "id": "lavado",
+      "titulo": "Lavado y secado"
+    },
+    {
+      "id": "frio",
+      "titulo": "Refrigeración"
+    },
+    {
+      "id": "coccion",
+      "titulo": "Cocción y cocina"
+    },
+    {
+      "id": "agua",
+      "titulo": "Agua caliente"
+    },
+    {
+      "id": "hogar",
+      "titulo": "Hogar e instalación"
+    }
+  ],
+  "items": [
+    {
+      "slug": "reparacion-de-lavadoras",
+      "nombre": "Lavadoras",
+      "titulo": "Reparación de lavadoras a domicilio",
+      "subtitulo": "Llenado, centrifugado, desagüe y tarjeta electrónica, revisados en tu casa.",
+      "icono": "washer",
+      "imagen": "/img/servicios/lavadoras.webp",
+      "imagenAlt": "Tambor de lavadora con ropa durante el ciclo de lavado",
+      "resumen": "¿No centrifuga, no llena, vibra o deja la ropa empapada? Revisamos motor, bomba, sensores y tarjeta sin sacar la lavadora de tu casa.",
+      "intro": [
+        "Cuando la lavadora se daña, la rutina de toda la casa se atrasa. Por eso la visita se agenda lo antes posible, según la ruta del día, y el técnico llega con herramienta y con los repuestos que más se cambian en este equipo.",
+        "Antes de dejarla lista corremos el ciclo entero: llenado, lavado, enjuague, centrifugado y desagüe. Si una de esas etapas no queda probada, la reparación no se da por terminada. Trabajamos con lavadoras de carga superior, de carga frontal y torres lavadora-secadora."
+      ],
+      "fallas": [
+        "No centrifuga o la ropa sale escurriendo",
+        "No toma agua, se queda llena o no desagua",
+        "Vibra con fuerza, golpea o suena metálico",
+        "No enciende, o el tablero marca un error y parpadea",
+        "Se sale el agua por la puerta, la bomba o las mangueras",
+        "Se para en medio del lavado o se reinicia sola"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Motor, bomba, válvulas, sensores y tarjeta se revisan en tu casa, sin llevarte la lavadora a un taller."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y lo que haya disponible."
+        },
+        {
+          "titulo": "Prueba con ciclo completo",
+          "texto": "Corremos llenado, lavado, enjuague, centrifugado y desagüe mientras tú miras."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, y puedes escribirnos por WhatsApp si algo vuelve a fallar."
+        }
+      ],
+      "marcas": [
+        "LG",
+        "Samsung",
+        "Haceb",
+        "Whirlpool",
+        "Mabe",
+        "Electrolux",
+        "Challenger",
+        "Frigidaire",
+        "Centrales",
+        "Kenmore"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Atienden lavadoras de carga frontal y torres lavadora-secadora?",
+          "respuesta": "Sí. Reparamos lavadoras de carga superior y frontal, automáticas y semiautomáticas, además de torres lavadora-secadora, en las marcas de la lista."
+        },
+        {
+          "pregunta": "¿Cuánto demora arreglar una lavadora?",
+          "respuesta": "Casi siempre se resuelve en la misma visita. Si hay que pedir una pieza, te damos el tiempo exacto antes de cobrarte algo."
+        },
+        {
+          "pregunta": "¿Conviene arreglarla o comprar una nueva?",
+          "respuesta": "Con el diagnóstico en la mano te lo decimos. Si la reparación cuesta más de la mitad de una lavadora nueva, te avisamos antes de tocar el equipo."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de lavadoras | Línea Blanca",
+        "descripcion": "Reparación de lavadoras LG, Samsung, Haceb, Whirlpool y Mabe en tu casa. Diagnóstico claro, repuestos originales o equivalentes y garantía por escrito."
+      },
+      "categoria": "lavado",
+      "variantes": [
+        "Carga frontal",
+        "Carga superior",
+        "Semiautomáticas",
+        "Centrales y de uso intensivo"
+      ]
+    },
+    {
+      "slug": "reparacion-de-neveras",
+      "nombre": "Neveras y nevecones",
+      "titulo": "Reparación de neveras y nevecones a domicilio",
+      "subtitulo": "Frío, escarcha, fugas de agua y compresor: devolvemos la temperatura correcta.",
+      "icono": "fridge",
+      "imagen": "/img/servicios/neveras.webp",
+      "imagenAlt": "Nevera de acero inoxidable en una cocina moderna",
+      "resumen": "¿No enfría, congela de más, gotea o el compresor no arranca? Revisamos todo el sistema de frío y te explicamos qué falló.",
+      "intro": [
+        "Una nevera que deja de enfriar pone en riesgo los alimentos y, muchas veces, se cambia cuando no hacía falta. Primero revisamos el sistema de refrigeración, el control de temperatura y las conexiones.",
+        "Atendemos neveras de una y dos puertas, nevecones, vitrinas y equipos comerciales pequeños. Cada visita cierra midiendo la temperatura y comprobando que el equipo se mantenga estable."
+      ],
+      "fallas": [
+        "No enfría, o enfría solo una parte",
+        "Congela de más y se llena de escarcha o hielo",
+        "El compresor no arranca, se recalienta o hace ruido",
+        "Gotea al piso o se acumula agua en el fondo",
+        "Los empaques están gastados y la puerta no cierra bien",
+        "Termostato, timer o resistencia de descongelación dañados"
+      ],
+      "incluye": [
+        {
+          "titulo": "Diagnóstico del sistema de frío",
+          "texto": "Medimos presión, temperatura y consumo para dar con la falla de fondo y no solo con el síntoma."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Compresor, termostato, resistencia o empaque, original o equivalente certificado."
+        },
+        {
+          "titulo": "Control de temperatura",
+          "texto": "Dejamos el equipo midiendo hasta comprobar que vuelve a su ciclo normal."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con seguimiento por WhatsApp."
+        }
+      ],
+      "marcas": [
+        "LG",
+        "Samsung",
+        "Haceb",
+        "Whirlpool",
+        "Mabe",
+        "Electrolux",
+        "Frigidaire",
+        "Challenger",
+        "General Electric",
+        "KitchenAid"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Arreglan nevecones y vitrinas?",
+          "respuesta": "Sí. Atendemos nevecones, congeladores horizontales y vitrinas de uso comercial pequeño."
+        },
+        {
+          "pregunta": "¿Cada cuánto conviene revisarla?",
+          "respuesta": "Una vez al año: limpiar el condensador, revisar los empaques y verificar la temperatura. Eso cuida el compresor y alarga la vida del equipo."
+        },
+        {
+          "pregunta": "Enfría pero gotea, ¿es grave?",
+          "respuesta": "Casi siempre es un desagüe tapado o un empaque vencido. Se corrige en la misma visita y evita daños en el piso y en el aislamiento."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de neveras y nevecones | Línea Blanca",
+        "descripcion": "Reparación de neveras y nevecones en tu casa: no enfría, escarcha, fugas y compresor. Garantía por escrito."
+      },
+      "categoria": "frio",
+      "variantes": [
+        "Neveras",
+        "Nevecones",
+        "Neveras inverter"
+      ]
+    },
+    {
+      "slug": "reparacion-de-secadoras",
+      "nombre": "Secadoras",
+      "titulo": "Reparación de secadoras a domicilio",
+      "subtitulo": "Calor, tambor y sensores: la ropa sale seca en un solo ciclo.",
+      "icono": "dryer",
+      "imagen": "/img/servicios/secadoras.webp",
+      "imagenAlt": "Secadora apilada sobre una lavadora en un cuarto de ropa moderno",
+      "resumen": "¿No seca, no calienta o el tambor no gira? Revisamos resistencia, sensor de humedad, correa y ducto de salida de aire.",
+      "intro": [
+        "Cuando una secadora no seca casi siempre hay una causa puntual: la resistencia, el sensor de humedad, la correa o un ducto tapado. La encontramos antes de cambiar piezas por probar.",
+        "Reparamos secadoras a gas y eléctricas, de carga frontal y superior. Despejar el ducto hace parte del servicio, porque es el motivo más frecuente de que rinda poco."
+      ],
+      "fallas": [
+        "La ropa sigue húmeda después de un ciclo completo",
+        "No calienta, o solo al comienzo",
+        "El tambor no gira o gira con ruido",
+        "Se detiene sola a mitad del ciclo",
+        "Demora el doble de lo normal",
+        "Ducto o filtro tapado y olor a quemado"
+      ],
+      "incluye": [
+        {
+          "titulo": "Diagnóstico de calor",
+          "texto": "Medimos resistencia, termostato y flujo de aire para ubicar el origen real del problema."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Correa, resistencia, sensor o termostato, original o equivalente certificado."
+        },
+        {
+          "titulo": "Limpieza del ducto",
+          "texto": "Liberamos la salida de aire, algo que también baja el riesgo de que se sobrecaliente."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada."
+        }
+      ],
+      "marcas": [
+        "LG",
+        "Samsung",
+        "Whirlpool",
+        "Electrolux",
+        "Haceb",
+        "Mabe",
+        "Frigidaire",
+        "Challenger",
+        "General Electric",
+        "Bosch"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Por qué mi secadora tarda tanto?",
+          "respuesta": "Por lo general hay un ducto obstruido o un sensor de humedad descalibrado. Ambos se corrigen en la misma visita."
+        },
+        {
+          "pregunta": "¿Arreglan secadoras a gas?",
+          "respuesta": "Sí, y revisamos combustión y ventilación como en las estufas y los calentadores."
+        },
+        {
+          "pregunta": "¿Puedo usarla mientras llega el técnico?",
+          "respuesta": "Si notas olor a quemado o un ruido fuerte, no. Desconéctala y espera la visita."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de secadoras | Línea Blanca",
+        "descripcion": "Reparación de secadoras a gas y eléctricas en tu casa. Revisión de resistencia, sensores y ducto. Garantía por escrito."
+      },
+      "categoria": "lavado",
+      "variantes": [
+        "Secadoras eléctricas",
+        "Secadoras a gas"
+      ]
+    },
+    {
+      "slug": "reparacion-de-lavavajillas",
+      "nombre": "Lavavajillas",
+      "titulo": "Reparación de lavavajillas a domicilio",
+      "subtitulo": "Lavado, desagüe, temperatura y fugas: vajilla limpia sin repetir el ciclo.",
+      "icono": "dishwasher",
+      "imagen": "/img/servicios/lavavajillas.webp",
+      "imagenAlt": "Lavavajillas de acero inoxidable abierto en una cocina",
+      "resumen": "¿Deja residuos, no desagua o gotea? Revisamos bomba, válvulas, resistencia y dosificador.",
+      "intro": [
+        "Si el lavavajillas ya no deja limpia la vajilla, muchos cambian de detergente y el problema sigue. Lo más común es que falle el brazo aspersor, la bomba o el sensor de temperatura.",
+        "Revisamos el ciclo completo y también la instalación: una manguera mal puesta o un desagüe sin caída producen fugas y malos olores. Atendemos lavavajillas domésticos e industriales."
+      ],
+      "fallas": [
+        "Deja residuos o la vajilla queda grasosa",
+        "No desagua o queda agua en el fondo",
+        "No calienta el agua del ciclo",
+        "Se sale agua por la puerta o por debajo",
+        "El brazo aspersor está tapado o sin presión",
+        "Muestra errores en el tablero o no inicia el ciclo"
+      ],
+      "incluye": [
+        {
+          "titulo": "Diagnóstico con el equipo en marcha",
+          "texto": "Revisamos llenado, presión, temperatura y desagüe mientras trabaja."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Bomba, válvula, resistencia o sensor, original o equivalente certificado."
+        },
+        {
+          "titulo": "Revisión de la instalación",
+          "texto": "Comprobamos mangueras, sifón y pendiente para evitar fugas y olores."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada."
+        }
+      ],
+      "marcas": [
+        "Whirlpool",
+        "Bosch",
+        "LG",
+        "Samsung",
+        "Electrolux",
+        "Mabe",
+        "Haceb",
+        "Challenger",
+        "General Electric",
+        "KitchenAid"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Arreglan lavavajillas importados?",
+          "respuesta": "Atendemos las marcas de la lista. Si el repuesto viene del exterior, te damos un tiempo estimado antes de pedirlo."
+        },
+        {
+          "pregunta": "¿Por qué huele mal?",
+          "respuesta": "Normalmente es grasa en el filtro o un desagüe sin sifón. Hacemos la limpieza técnica y corregimos la instalación."
+        },
+        {
+          "pregunta": "¿Se puede instalar bajo el mesón?",
+          "respuesta": "Sí, mientras haya espacio, ventilación y conexiones al alcance. Lo verificamos antes de instalar."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de lavavajillas | Línea Blanca",
+        "descripcion": "Reparación de lavavajillas domésticos e industriales en tu casa. Fugas, desagüe y lavado. Garantía por escrito."
+      },
+      "categoria": "lavado",
+      "variantes": [
+        "Domésticos",
+        "Industriales"
+      ]
+    },
+    {
+      "slug": "reparacion-de-estufas",
+      "nombre": "Estufas",
+      "titulo": "Reparación de estufas a domicilio",
+      "subtitulo": "A gas, eléctricas, de inducción y vitrocerámicas, de cualquier marca.",
+      "icono": "stove",
+      "imagen": "/img/servicios/estufas.webp",
+      "imagenAlt": "Estufa a gas moderna con quemadores y utensilios de cocina",
+      "resumen": "¿Un quemador no prende, la llama sale amarilla o hay olor a gas? Reparamos estufas a gas, eléctricas, de inducción y vitrocerámicas.",
+      "intro": [
+        "La llama cuenta cómo está la estufa. Si sale amarilla, si un quemador no enciende o si hay un olor raro, se revisa ese mismo día: pueden ser señales de mala combustión o de una fuga.",
+        "Reparamos los cuatro tipos de estufa (a gas, eléctricas, de inducción y vitrocerámicas) en cualquier marca. También instalamos, convertimos a gas natural y hacemos mantenimiento preventivo."
+      ],
+      "fallas": [
+        "Un quemador no enciende o la chispa es débil",
+        "La llama es amarilla, se desprende o deja hollín",
+        "Huele a gas o hay fuga en la conexión",
+        "Las perillas están duras o las válvulas no cierran bien",
+        "Eléctricas e inducción: una zona no calienta o se apaga sola",
+        "Instalación a gas y conversión a gas natural"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión de la combustión",
+          "texto": "Miramos la llama, los inyectores, la aireación y la conexión antes de intervenir."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Chispero, válvula, inyector o perilla, original o equivalente certificado."
+        },
+        {
+          "titulo": "Prueba de encendido",
+          "texto": "Encendemos cada quemador y confirmamos que la llama sea estable y sin olor."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada."
+        }
+      ],
+      "marcas": [
+        "Haceb",
+        "Challenger",
+        "Whirlpool",
+        "Samsung",
+        "Mabe",
+        "KitchenAid",
+        "General Electric",
+        "Bosch",
+        "Tramontina",
+        "Oster",
+        "Todas las marcas"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Qué tipos de estufa reparan?",
+          "respuesta": "A gas, eléctricas, de inducción y vitrocerámicas, de cualquier marca."
+        },
+        {
+          "pregunta": "Huelo gas, ¿qué hago primero?",
+          "respuesta": "Cierra la llave general, ventila el lugar y no acciones interruptores. Escríbenos o llámanos de inmediato: esa revisión va primero."
+        },
+        {
+          "pregunta": "¿Convierten estufas a gas natural?",
+          "respuesta": "Sí, cambiando los inyectores y probando la combustión. Una conversión debe quedar bien hecha y verificada, no improvisada."
+        },
+        {
+          "pregunta": "¿Arreglan inducción y vitrocerámica?",
+          "respuesta": "Sí. Revisamos la placa, los sensores y el circuito de potencia; si el repuesto no se consigue, te lo decimos antes de cobrar."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de estufas | Línea Blanca",
+        "descripcion": "Reparación de estufas a gas, eléctricas, de inducción y vitrocerámicas, de todas las marcas, en tu casa."
+      },
+      "categoria": "coccion",
+      "variantes": [
+        "A gas",
+        "Eléctricas",
+        "De inducción",
+        "Vitrocerámicas"
+      ]
+    },
+    {
+      "slug": "reparacion-de-hornos",
+      "nombre": "Hornos",
+      "titulo": "Reparación de hornos a domicilio",
+      "subtitulo": "Resistencias, termostato, convección y tablero para recuperar una temperatura pareja.",
+      "icono": "oven",
+      "imagen": "/img/servicios/hornos.webp",
+      "imagenAlt": "Panel de control de un horno de acero inoxidable",
+      "resumen": "¿No calienta, se pasa de temperatura o la puerta no sella? Revisamos resistencia, termostato y control de temperatura.",
+      "intro": [
+        "Un horno que no sostiene la temperatura echa a perder cualquier receta y puede volverse un riesgo eléctrico. Medimos cómo calienta y comprobamos en qué momento corta el termostato.",
+        "Reparamos hornos eléctricos y a gas, empotrados, de mesa y de estufa. Cambiamos resistencias, termostatos, ventiladores y empaques de la puerta."
+      ],
+      "fallas": [
+        "No calienta, o tarda mucho en llegar a la temperatura",
+        "Se pasa de temperatura y quema la comida",
+        "La resistencia está partida o con puntos calientes",
+        "La puerta no sella y se escapa el calor",
+        "El ventilador de convección suena o no gira",
+        "El tablero, las perillas o el selector no responden"
+      ],
+      "incluye": [
+        {
+          "titulo": "Diagnóstico eléctrico",
+          "texto": "Medimos resistencia, termostato y control de potencia con el equipo desconectado."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Resistencia, termostato, empaque o ventilador, original o equivalente certificado."
+        },
+        {
+          "titulo": "Prueba de temperatura",
+          "texto": "Lo calentamos y verificamos que sea estable y que corte donde debe."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada."
+        }
+      ],
+      "marcas": [
+        "Electrolux",
+        "Haceb",
+        "Challenger",
+        "General Electric",
+        "Bosch",
+        "Whirlpool",
+        "Black+Decker",
+        "Oster",
+        "Samsung",
+        "LG"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Arreglan hornos empotrados de cualquier marca?",
+          "respuesta": "Trabajamos las marcas de la lista y varias referencias importadas. Si no tenemos la pieza, te decimos si se puede conseguir."
+        },
+        {
+          "pregunta": "¿Cambian el vidrio de la puerta?",
+          "respuesta": "Sí, cuando la referencia está disponible. Es una reparación de seguridad: un vidrio trizado no debe usarse."
+        },
+        {
+          "pregunta": "¿Vale la pena arreglar un horno viejo?",
+          "respuesta": "Depende del costo de la pieza frente a uno nuevo. El diagnóstico incluye esa comparación para que decidas con datos."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de hornos | Línea Blanca",
+        "descripcion": "Reparación de hornos eléctricos y a gas, empotrados y de mesa, en tu casa. Garantía por escrito."
+      },
+      "categoria": "coccion",
+      "variantes": [
+        "Eléctricos",
+        "A gas",
+        "Empotrados",
+        "De mesa"
+      ]
+    },
+    {
+      "slug": "reparacion-de-microondas",
+      "nombre": "Microondas",
+      "titulo": "Reparación de microondas a domicilio",
+      "subtitulo": "No calienta, hace chispas o el plato no gira: revisión segura de un equipo con alto voltaje.",
+      "icono": "microwave",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿No calienta, saca chispas o la puerta no cierra bien? Revisamos magnetrón, condensador, seguro de la puerta y tablero.",
+      "intro": [
+        "Cuando un microondas prende pero no calienta, casi siempre hay una pieza de alto voltaje dañada. No es un trabajo para improvisar: el condensador guarda carga aunque el equipo esté desenchufado.",
+        "Primero revisamos la puerta, los seguros, el motor del plato y el tablero, y solo después las piezas de potencia. Si reparar cuesta casi lo mismo que uno nuevo, te lo contamos antes de intervenir."
+      ],
+      "fallas": [
+        "La luz enciende y el plato gira, pero no calienta",
+        "Saca chispas o suena fuerte por dentro",
+        "La puerta no cierra bien o no activa el seguro",
+        "El plato no gira o hace ruido",
+        "El tablero no responde o fallan los botones",
+        "Se apaga solo o hace saltar el breaker"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Puerta, seguros, magnetrón, condensador y tablero, con instrumentos de medición."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Prueba completa",
+          "texto": "Verificamos que caliente parejo y que la puerta selle y corte como debe."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [],
+      "faq": [
+        {
+          "pregunta": "¿Puedo abrirlo yo para mirar?",
+          "respuesta": "No. El condensador de alto voltaje conserva carga aunque lo desenchufes. Es una revisión para técnicos."
+        },
+        {
+          "pregunta": "¿Vale la pena repararlo?",
+          "respuesta": "Depende de la falla y del modelo. Con el diagnóstico te decimos si conviene, antes de cobrar la reparación."
+        },
+        {
+          "pregunta": "¿Arreglan microondas empotrados?",
+          "respuesta": "Escríbenos con la marca y el modelo y te confirmamos si podemos revisarlo en tu casa."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de microondas | Línea Blanca",
+        "descripcion": "Reparación de microondas de mesa y empotrados en tu casa. No calienta, chispas, puerta y tablero."
+      },
+      "categoria": "coccion",
+      "variantes": [
+        "De mesa",
+        "Empotrados"
+      ]
+    },
+    {
+      "slug": "reparacion-de-campanas-extractoras",
+      "nombre": "Campanas extractoras y hongos",
+      "titulo": "Reparación y mantenimiento de campanas extractoras y hongos",
+      "subtitulo": "Cocinas de hogar y de restaurante: extracción pareja, sin ruido y con filtros limpios.",
+      "icono": "hood",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿El motor no tiene fuerza, hace ruido, los filtros están saturados o la luz no prende? Arreglamos y damos mantenimiento a campanas y hongos.",
+      "intro": [
+        "Una campana que no extrae deja grasa y olor por toda la cocina. Casi siempre el culpable es el motor, el condensador o los filtros llenos, y se arregla sin cambiar la campana.",
+        "Atendemos campanas extractoras de cocinas de hogar, campanas de restaurante y hongos, tanto para arreglarlas como para su mantenimiento. Cuando hace falta, revisamos también el ducto y la salida."
+      ],
+      "fallas": [
+        "El motor no gira o gira sin fuerza",
+        "Hace ruido o vibra al encender",
+        "No saca el humo ni el vapor",
+        "Filtros de grasa saturados: limpieza o cambio",
+        "La luz, el interruptor o el control no responden",
+        "Instalación, ducto y cambio de ubicación"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Motor, condensador, control, luz y estado de filtros y ducto."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Prueba a todas las velocidades",
+          "texto": "Comprobamos que la extracción sea pareja y sin vibración."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [],
+      "faq": [
+        {
+          "pregunta": "¿Atienden campanas de restaurante y hongos?",
+          "respuesta": "Sí. Las arreglamos y les damos mantenimiento, igual que a las campanas de cocinas de hogar."
+        },
+        {
+          "pregunta": "¿Cada cuánto hay que limpiar los filtros?",
+          "respuesta": "Depende del uso. Donde se fríe a diario, cada mes; en una cocina de casa, cada dos o tres meses."
+        },
+        {
+          "pregunta": "¿También instalan campanas?",
+          "respuesta": "En Bogotá sí. Escríbenos con la marca, el modelo y el lugar para coordinar la visita."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación y mantenimiento de campanas extractoras y hongos | Línea Blanca",
+        "descripcion": "Reparación y mantenimiento de campanas extractoras de casa y de restaurante, y de hongos."
+      },
+      "categoria": "coccion",
+      "variantes": [
+        "Campanas de cocina",
+        "Campanas de restaurantes",
+        "Hongos"
+      ]
+    },
+    {
+      "slug": "reparacion-de-freidoras",
+      "nombre": "Freidoras",
+      "titulo": "Reparación de freidoras a domicilio",
+      "subtitulo": "Domésticas e industriales: temperatura estable y aceite caliente a tiempo.",
+      "icono": "fryer",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿No calienta, no sostiene la temperatura o pierde aceite? Arreglamos freidoras domésticas e industriales.",
+      "intro": [
+        "En una freidora todo depende de la temperatura: si el termostato falla, la comida sale cruda o quemada y el aceite se daña antes de tiempo. Comparamos la temperatura real con la que marca el control.",
+        "Atendemos freidoras domésticas e industriales. En los equipos de uso comercial revisamos además las válvulas y los dispositivos de seguridad."
+      ],
+      "fallas": [
+        "No calienta, o tarda en llegar a temperatura",
+        "La temperatura no se estabiliza",
+        "El termostato o el sensor cortan antes de tiempo",
+        "Resistencia dañada o con depósitos",
+        "Pierde aceite por la válvula o las juntas",
+        "El tablero o el temporizador no responden"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Medimos la temperatura real y revisamos resistencia, termostato, sensores y conexiones."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Prueba completa",
+          "texto": "Calentamos y vigilamos el control hasta que la temperatura se mantenga estable."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [],
+      "faq": [
+        {
+          "pregunta": "¿Arreglan freidoras industriales?",
+          "respuesta": "Sí, atendemos freidoras domésticas e industriales."
+        },
+        {
+          "pregunta": "¿Qué debo contarles antes de la visita?",
+          "respuesta": "La marca, el modelo y qué hace: si no calienta, si no mantiene la temperatura o si pierde aceite."
+        },
+        {
+          "pregunta": "Calienta, pero el aceite no sube de temperatura. ¿Qué será?",
+          "respuesta": "Casi siempre es el termostato o un sensor descalibrado. Se confirma midiendo la temperatura real durante la visita."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de freidoras | Línea Blanca",
+        "descripcion": "Reparación de freidoras domésticas e industriales en tu casa o negocio: termostato, resistencia y fugas."
+      },
+      "categoria": "coccion",
+      "variantes": [
+        "Domésticas",
+        "Industriales"
+      ]
+    },
+    {
+      "slug": "reparacion-de-calentadores",
+      "nombre": "Calentadores",
+      "titulo": "Reparación de calentadores a domicilio",
+      "subtitulo": "Agua caliente estable, encendido confiable y revisión de gas sin riesgos.",
+      "icono": "flame",
+      "imagen": "/img/servicios/calentadores.webp",
+      "imagenAlt": "Calentador de agua instalado en un baño moderno",
+      "resumen": "¿No calienta, se apaga solo o gotea? Revisamos encendido, presión y conexiones de gas con un protocolo de seguridad.",
+      "intro": [
+        "Un calentador que falla no es solo una molestia: también puede ser un riesgo. Antes de tocar cualquier pieza revisamos gas, ventilación y presión.",
+        "Atendemos calentadores a gas y eléctricos, de paso y de acumulación. Si un equipo ya no tiene repuestos seguros, te lo decimos con claridad."
+      ],
+      "fallas": [
+        "No calienta, o el agua sale fría de repente",
+        "Se apaga a los pocos segundos de prender",
+        "Gotea por las conexiones, la válvula o el cuerpo",
+        "No enciende: chispa, batería o encendido electrónico",
+        "La presión es inestable o el agua sale demasiado caliente",
+        "Mantenimiento, purga y revisión de la ventilación"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión de seguridad",
+          "texto": "Verificamos gas, ventilación y presión antes y después de intervenir."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Válvula, encendedor, sensor o resistencia, original o equivalente certificado."
+        },
+        {
+          "titulo": "Prueba de estabilidad",
+          "texto": "Lo encendemos, medimos la temperatura y comprobamos que se mantenga sin apagarse."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada."
+        }
+      ],
+      "marcas": [
+        "Bosch",
+        "Challenger",
+        "Haceb",
+        "Sueco",
+        "Cimsa",
+        "Clasic",
+        "Mabe",
+        "Abba",
+        "Rheem",
+        "Ariston"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Revisan la instalación de gas?",
+          "respuesta": "Sí: conexiones, ventilación y ausencia de fugas. Si encontramos una condición insegura, no dejamos el equipo funcionando."
+        },
+        {
+          "pregunta": "¿Arreglan calentadores eléctricos?",
+          "respuesta": "Sí, de paso y de acumulación. Cambiamos resistencia, termostato y válvulas según el modelo."
+        },
+        {
+          "pregunta": "¿Cada cuánto necesita mantenimiento?",
+          "respuesta": "Una vez al año en uso residencial. Si el agua es dura, cada seis meses para evitar sedimentos y pérdida de eficiencia."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de calentadores | Línea Blanca",
+        "descripcion": "Reparación de calentadores a gas y eléctricos, de paso y de acumulación, con revisión de gas y ventilación."
+      },
+      "categoria": "agua",
+      "variantes": [
+        "De paso a gas",
+        "De acumulación",
+        "Eléctricos"
+      ]
+    },
+    {
+      "slug": "reparacion-de-cafeteras",
+      "nombre": "Cafeteras",
+      "titulo": "Reparación de cafeteras a domicilio",
+      "subtitulo": "Automáticas, de molino, industriales y de goteo, de todas las marcas.",
+      "icono": "coffee",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿No calienta, no bombea, gotea o sale muy lento? Reparamos cafeteras automáticas, de molino, industriales y de goteo.",
+      "intro": [
+        "Una cafetera que deja de calentar o de bombear pocas veces está perdida. La causa suele ser la cal acumulada, la bomba, la resistencia o el termostato.",
+        "Reparamos cuatro tipos: automáticas, de molino, industriales y de goteo, en todas las marcas, entre ellas Krups, Breville, Nespresso, Nestlé y Dolce Gusto. En Bogotá además hacemos mantenimiento con limpieza interna y descalcificación para que el equipo dure más."
+      ],
+      "fallas": [
+        "No calienta el agua o el café sale tibio",
+        "No bombea o no sale agua por el grupo",
+        "Gotea por la base, el depósito o las mangueras",
+        "Sale muy lento por la cal acumulada",
+        "El molino se atasca, suena o no muele parejo",
+        "El vaporizador o espumador no tiene presión",
+        "No enciende o el panel no responde"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Bomba, resistencia, termostato, mangueras y nivel de cal acumulada."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Varios ciclos de prueba",
+          "texto": "Los hacemos contigo y verificamos temperatura, presión y ausencia de fugas."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [
+        "Krups",
+        "Breville",
+        "Nespresso",
+        "Nestlé",
+        "Dolce Gusto",
+        "Todas las marcas"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Qué tipos de cafetera arreglan?",
+          "respuesta": "Cuatro: automáticas, de molino, industriales y de goteo."
+        },
+        {
+          "pregunta": "¿Atienden todas las marcas?",
+          "respuesta": "Sí, entre ellas Krups, Breville, Nespresso, Nestlé y Dolce Gusto. Escríbenos con la marca y el modelo para confirmar la visita."
+        },
+        {
+          "pregunta": "¿Qué incluye el mantenimiento?",
+          "respuesta": "Limpieza interna y descalcificación. Cuida la bomba y la resistencia, y mejora la temperatura del café."
+        },
+        {
+          "pregunta": "¿Conviene arreglarla o comprar otra?",
+          "respuesta": "Con el diagnóstico te lo decimos. Si el costo se acerca al de una nueva, te avisamos antes de intervenir."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de cafeteras | Línea Blanca",
+        "descripcion": "Reparación de cafeteras automáticas, de molino, industriales y de goteo, de todas las marcas."
+      },
+      "categoria": "hogar",
+      "variantes": [
+        "Automáticas",
+        "De molino",
+        "De goteo",
+        "Industriales"
+      ]
+    },
+    {
+      "slug": "reparacion-de-aspiradoras",
+      "nombre": "Aspiradoras",
+      "titulo": "Reparación de aspiradoras a domicilio",
+      "subtitulo": "Succión, motor, cables y accesorios. No atendemos aspiradoras robóticas.",
+      "icono": "vacuum",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿Perdió succión, el motor se calienta o hace ruido? Atendemos aspiradoras de todas las marcas, excepto las robóticas.",
+      "intro": [
+        "Una aspiradora que ya no succiona no siempre necesita motor nuevo: a veces es un filtro, una manguera o el depósito. Lo revisamos en orden, de lo más simple a lo más costoso.",
+        "Atendemos aspiradoras de todas las marcas. No reparamos las robóticas."
+      ],
+      "fallas": [
+        "Perdió succión aunque el filtro esté limpio",
+        "El motor no prende o se calienta",
+        "Ruido o vibración extraña",
+        "Cable retráctil o interruptor dañado",
+        "Mangueras y accesorios rotos o tapados",
+        "Se apaga sola por recalentamiento"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Motor, filtros, mangueras, cable e interruptor para encontrar por qué pierde succión."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Prueba de succión",
+          "texto": "Verificamos la succión y que el motor trabaje sin recalentarse."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [
+        "Todas las marcas"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Arreglan aspiradoras robóticas?",
+          "respuesta": "No. Atendemos aspiradoras de todas las marcas, pero no las robóticas."
+        },
+        {
+          "pregunta": "Hace ruido y no succiona, ¿qué puede ser?",
+          "respuesta": "Suele ser una obstrucción, un filtro saturado o un rodamiento del motor. Se confirma en la revisión."
+        },
+        {
+          "pregunta": "¿Conviene arreglarla o comprar otra?",
+          "respuesta": "Con el diagnóstico te decimos si vale la pena, antes de cobrar la reparación."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de aspiradoras | Línea Blanca",
+        "descripcion": "Reparación de aspiradoras de todas las marcas, excepto robóticas, en tu casa."
+      },
+      "categoria": "hogar",
+      "variantes": [
+        "De mano",
+        "Verticales",
+        "De arrastre"
+      ]
+    },
+    {
+      "slug": "reparacion-de-televisores",
+      "nombre": "Televisores",
+      "titulo": "Reparación de televisores a domicilio",
+      "subtitulo": "Imagen, sonido, encendido y conexiones: el diagnóstico se hace en tu sala.",
+      "icono": "tv",
+      "imagen": "",
+      "imagenAlt": "",
+      "resumen": "¿No enciende, no hay imagen o sonido, o se apaga solo? Revisamos fuente de poder, tarjetas y retroiluminación.",
+      "intro": [
+        "Cuando un televisor falla, lo más común es la fuente de poder, la retroiluminación o una tarjeta. Se revisa en ese orden y, si se puede, sin llevarlo a un taller.",
+        "Escríbenos con la marca, el modelo y lo que hace el televisor para confirmar que podemos revisarlo."
+      ],
+      "fallas": [
+        "No enciende o se queda en la luz de espera",
+        "Hay sonido pero la pantalla está oscura",
+        "Líneas, manchas o imagen sin color",
+        "Se apaga solo o se reinicia",
+        "HDMI, WiFi o control remoto sin respuesta",
+        "Retroiluminación dañada"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión en el lugar",
+          "texto": "Fuente de poder, tarjetas, retroiluminación y conexiones, con instrumentos de medición."
+        },
+        {
+          "titulo": "El repuesto que corresponde",
+          "texto": "Original o equivalente certificado, según el modelo y la disponibilidad."
+        },
+        {
+          "titulo": "Prueba completa",
+          "texto": "Probamos imagen, sonido y entradas contigo antes de dar el televisor por reparado."
+        },
+        {
+          "titulo": "Garantía por escrito",
+          "texto": "Cubre la reparación y la pieza instalada, con apoyo por WhatsApp."
+        }
+      ],
+      "marcas": [],
+      "faq": [
+        {
+          "pregunta": "¿Qué debo decirles antes de la visita?",
+          "respuesta": "La marca, el modelo (va en la parte de atrás) y qué hace el televisor: si enciende, si hay sonido o si aparece un código."
+        },
+        {
+          "pregunta": "¿Siempre tiene arreglo?",
+          "respuesta": "No siempre. Con el diagnóstico te decimos si conviene, antes de cobrar la reparación."
+        },
+        {
+          "pregunta": "¿Dónde reparan televisores?",
+          "respuesta": "En Bogotá y en Barranquilla, en tu casa."
+        }
+      ],
+      "meta": {
+        "titulo": "Reparación de televisores | Línea Blanca",
+        "descripcion": "Reparación de televisores LED, LCD y Smart TV en tu casa en Bogotá y Barranquilla."
+      },
+      "categoria": "hogar",
+      "variantes": [
+        "LED y LCD",
+        "Smart TV"
+      ]
+    },
+    {
+      "slug": "servicio-de-instalacion",
+      "nombre": "Instalación y mantenimiento",
+      "titulo": "Instalación, mantenimiento y reparación a domicilio",
+      "subtitulo": "Un solo servicio para que tu equipo quede bien instalado, cuidado y funcionando.",
+      "icono": "wrench",
+      "imagen": "/img/servicios/instalacion.webp",
+      "imagenAlt": "Lavadora instalada y conectada en un baño de una vivienda",
+      "resumen": "Instalamos, damos mantenimiento y reparamos tus electrodomésticos en casa.",
+      "intro": [
+        "Una lavadora que vibra, una nevera que no enfría o un calentador que se apaga pueden venir de una mala instalación, de falta de mantenimiento o de una falla del equipo. En la misma visita revisamos las tres cosas.",
+        "Instalamos equipos nuevos, movemos los que ya tienes, hacemos el mantenimiento que alarga su vida y reparamos lo que falló. Si lo necesitas, también retiramos el equipo viejo."
+      ],
+      "fallas": [
+        "Lavadoras y secadoras: nivelación, conexiones y desagüe",
+        "Estufas, hornos y calentadores: conexión a gas y prueba de llama",
+        "Neveras, nevecones y lavavajillas: calibración y conexión de agua",
+        "Mantenimiento: limpieza, revisión de piezas de desgaste y ajustes",
+        "Reparación: diagnóstico de la falla y cambio del repuesto correcto",
+        "Retiro del equipo anterior y aseo del lugar"
+      ],
+      "incluye": [
+        {
+          "titulo": "Revisión del espacio",
+          "texto": "Medidas, ventilación, tomas y desagües antes de mover el equipo."
+        },
+        {
+          "titulo": "Conexión y nivelación",
+          "texto": "Lo dejamos firme, sin vibración y con conexiones sin fugas."
+        },
+        {
+          "titulo": "Prueba de funcionamiento",
+          "texto": "Probamos el ciclo o la combustión, según el equipo."
+        },
+        {
+          "titulo": "Consejos de uso",
+          "texto": "Te explicamos los cuidados básicos y cuándo toca el primer mantenimiento."
+        }
+      ],
+      "marcas": [
+        "LG",
+        "Samsung",
+        "Haceb",
+        "Whirlpool",
+        "Mabe",
+        "Electrolux",
+        "Challenger",
+        "Bosch",
+        "Frigidaire",
+        "KitchenAid"
+      ],
+      "faq": [
+        {
+          "pregunta": "¿Instalan equipos comprados en otra tienda?",
+          "respuesta": "Sí. Instalamos el que ya tengas, sin importar dónde lo compraste."
+        },
+        {
+          "pregunta": "¿Se llevan el equipo viejo?",
+          "respuesta": "Sí, si lo pides al agendar. Se cotiza aparte según el equipo y el acceso."
+        },
+        {
+          "pregunta": "¿Cuánto demora una instalación?",
+          "respuesta": "Entre 40 y 90 minutos, según el equipo. Las conexiones de gas y los calentadores necesitan una prueba adicional."
+        }
+      ],
+      "meta": {
+        "titulo": "Instalación, mantenimiento y reparación | Línea Blanca",
+        "descripcion": "Instalación, mantenimiento y reparación de electrodomésticos en tu casa: lavadoras, neveras, estufas y calentadores."
+      },
+      "categoria": "hogar",
+      "variantes": [
+        "Lavadoras",
+        "Neveras",
+        "Calentadores",
+        "Otros equipos"
+      ]
+    }
+  ]
+}

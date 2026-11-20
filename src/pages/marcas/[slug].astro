@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Formulario from "../../components/Formulario.astro";
+import Icon from "../../components/Icon.astro";
+import Pie from "../../components/Pie.astro";
+import { ruta, recurso, wa, sitio, marcas, servicioPor, reemplazar, ciudadesDeServicio } from "../../lib/sitio.js";
+import d from "../../datos/marcas.json";
+
+export function getStaticPaths() {
+  return marcas.map((m) => ({ params: { slug: m.slug }, props: { marca: m } }));
+}
+const { marca } = Astro.props;
+const v = { marca: marca.nombre };
+const tipos = marca.tipos.map(servicioPor);
+const titulo = reemplazar(d.detalle.titulo, v);
+const otras = marcas.filter((m) => m.slug !== marca.slug);
+const jsonld = { "@context": "https://schema.org", "@type": "Service", name: titulo, description: marca.nota, provider: { "@type": "HomeAndConstructionBusiness", name: sitio.nombre, telephone: `+${sitio.whatsapp}` } };
+---
+<Layout titulo={`${titulo} | Línea Blanca`} descripcion={`${marca.nota} Servicio técnico a domicilio con garantía por escrito.`} activa="marcas" jsonld={jsonld}>
+  <section class="equipo-hero">
+    <div class="container">
+      <nav class="migas" aria-label="Ruta"><a href={ruta("")}>Inicio</a><span aria-hidden="true">/</span><a href={ruta("marcas/")}>Marcas</a><span aria-hidden="true">/</span><span>{marca.nombre}</span></nav>
+      <div class="equipo-hero-grid">
+        <div>
+          {marca.logo && <span class="logo-tile logo-tile-lg"><img src={recurso(`brand/marcas/${marca.logo}`)} alt={marca.nombre} /></span>}
+          <h1>{titulo}</h1>
+          <p class="lead">{marca.nota}</p>
+          <div class="hero-actions">
+            <a class="btn btn-wa btn-lg" href={wa(`${sitio.mensajes.marca} ${marca.nombre}.`)} target="_blank" rel="noopener">{reemplazar(d.detalle.ctaMarca, v)}<span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost btn-lg" href={ruta("marcas/")}>Todas las marcas</a>
+          </div>
+          <p class="marcas-nota">{d.nota}</p>
+        </div>
+        <div class="equipo-card">
+          <h2>{reemplazar(d.detalle.focosTitulo, v)}</h2>
+          <ul class="fallas fallas-una">{marca.focos.map((f) => <li>{f}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{reemplazar(d.detalle.serviciosTitulo, v)}</h2></div>
+      <ul class="marcas-indice">
+        {tipos.map((s) => (
+          <li><a href={ruta(`${s.slug}/`)}>
+            <span class="indice-nombre">{s.nombre}</span>
+            <span class="indice-resumen">{s.resumen}<small>{ciudadesDeServicio(s.slug).length === 10 ? "Bogotá y 9 ciudades más" : ciudadesDeServicio(s.slug).map((c) => c.nombre).join(", ")}</small></span>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <section class="section otros">
+    <div class="container">
+      <div class="section-head"><h2>{d.detalle.otrasTitulo}</h2></div>
+      <ul class="otros-lista">{otras.map((m) => <li><a href={ruta(`marcas/${m.slug}/`)}>{m.nombre}</a></li>)}</ul>
+    </div>
+  </section>
+  <Formulario marcaPre={marca.nombre} servicioPre={tipos[0]?.nombre ?? ""} />
+  <Pie />
+</Layout>

@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "titulo": "Nosotros | Línea Blanca, servicio técnico a domicilio",
+    "descripcion": "Más de 18 años arreglando electrodomésticos en tu casa, en Bogotá, municipios cercanos, Barranquilla e Ibagué. Técnicos por línea de equipo, repuestos originales o equivalentes y garantía por escrito."
+  },
+  "hero": {
+    "titulo": "Oficio, no improvisación.",
+    "texto": "Llevamos más de 18 años arreglando electrodomésticos. En ese tiempo aprendimos que el cliente no quiere un discurso técnico: quiere saber qué tiene, cuánto cuesta y cuándo queda listo."
+  },
+  "historia": {
+    "titulo": "Empezamos con una lavadora y una caja de herramientas.",
+    "parrafos": [
+      "El servicio nació arreglando lavadoras y neveras de vecinos y conocidos. La recomendación fue el primer canal y sigue siéndolo: la mayoría de los clientes llega porque alguien le contó cómo quedó su equipo.",
+      "Con los años pasamos a calentadores, estufas, hornos, secadoras, lavavajillas y más equipos, y el servicio llegó a otras ciudades. La forma de trabajar no cambió: diagnosticar bien antes de cambiar piezas y dejar constancia de lo que se hizo."
+    ]
+  },
+  "principios": {
+    "titulo": "Tres cosas que no negociamos.",
+    "items": [
+      {
+        "titulo": "Diagnosticar antes de cobrar",
+        "texto": "Primero se revisa y se explica. Decides con el valor sobre la mesa, no cuando el equipo ya está abierto."
+      },
+      {
+        "titulo": "Usar el repuesto correcto",
+        "texto": "El más barato no siempre es el que sirve. Trabajamos con originales o equivalentes certificados."
+      },
+      {
+        "titulo": "Responder después",
+        "texto": "La garantía por escrito no es un sello: es el compromiso de volver si la misma falla reaparece."
+      }
+    ]
+  },
+  "equipo": {
+    "titulo": "Técnicos especializados por línea.",
+    "texto": "No todos los equipos se diagnostican igual. Por eso el trabajo se organiza por líneas (refrigeración, lavado, gas y cocción) y quien llega a tu casa conoce el modelo y sus fallas típicas.",
+    "nota": "Usamos herramientas de diagnóstico, multímetro, manómetros y equipo de protección. Cada intervención queda documentada con el modelo, el repuesto y la prueba que se hizo."
+  },
+  "cifras": [
+    {
+      "valor": "18+",
+      "texto": "años de experiencia"
+    },
+    {
+      "valor": "10",
+      "texto": "ciudades atendidas"
+    },
+    {
+      "valor": "14",
+      "texto": "servicios y equipos"
+    }
+  ],
+  "compromiso": {
+    "titulo": "Qué esperar de una visita.",
+    "items": [
+      "Un técnico identificado y con herramientas.",
+      "Explicación de la falla en palabras normales.",
+      "Valor del diagnóstico y de la reparación antes de intervenir.",
+      "Prueba del equipo contigo presente.",
+      "Garantía por escrito y un canal directo para soporte."
+    ]
+  },
+  "cierre": {
+    "titulo": "¿Le damos una segunda vida a tu equipo?",
+    "texto": "Escríbenos con el tipo de electrodoméstico y la falla. Te decimos si se puede revisar y cuándo podemos llegar.",
+    "boton": "Agendar por WhatsApp"
+  }
+}

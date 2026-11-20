@@ -12,7 +12,10 @@ La página se construye con Astro y CSS propio. Ejecuta `npm install` una vez y 
 
 ## Contenido editable
 
-- `src/datos/inicio.json`: portada, equipos (cada uno con su página, fallas y marcas), compromisos, proceso, cobertura, preguntas, contacto y textos de las páginas interiores.
+- `src/datos/sitio.json`: nombre, WhatsApp, horario, ciudades y qué se atiende en cada grupo de ciudades, menú y legales.
+- `src/datos/inicio.json`: portada, selector de equipos y ciudades, compromisos, proceso, garantía, testimonios, medios de pago y preguntas.
+- `src/datos/servicios.json`, `marcas.json`, `ciudades.json`: una entrada por servicio, marca o ciudad; de ahí salen las páginas internas.
+- `nosotros.json`, `contacto.json`, `servicios-pagina.json`, `legales.json`, `404.json`: textos de cada página.
 - `src/datos/sitio.json`: nombre, teléfono y horario.
 - `MARCA.md`: identidad visual de Línea Blanca.
 
@@ -22,7 +25,7 @@ El script `scripts/publicar-demo.sh` compila solo `/lineablanca` y publica en la
 
 ## Imágenes y contenido
 
-Las fotografías (`public/img/portada.jpg` y `nevera.jpg`) son de Unsplash, con licencia libre y crédito en el pie: PlanetCare (lavadora, foto 5cpBWEl6y6c) y Lisa Anna (nevera, foto ZkWMfHPNWpw). Son provisionales. La tipografía Manrope (OFL, subconjunto latino) está en `public/fonts/`. El logo local es el archivo entregado para la marca.
+Las fotografías (`public/img/portada.jpg` y `nevera.jpg`) son de Unsplash, con licencia libre y crédito en el pie: Brian Zajac (cocina de portada, foto Uw4Z5jU_G-E) y Lisa Anna (nevera, foto ZkWMfHPNWpw). Son provisionales. La tipografía Manrope (OFL, subconjunto latino) está en `public/fonts/`. El logo local es el archivo entregado para la marca.
 
 El tema es claro por defecto; el visitante puede activar el oscuro con el botón de la barra y queda guardado en su navegador.
 
