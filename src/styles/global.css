@@ -640,3 +640,16 @@ details[open] .mas::after { transform: rotate(0); }
 @media (max-width: 640px) { h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; } }
 @media (max-width: 640px) { .hero h1 { font-size: clamp(1.5rem, 7.6vw, 2.2rem); } }
 @media (max-width: 900px) { .mega { display: none !important; } }
+
+/* Selector de ciudades como lista vertical */
+.donde-lista { display: grid; gap: 4px; }
+.ciudad-tab { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 0 18px; border-radius: 16px; background: transparent; text-align: left; font-size: 18px; }
+.ciudad-tab:hover { background: var(--bg); }
+.ciudad-nombre { flex: 1; font-weight: 800; letter-spacing: -0.015em; }
+.ciudad-cuenta { font-size: 13px; font-weight: 650; color: var(--ink-soft); }
+.ciudad-tab .tab-flecha { opacity: 0; transform: translateX(-6px); transition: opacity .2s ease, transform .2s ease; flex: 0 0 auto; }
+.ciudad-tab:hover .tab-flecha { opacity: .6; transform: none; }
+.ciudad-tab[aria-selected="true"] { background: var(--blue); color: var(--on-blue); }
+.ciudad-tab[aria-selected="true"] .ciudad-cuenta { color: #e3f0fc; }
+.ciudad-tab[aria-selected="true"] .tab-flecha { opacity: 1; transform: none; }
+@media (max-width: 640px) { .donde-lista { grid-template-columns: 1fr 1fr; } .ciudad-tab { padding: 0 14px; min-height: 52px; font-size: 16px; flex-wrap: wrap; align-content: center; gap: 0 8px; } .ciudad-tab .tab-flecha { display: none; } .ciudad-cuenta { flex-basis: 100%; } }

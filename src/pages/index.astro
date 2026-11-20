@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Formulario from "../components/Formulario.astro";
 import Pie from "../components/Pie.astro";
 import Icon from "../components/Icon.astro";
-import { sitio, ruta, recurso, wa, reemplazar, categorias, ciudades, marcas, rutaCiudad, serviciosDeCiudad, servicioPor } from "../lib/sitio.js";
+import { sitio, ruta, recurso, wa, reemplazar, categorias, ciudades, marcas, rutaCiudad, serviciosDeCiudad, servicioPor, servicios } from "../lib/sitio.js";
 import d from "../datos/inicio.json";
 
 const equipos = categorias.flatMap((c) => c.items);
@@ -93,7 +93,11 @@ const jsonld = {
       <div class="donde-grid">
         <div class="donde-lista" role="tablist" aria-label="Ciudades" data-ciudades>
           {ciudades.map((c, i) => (
-            <button class="ciudad-tab" type="button" role="tab" id={`ct-${c.slug}`} aria-controls={`cp-${c.slug}`} aria-selected={i === 0 ? "true" : "false"} data-id={c.slug}>{c.nombre}</button>
+            <button class="ciudad-tab" type="button" role="tab" id={`ct-${c.slug}`} aria-controls={`cp-${c.slug}`} aria-selected={i === 0 ? "true" : "false"} data-id={c.slug}>
+              <span class="ciudad-nombre">{c.nombre}</span>
+              <span class="ciudad-cuenta">{sitio.grupos[c.grupo].servicios.length === servicios.length ? "Todos los equipos" : `${sitio.grupos[c.grupo].servicios.length} equipos`}</span>
+              <Icon nombre="arrow-right" tamano={18} clase="tab-flecha" />
+            </button>
           ))}
         </div>
         <div class="donde-paneles">
