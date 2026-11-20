@@ -254,7 +254,7 @@ details[open] .mas::after { transform: rotate(0); }
 .equipo-card { padding: clamp(24px, 3vw, 40px); border-radius: var(--r-lg); background: var(--surface); }
 .equipo-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 20px; margin-bottom: 28px; background: var(--surface-2); }
 .equipo-card h2 { font-size: 20px; letter-spacing: -0.02em; }
-.fallas-una { grid-template-columns: 1fr; margin: 18px 0 0; gap: 14px; }
+.fallas-una { grid-template-columns: minmax(0, 1fr); margin: 18px 0 0; gap: 14px; }
 .marcas-equipo { background: var(--surface); padding: clamp(48px, 6vw, 88px) 0; }
 .otros-lista { display: flex; flex-wrap: wrap; gap: 10px; }
 .otros-lista a { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 22px; border-radius: 999px; background: var(--surface); font-size: 17px; font-weight: 700; transition: background .2s ease, color .2s ease; }
@@ -278,10 +278,10 @@ details[open] .mas::after { transform: rotate(0); }
   .nav-links.abierto { transform: none; opacity: 1; visibility: visible; }
   .nav-links > a:not(.btn) { padding: 16px 4px; font-size: 18px; }
   .nav-cta { margin-top: 12px; }
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { max-width: none; }
   .hero-media img { aspect-ratio: 4 / 3; max-height: 460px; }
-  .equipos { grid-template-columns: 1fr; }
+  .equipos { grid-template-columns: minmax(0, 1fr); }
   .equipos-lista { display: flex; gap: 8px; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
   .equipos-lista::-webkit-scrollbar { display: none; }
   .equipos-grupo { display: contents; }
@@ -291,11 +291,11 @@ details[open] .mas::after { transform: rotate(0); }
   .equipo-tab span { flex: 0 1 auto; }
   .equipos-detalle { position: static; }
   .compromisos { margin: 0; border-radius: 0; }
-  .equipo-hero-grid { grid-template-columns: 1fr; }
+  .equipo-hero-grid { grid-template-columns: minmax(0, 1fr); }
   .indice-grupo a { grid-template-columns: 1fr 24px; gap: 8px 16px; }
   .indice-resumen { grid-column: 1; grid-row: 2; }
   .indice-grupo a svg { grid-column: 2; grid-row: 1 / span 2; }
-  .compromisos-grid, .marcas-grid, .faq-grid, .solicitud-grid { grid-template-columns: 1fr; }
+  .compromisos-grid, .marcas-grid, .faq-grid, .solicitud-grid { grid-template-columns: minmax(0, 1fr); }
   .faq-intro { position: static; }
 }
 @media (max-width: 640px) {
@@ -303,11 +303,11 @@ details[open] .mas::after { transform: rotate(0); }
   .hero h1 { font-size: 34px; }
   h2, .compromisos h2, .solicitud h2 { font-size: 27px; }
   .hero-actions .btn { width: 100%; }
-  .fallas { grid-template-columns: 1fr; }
-  .compromisos-lista { grid-template-columns: 1fr; gap: 28px; }
-  .pasos { grid-template-columns: 1fr; }
+  .fallas { grid-template-columns: minmax(0, 1fr); }
+  .compromisos-lista { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .pasos { grid-template-columns: minmax(0, 1fr); }
   .pasos li { min-height: 0; gap: 20px; }
-  .cobertura-grid { grid-template-columns: 1fr; }
+  .cobertura-grid { grid-template-columns: minmax(0, 1fr); }
   .faq summary { padding: 18px 20px; font-size: 17px; }
   .faq details p { padding: 0 20px 20px; }
   .solicitud-grid { padding: 24px 18px; border-radius: 22px; }
@@ -460,20 +460,20 @@ details[open] .mas::after { transform: rotate(0); }
 
 @media (max-width: 1080px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
-  .testimonios-lista { grid-template-columns: 1fr; }
-  .compromisos-tres { grid-template-columns: 1fr; }
+  .testimonios-lista { grid-template-columns: minmax(0, 1fr); }
+  .compromisos-tres { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 900px) {
-  .intro-grid, .donde-grid, .garantia-grid, .pagos-grid, .legal-grid { grid-template-columns: 1fr; }
+  .intro-grid, .donde-grid, .garantia-grid, .pagos-grid, .legal-grid { grid-template-columns: minmax(0, 1fr); }
   .legal-indice { position: static; }
   .marcas-indice a { grid-template-columns: 1fr 24px; gap: 8px 16px; }
   .marcas-indice .indice-resumen { grid-column: 1; grid-row: 2; }
   .marcas-indice a svg { grid-column: 2; grid-row: 1 / span 2; }
 }
 @media (max-width: 640px) {
-  .form-fila { grid-template-columns: 1fr; }
-  .garantia-items { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .form-fila { grid-template-columns: minmax(0, 1fr); }
+  .garantia-items { grid-template-columns: minmax(0, 1fr); }
+  .footer-top { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .pago-num { width: 100%; justify-content: space-between; }
 }
 
@@ -555,7 +555,7 @@ details[open] .mas::after { transform: rotate(0); }
   .barra-movil .btn { min-height: 50px; width: 100%; }
   .floating-contact { display: none; }
   body { padding-bottom: 72px; }
-  .lista-iconos { grid-template-columns: 1fr; }
+  .lista-iconos { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .logos-marcas { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
@@ -625,7 +625,7 @@ details[open] .mas::after { transform: rotate(0); }
   .nav-links > a:not(.btn), .nav-item > a { padding: 16px 6px; border-radius: 0; font-size: 18px; color: #fff; background: transparent !important; border-bottom: 1px solid rgba(255,255,255,.1); }
   .nav-movil-acciones .btn-ghost { color: #fff; border-color: rgba(255,255,255,.6); }
   .nav-movil-acciones .btn-ghost:hover { background: #fff; color: var(--deep); }
-  .muro-grid { grid-template-columns: 1fr; }
+  .muro-grid { grid-template-columns: minmax(0, 1fr); }
   .muro-intro { position: static; }
 }
 @media (max-width: 640px) { .muro { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -634,3 +634,9 @@ details[open] .mas::after { transform: rotate(0); }
 .hero-media { margin-bottom: 34px; }
 @media (max-width: 900px) { .hero-media { margin-bottom: 0; } .hero-media img { aspect-ratio: 4 / 3; } }
 @media (max-width: 900px) { .hero-placa { position: static; left: auto; right: auto; bottom: auto; transform: none; width: auto; max-width: none; margin-top: 12px; background: var(--surface); } }
+
+/* Celulares con letra ampliada: nada debe ensanchar la columna ni empujar el contenido fuera de la pantalla. */
+.hero-copy, .hero-grid > *, .equipo-hero-grid > *, .compromisos-grid > *, .donde-grid > *, .muro-grid > *, .faq-grid > *, .solicitud-grid > *, .garantia-grid > *, .pagos-grid > *, .intro-grid > * { min-width: 0; }
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 640px) { .hero h1 { font-size: clamp(1.5rem, 7.6vw, 2.2rem); } }
+@media (max-width: 900px) { .mega { display: none !important; } }
