@@ -15,6 +15,11 @@ export function getStaticPaths() {
 const { tipo, item } = Astro.props;
 const esServicio = tipo === "servicio";
 const dd = d.detalle;
+const slides = esServicio ? [
+  ...item.variantes.filter((v) => v.imagen).map((v) => ({ imagen: v.imagen, nombre: v.nombre, alt: v.alt })),
+  ...item.galeria.map((g) => ({ imagen: g.imagen, nombre: item.nombre, alt: g.alt })),
+] : [];
+const sinFoto = esServicio ? item.variantes.filter((v) => !v.imagen).map((v) => v.nombre) : [];
 const ciudades = esServicio ? ciudadesDeServicio(item.slug) : [];
 const relacionados = esServicio ? [...servicios.filter((s) => s.categoria === item.categoria && s.slug !== item.slug), ...servicios.filter((s) => s.categoria !== item.categoria && s.slug !== item.slug)] : [];
 const origen = Astro.site ?? sitio.dominio;
@@ -67,11 +72,36 @@ const descripcion = esServicio ? item.meta.descripcion : item.descripcion;
     </div>
   </section>
 
-  {item.variantes.length > 0 && (
-    <section class="section variantes">
+  {(slides.length > 0 || sinFoto.length > 0) && (
+    <section class="section variantes" aria-labelledby="t-variantes">
       <div class="container">
-        <h2>{dd.variantes}</h2>
-        <ul class="chips chips-lg">{item.variantes.map((v) => <li>{v}</li>)}</ul>
+        <div class="car-cab">
+          <h2 id="t-variantes">{dd.variantes}</h2>
+          {slides.length > 2 && (
+            <div class="car-ctl">
+              <button type="button" class="car-play" data-play aria-pressed="false">Pausar</button>
+              <button type="button" class="car-btn car-prev" data-prev aria-label="Anterior"><Icon nombre="arrow-right" tamano={20} /></button>
+              <button type="button" class="car-btn" data-next aria-label="Siguiente"><Icon nombre="arrow-right" tamano={20} /></button>
+            </div>
+          )}
+        </div>
+        {slides.length > 0 && (
+          <div class="car" data-carrusel role="region" aria-roledescription="carrusel" aria-label={dd.variantes}>
+            <ul class="car-pista" data-pista>
+              {slides.map((sl, i) => (
+                <li class="car-slide" aria-label={`${i + 1} de ${slides.length}`}>
+                  <figure>
+                    <img src={recurso(sl.imagen)} alt={sl.alt} width="1200" height="900" loading={i < 2 ? "eager" : "lazy"} />
+                    <figcaption>{sl.nombre}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {sinFoto.length > 0 && (
+          <p class="car-tambien"><strong>{slides.length > 0 ? "También atendemos:" : ""}</strong> {sinFoto.join(" · ")}</p>
+        )}
       </div>
     </section>
   )}
@@ -120,6 +150,44 @@ const descripcion = esServicio ? item.meta.descripcion : item.descripcion;
 
   <Formulario servicioPre={item.nombre} titulo={dd.agendarTitulo} texto={dd.agendarTexto} />
   <Pie />
+  <script is:inline>
+    (() => {
+      const c = document.querySelector("[data-carrusel]");
+      if (!c) return;
+      const pista = c.querySelector("[data-pista]");
+      const slides = [...pista.children];
+      const caja = c.closest(".variantes");
+      const prev = caja.querySelector("[data-prev]"), next = caja.querySelector("[data-next]"), play = caja.querySelector("[data-play]");
+      const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let timer = null, pausado = sinMovimiento, visible = true;
+      const cabe = () => pista.scrollWidth <= pista.clientWidth + 4;
+      const paso = () => slides[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(pista).columnGap) || 16);
+      const ir = (dir) => {
+        const max = pista.scrollWidth - pista.clientWidth;
+        let x = pista.scrollLeft + dir * paso();
+        if (dir > 0 && pista.scrollLeft >= max - 4) x = 0;
+        if (dir < 0 && pista.scrollLeft <= 4) x = max;
+        pista.scrollTo({ left: x, behavior: "smooth" });
+      };
+      const parar = () => { clearInterval(timer); timer = null; };
+      const arrancar = () => { parar(); if (pausado || !visible || cabe() || slides.length < 2) return; timer = setInterval(() => ir(1), 2200); };
+      prev?.addEventListener("click", () => { ir(-1); arrancar(); });
+      next?.addEventListener("click", () => { ir(1); arrancar(); });
+      if (play) {
+        if (sinMovimiento) play.textContent = "Reproducir";
+        play.setAttribute("aria-pressed", String(pausado));
+        play.addEventListener("click", () => { pausado = !pausado; play.textContent = pausado ? "Reproducir" : "Pausar"; play.setAttribute("aria-pressed", String(pausado)); arrancar(); });
+      }
+      ["mouseenter", "focusin", "touchstart"].forEach((ev) => c.addEventListener(ev, parar, { passive: true }));
+      ["mouseleave", "focusout"].forEach((ev) => c.addEventListener(ev, arrancar));
+      c.addEventListener("touchend", () => setTimeout(arrancar, 4000), { passive: true });
+      document.addEventListener("visibilitychange", () => { visible = !document.hidden; arrancar(); });
+      if ("IntersectionObserver" in window) new IntersectionObserver((es) => { visible = es[0].isIntersecting; arrancar(); }, { threshold: 0.2 }).observe(c);
+      window.addEventListener("resize", () => { if (cabe()) caja.classList.add("sin-scroll"); else caja.classList.remove("sin-scroll"); arrancar(); });
+      if (cabe()) caja.classList.add("sin-scroll");
+      arrancar();
+    })();
+  </script>
 </Layout>
 ) : (
 <Layout titulo={titulo} descripcion={descripcion}>

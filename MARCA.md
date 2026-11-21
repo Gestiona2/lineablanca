@@ -31,5 +31,5 @@ Fotografía editorial de electrodomésticos y hogares reales, luz natural, mater
 - Dominio: `https://www.lineablanca.co/`
 - WhatsApp: `+57 312 341 0405`
 - Cobertura publicada: Bogotá, Barranquilla, Ibagué, Medellín, Cartagena, Cali y Santa Marta; además se mencionan La Calera, Funza, Madrid, Mosquera, Cota, Chía y Cajicá.
-- Horario publicado: lunes a viernes 6:00–18:00; horario extendido 6:00–22:00; sábados 7:00–17:00; domingos y festivos no trabajan.
+- Horario confirmado por el cliente (2026-11-21): lunes a viernes 7:00–17:00; sábados 7:00–12:00; domingos y festivos no trabajan (dato de lineablanca.co).
 - Correo, razón social y NIT: no visibles en el contenido consultado; pendientes de confirmar.

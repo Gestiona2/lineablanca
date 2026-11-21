@@ -13,7 +13,7 @@ const marcasInicio = d.marcasInicio.map((s) => marcas.find((m) => m.slug === s))
 const jsonld = {
   "@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", name: sitio.nombre,
   description: sitio.descripcion, telephone: `+${sitio.whatsapp}`, url: sitio.dominio,
-  areaServed: ciudades.map((c) => c.nombre), openingHours: "Mo-Fr 06:00-18:00, Sa 07:00-17:00",
+  areaServed: ciudades.map((c) => c.nombre), openingHours: "Mo-Fr 07:00-17:00, Sa 07:00-12:00",
 };
 ---
 

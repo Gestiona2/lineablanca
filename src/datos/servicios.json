@@ -95,11 +95,28 @@
       },
       "categoria": "lavado",
       "variantes": [
-        "Carga frontal",
-        "Carga superior",
-        "Semiautomáticas",
-        "Centrales y de uso intensivo"
-      ]
+        {
+          "nombre": "Carga frontal",
+          "imagen": "img/servicios/lavadoras-carga-frontal.webp",
+          "alt": "Lavadoras: carga frontal"
+        },
+        {
+          "nombre": "Carga superior",
+          "imagen": "img/servicios/lavadoras-carga-superior.webp",
+          "alt": "Lavadoras: carga superior"
+        },
+        {
+          "nombre": "Semiautomáticas",
+          "imagen": "",
+          "alt": "Lavadoras: semiautomáticas"
+        },
+        {
+          "nombre": "Centrales y de uso intensivo",
+          "imagen": "img/servicios/lavadoras-centrales-y-de-uso-intensivo.webp",
+          "alt": "Lavadoras: centrales y de uso intensivo"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-neveras",
@@ -172,10 +189,23 @@
       },
       "categoria": "frio",
       "variantes": [
-        "Neveras",
-        "Nevecones",
-        "Neveras inverter"
-      ]
+        {
+          "nombre": "Neveras",
+          "imagen": "img/servicios/neveras-neveras.webp",
+          "alt": "Neveras y nevecones: neveras"
+        },
+        {
+          "nombre": "Nevecones",
+          "imagen": "img/servicios/neveras-nevecones.webp",
+          "alt": "Neveras y nevecones: nevecones"
+        },
+        {
+          "nombre": "Neveras inverter",
+          "imagen": "",
+          "alt": "Neveras y nevecones: neveras inverter"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-secadoras",
@@ -248,8 +278,26 @@
       },
       "categoria": "lavado",
       "variantes": [
-        "Secadoras eléctricas",
-        "Secadoras a gas"
+        {
+          "nombre": "Secadoras eléctricas",
+          "imagen": "",
+          "alt": "Secadoras: secadoras eléctricas"
+        },
+        {
+          "nombre": "Secadoras a gas",
+          "imagen": "",
+          "alt": "Secadoras: secadoras a gas"
+        }
+      ],
+      "galeria": [
+        {
+          "imagen": "img/servicios/secadoras-1.webp",
+          "alt": "Secadoras"
+        },
+        {
+          "imagen": "img/servicios/secadoras-2.webp",
+          "alt": "Secadoras"
+        }
       ]
     },
     {
@@ -323,9 +371,18 @@
       },
       "categoria": "lavado",
       "variantes": [
-        "Domésticos",
-        "Industriales"
-      ]
+        {
+          "nombre": "Domésticos",
+          "imagen": "img/servicios/lavavajillas-domesticos.webp",
+          "alt": "Lavavajillas: domésticos"
+        },
+        {
+          "nombre": "Industriales",
+          "imagen": "",
+          "alt": "Lavavajillas: industriales"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-estufas",
@@ -403,11 +460,28 @@
       },
       "categoria": "coccion",
       "variantes": [
-        "A gas",
-        "Eléctricas",
-        "De inducción",
-        "Vitrocerámicas"
-      ]
+        {
+          "nombre": "A gas",
+          "imagen": "img/servicios/estufas-a-gas.webp",
+          "alt": "Estufas: a gas"
+        },
+        {
+          "nombre": "Eléctricas",
+          "imagen": "img/servicios/estufas-electricas.webp",
+          "alt": "Estufas: eléctricas"
+        },
+        {
+          "nombre": "De inducción",
+          "imagen": "img/servicios/estufas-de-induccion.webp",
+          "alt": "Estufas: de inducción"
+        },
+        {
+          "nombre": "Vitrocerámicas",
+          "imagen": "img/servicios/estufas-vitroceramicas.webp",
+          "alt": "Estufas: vitrocerámicas"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-hornos",
@@ -480,11 +554,28 @@
       },
       "categoria": "coccion",
       "variantes": [
-        "Eléctricos",
-        "A gas",
-        "Empotrados",
-        "De mesa"
-      ]
+        {
+          "nombre": "Eléctricos",
+          "imagen": "img/servicios/hornos-electricos.webp",
+          "alt": "Hornos: eléctricos"
+        },
+        {
+          "nombre": "A gas",
+          "imagen": "img/servicios/hornos-a-gas.webp",
+          "alt": "Hornos: a gas"
+        },
+        {
+          "nombre": "Empotrados",
+          "imagen": "img/servicios/hornos-empotrados.webp",
+          "alt": "Hornos: empotrados"
+        },
+        {
+          "nombre": "De mesa",
+          "imagen": "",
+          "alt": "Hornos: de mesa"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-microondas",
@@ -546,9 +637,18 @@
       },
       "categoria": "coccion",
       "variantes": [
-        "De mesa",
-        "Empotrados"
-      ]
+        {
+          "nombre": "De mesa",
+          "imagen": "img/servicios/microondas-de-mesa.webp",
+          "alt": "Microondas: de mesa"
+        },
+        {
+          "nombre": "Empotrados",
+          "imagen": "",
+          "alt": "Microondas: empotrados"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-campanas-extractoras",
@@ -610,10 +710,23 @@
       },
       "categoria": "coccion",
       "variantes": [
-        "Campanas de cocina",
-        "Campanas de restaurantes",
-        "Hongos"
-      ]
+        {
+          "nombre": "Campanas de cocina",
+          "imagen": "img/servicios/campanas-extractoras-campanas-de-cocina.webp",
+          "alt": "Campanas extractoras y hongos: campanas de cocina"
+        },
+        {
+          "nombre": "Campanas de restaurantes",
+          "imagen": "",
+          "alt": "Campanas extractoras y hongos: campanas de restaurantes"
+        },
+        {
+          "nombre": "Hongos",
+          "imagen": "",
+          "alt": "Campanas extractoras y hongos: hongos"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-freidoras",
@@ -675,9 +788,18 @@
       },
       "categoria": "coccion",
       "variantes": [
-        "Domésticas",
-        "Industriales"
-      ]
+        {
+          "nombre": "Domésticas",
+          "imagen": "img/servicios/freidoras-domesticas.webp",
+          "alt": "Freidoras: domésticas"
+        },
+        {
+          "nombre": "Industriales",
+          "imagen": "img/servicios/freidoras-industriales.webp",
+          "alt": "Freidoras: industriales"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-calentadores",
@@ -750,9 +872,31 @@
       },
       "categoria": "agua",
       "variantes": [
-        "De paso a gas",
-        "De acumulación",
-        "Eléctricos"
+        {
+          "nombre": "De paso a gas",
+          "imagen": "",
+          "alt": "Calentadores: de paso a gas"
+        },
+        {
+          "nombre": "De acumulación",
+          "imagen": "",
+          "alt": "Calentadores: de acumulación"
+        },
+        {
+          "nombre": "Eléctricos",
+          "imagen": "",
+          "alt": "Calentadores: eléctricos"
+        }
+      ],
+      "galeria": [
+        {
+          "imagen": "img/servicios/calentadores-1.webp",
+          "alt": "Calentadores"
+        },
+        {
+          "imagen": "img/servicios/calentadores-2.webp",
+          "alt": "Calentadores"
+        }
       ]
     },
     {
@@ -827,11 +971,28 @@
       },
       "categoria": "hogar",
       "variantes": [
-        "Automáticas",
-        "De molino",
-        "De goteo",
-        "Industriales"
-      ]
+        {
+          "nombre": "Automáticas",
+          "imagen": "img/servicios/cafeteras-automaticas.webp",
+          "alt": "Cafeteras: automáticas"
+        },
+        {
+          "nombre": "De molino",
+          "imagen": "img/servicios/cafeteras-de-molino.webp",
+          "alt": "Cafeteras: de molino"
+        },
+        {
+          "nombre": "De goteo",
+          "imagen": "img/servicios/cafeteras-de-goteo.webp",
+          "alt": "Cafeteras: de goteo"
+        },
+        {
+          "nombre": "Industriales",
+          "imagen": "img/servicios/cafeteras-industriales.webp",
+          "alt": "Cafeteras: industriales"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-aspiradoras",
@@ -895,10 +1056,23 @@
       },
       "categoria": "hogar",
       "variantes": [
-        "De mano",
-        "Verticales",
-        "De arrastre"
-      ]
+        {
+          "nombre": "De mano",
+          "imagen": "",
+          "alt": "Aspiradoras: de mano"
+        },
+        {
+          "nombre": "Verticales",
+          "imagen": "img/servicios/aspiradoras-verticales.webp",
+          "alt": "Aspiradoras: verticales"
+        },
+        {
+          "nombre": "De arrastre",
+          "imagen": "img/servicios/aspiradoras-de-arrastre.webp",
+          "alt": "Aspiradoras: de arrastre"
+        }
+      ],
+      "galeria": []
     },
     {
       "slug": "reparacion-de-televisores",
@@ -960,8 +1134,22 @@
       },
       "categoria": "hogar",
       "variantes": [
-        "LED y LCD",
-        "Smart TV"
+        {
+          "nombre": "LED y LCD",
+          "imagen": "",
+          "alt": "Televisores: led y lcd"
+        },
+        {
+          "nombre": "Smart TV",
+          "imagen": "",
+          "alt": "Televisores: smart tv"
+        }
+      ],
+      "galeria": [
+        {
+          "imagen": "img/servicios/televisores-1.webp",
+          "alt": "Televisores"
+        }
       ]
     },
     {
@@ -1035,10 +1223,36 @@
       },
       "categoria": "hogar",
       "variantes": [
-        "Lavadoras",
-        "Neveras",
-        "Calentadores",
-        "Otros equipos"
+        {
+          "nombre": "Lavadoras",
+          "imagen": "",
+          "alt": "Instalación y mantenimiento: lavadoras"
+        },
+        {
+          "nombre": "Neveras",
+          "imagen": "",
+          "alt": "Instalación y mantenimiento: neveras"
+        },
+        {
+          "nombre": "Calentadores",
+          "imagen": "",
+          "alt": "Instalación y mantenimiento: calentadores"
+        },
+        {
+          "nombre": "Otros equipos",
+          "imagen": "",
+          "alt": "Instalación y mantenimiento: otros equipos"
+        }
+      ],
+      "galeria": [
+        {
+          "imagen": "img/servicios/instalacion-1.webp",
+          "alt": "Instalación, mantenimiento y reparación"
+        },
+        {
+          "imagen": "img/servicios/instalacion-2.webp",
+          "alt": "Instalación, mantenimiento y reparación"
+        }
       ]
     }
   ]

@@ -9,7 +9,7 @@ Línea Blanca es la **misma empresa** que Arreglo de Lavadoras. El sitio compart
 - [ ] Correo corporativo, razón social y NIT (no hay; los legales remiten a WhatsApp). Los legales son plantillas: requieren revisión legal antes de publicar en el dominio real.
 - [ ] Medios de pago (Bancolombia, Nequi, Daviplata) y titular: se copiaron de Arreglo de Lavadoras. Confirmar que son los mismos para Línea Blanca; si no, editarlos en `src/datos/inicio.json` (`pagos`).
 - [ ] Testimonios (Andrea Angarita, Carlos Manosalva, Claudia Martínez): vienen de Arreglo de Lavadoras. Confirmar que se pueden mostrar también aquí.
-- [ ] Horario: se usa el publicado en lineablanca.co (lunes a viernes 6–18 con extendido hasta 22; sábados 7–17). Arreglo de Lavadoras publica lunes a sábado 7–17. Confirmar cuál aplica.
+- [x] Horario confirmado por el cliente: lunes a viernes 7:00 a. m. a 5:00 p. m. y sábados 7:00 a. m. a 12:00 m. (domingos y festivos no se trabaja, según lineablanca.co; confirmar).
 - [ ] Confirmar que "18 años de experiencia", "10 ciudades" y "14 servicios" también valen para Línea Blanca (misma empresa).
 - [ ] La web anterior se titulaba "Servicio Técnico Autorizado"; el rediseño no usa esa frase (no hay autorización de marca que la respalde).
 - [ ] Las 12 URL por barrio de Bogotá y las páginas por marca y servicio antiguas de lineablanca.co (más de 60) no se replican uno a uno; las reemplazan `/atendemos-en-<ciudad>/` y `/marcas/<marca>/`. Decidir si hacen falta redirecciones desde las URL viejas al publicar en el dominio real.
@@ -19,7 +19,7 @@ Línea Blanca es la **misma empresa** que Arreglo de Lavadoras. El sitio compart
 - [ ] Los logos de marcas (`public/brand/marcas/`) son marcas de terceros; se usan solo para identificar los equipos que se atienden, igual que en Arreglo de Lavadoras, con el aviso de que Línea Blanca no es servicio oficial. Solo 12 de las 22 marcas tienen logo; las demás se muestran en texto.
 
 - [ ] Fotos de portada y nevera (Unsplash: Brian Zajac y Lisa Anna, créditos en `creditos-imagenes.md`) y las 8 fotos de servicios (copiadas de Arreglo de Lavadoras): provisionales; ninguna es trabajo real de Línea Blanca. La portada es una cocina con lavavajillas, microondas, estufa y nevera (imagen con aspecto de render).
-- [ ] Hay servicios sin foto (microondas, campanas, freidoras, cafeteras, aspiradoras, televisores): la página se arma sin imagen.
+- [x] Cada servicio tiene un carrusel de tipos con avance automático cada 2,2 s (pausa al pasar el cursor, al tocar o con el botón Pausar). Las 30 fotos por tipo se copiaron de Arreglo de Lavadoras (Pexels, licencia libre sin atribución obligatoria); son de apoyo y conviene reemplazarlas por fotos reales del cliente. Los tipos sin foto (semiautomáticas, inverter, industriales, hongos, etc.) se listan como texto.
 
 ## Técnico
 

@@ -653,3 +653,24 @@ details[open] .mas::after { transform: rotate(0); }
 .ciudad-tab[aria-selected="true"] .ciudad-cuenta { color: #e3f0fc; }
 .ciudad-tab[aria-selected="true"] .tab-flecha { opacity: 1; transform: none; }
 @media (max-width: 640px) { .donde-lista { grid-template-columns: 1fr 1fr; } .ciudad-tab { padding: 0 14px; min-height: 52px; font-size: 16px; flex-wrap: wrap; align-content: center; gap: 0 8px; } .ciudad-tab .tab-flecha { display: none; } .ciudad-cuenta { flex-basis: 100%; } }
+
+/* Carrusel de tipos por servicio (avance automático cada 2,2 s; se detiene al pasar el cursor, al tocar o con el botón Pausar) */
+.variantes { padding-top: 0; }
+.car-cab { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-bottom: 22px; }
+.car-cab h2 { margin: 0 !important; }
+.car-ctl { display: flex; align-items: center; gap: 8px; }
+.car-btn { width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; transition: background .2s ease, color .2s ease; }
+.car-btn:hover { background: var(--blue); color: var(--on-blue); }
+.car-prev .icono { transform: rotate(180deg); }
+.car-play { min-height: 46px; padding: 0 18px; border: 0; border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 14px; font-weight: 750; cursor: pointer; }
+.car-play:hover { background: var(--surface-2); }
+.sin-scroll .car-ctl { display: none; }
+.car-pista { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 4px; }
+.car-pista::-webkit-scrollbar { display: none; }
+.car-slide { flex: 0 0 clamp(260px, 40%, 460px); scroll-snap-align: start; }
+.car-slide figure { position: relative; margin: 0; }
+.car-slide img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; background: var(--surface-2); }
+.car-slide figcaption { position: absolute; left: 14px; bottom: 14px; padding: 9px 18px; border-radius: 999px; background: var(--bg); color: var(--ink); font-size: 15px; font-weight: 800; }
+.car-tambien { margin-top: 18px; font-size: 16px; color: var(--ink-soft); }
+.car-tambien strong { color: var(--ink); }
+@media (max-width: 640px) { .car-slide { flex-basis: 82%; } .car-play { display: none; } }
