@@ -178,5 +178,12 @@
       "texto": "Términos y condiciones",
       "href": "/terminos/"
     }
-  ]
+  ],
+  "googleAds": {
+    "_comentario": "Rellenar cuando el especialista de Google Ads entregue los datos. id = AW-XXXXXXXXX; etiquetaGracias = etiqueta de conversión del formulario; etiquetaWhatsapp y etiquetaLlamar = etiquetas de conversión de los clics. Mientras estén vacíos no se carga ningún script de Google.",
+    "id": "",
+    "etiquetaGracias": "",
+    "etiquetaWhatsapp": "",
+    "etiquetaLlamar": ""
+  }
 }

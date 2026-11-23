@@ -1,0 +1,24 @@
+{
+  "_comentario": "Textos de /gracias/. Es la página a la que llega quien envía el formulario; sirve como conversión de Google Ads. No se indexa.",
+  "meta": {
+    "titulo": "Gracias por escribirnos | Línea Blanca",
+    "descripcion": "Tu solicitud de servicio técnico va por WhatsApp. Un asesor te responde con la disponibilidad y el valor del diagnóstico."
+  },
+  "titulo": "¡Gracias por escribirnos!",
+  "texto": "Se abrió WhatsApp con tu solicitud ya escrita. Pulsa Enviar y un asesor te responde con la disponibilidad más cercana y el valor del diagnóstico.",
+  "botonWhatsapp": "Abrir WhatsApp de nuevo",
+  "botonLlamar": "Llamar ahora",
+  "avisoSinMensaje": "Si no se abrió WhatsApp, usa el botón y escríbenos el equipo, la marca y la ciudad.",
+  "siguienteTitulo": "Qué pasa ahora",
+  "pasos": [
+    {"titulo": "Envía el mensaje", "texto": "La solicitud solo queda registrada cuando pulsas Enviar en WhatsApp."},
+    {"titulo": "Te respondemos", "texto": "Un asesor te confirma el día, la franja y el valor del diagnóstico dentro del horario de atención."},
+    {"titulo": "Visita en tu casa", "texto": "El técnico revisa, te explica la falla y solo repara si tú lo autorizas."}
+  ],
+  "mientrasTanto": "Mientras tanto",
+  "enlaces": [
+    {"texto": "Volver al inicio", "href": ""},
+    {"texto": "Ver todos los servicios", "href": "servicios/"},
+    {"texto": "Ver las marcas que arreglamos", "href": "marcas/"}
+  ]
+}

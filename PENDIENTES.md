@@ -28,3 +28,9 @@ Línea Blanca es la **misma empresa** que Arreglo de Lavadoras. El sitio compart
 - [ ] Revisar a 768 px y en celular real antes de enseñar al cliente.
 - [ ] Al pasar al dominio real: quitar `noindex` (se activa solo en demos.emp2web.com), definir `PUBLIC_SITE` y `PUBLIC_BASE`, y revisar el sitemap.
 - [ ] El tema oscuro solo se activa con el botón de la barra; por defecto el sitio abre siempre en claro.
+
+## Google Ads
+
+- [x] Página de agradecimiento `/gracias/` (noindex, fuera del sitemap y bloqueada en robots.txt del dominio real). El formulario abre WhatsApp y lleva a esa página; es la conversión del formulario.
+- [ ] Pedir al especialista de Google Ads el ID (`AW-XXXXXXXXX`) y las etiquetas de conversión para llenar `googleAds` en `src/datos/sitio.json`. Mientras estén vacíos el sitio no carga ningún script de Google; solo avisa al `dataLayer` (`solicitud_enviada`, `clic_whatsapp`, `clic_llamar`) por si usan Tag Manager.
+- [ ] Listado de enlaces para el especialista: `entrega/Enlaces-Google-Ads-Linea-Blanca.xlsx`. Regenerar si cambia el dominio o las páginas.

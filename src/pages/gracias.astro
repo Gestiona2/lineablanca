@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Pie from "../components/Pie.astro";
+import Icon from "../components/Icon.astro";
+import { sitio, ruta, wa } from "../lib/sitio.js";
+import d from "../datos/gracias.json";
+---
+<Layout titulo={d.meta.titulo} descripcion={d.meta.descripcion} noindex={true}>
+  <section class="gracias">
+    <div class="container gracias-grid">
+      <div class="gracias-copy">
+        <span class="gracias-check" aria-hidden="true"><Icon nombre="check" tamano={40} trazo={2.4} /></span>
+        <h1>{d.titulo}</h1>
+        <p class="lead">{d.texto}</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa btn-lg" id="graciasWa" href={wa("Hola, quiero agendar un servicio técnico.")} target="_blank" rel="noopener"><Icon nombre="whatsapp" tamano={22} />{d.botonWhatsapp}</a>
+          <a class="btn btn-ghost btn-lg" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={22} />{d.botonLlamar}</a>
+        </div>
+        <p class="gracias-aviso">{d.avisoSinMensaje}</p>
+      </div>
+      <div class="gracias-panel">
+        <h2>{d.siguienteTitulo}</h2>
+        <ol class="gracias-pasos">
+          {d.pasos.map((p) => <li><h3>{p.titulo}</h3><p>{p.texto}</p></li>)}
+        </ol>
+        <ul class="horario horario-claro">{sitio.horarioLineas.map((l) => <li>{l}</li>)}</ul>
+      </div>
+    </div>
+    <div class="container gracias-enlaces">
+      <p>{d.mientrasTanto}</p>
+      <ul>{d.enlaces.map((e) => <li><a href={ruta(e.href)}>{e.texto}<Icon nombre="arrow-right" tamano={16} /></a></li>)}</ul>
+    </div>
+  </section>
+  <Pie />
+  <script is:inline>
+    (() => {
+      // Evento de conversión para Google Ads / Tag Manager (solo si el sitio tiene configurada la etiqueta).
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "solicitud_enviada", pagina: "gracias" });
+      const conf = window.__ads || {};
+      if (window.gtag && conf.id && conf.etiquetaGracias) {
+        window.gtag("event", "conversion", { send_to: `${conf.id}/${conf.etiquetaGracias}` });
+      }
+      // Si el formulario guardó el mensaje, el botón lo reutiliza.
+      try {
+        const msg = sessionStorage.getItem("lb-wa");
+        const a = document.getElementById("graciasWa");
+        if (msg && a) a.href = msg;
+      } catch (e) {}
+    })();
+  </script>
+</Layout>

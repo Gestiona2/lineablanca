@@ -30,3 +30,7 @@ Las fotografías (`public/img/portada.jpg` y `nevera.jpg`) son de Unsplash, con 
 El tema es claro por defecto; el visitante puede activar el oscuro con el botón de la barra y queda guardado en su navegador.
 
 El teléfono, horarios, ciudades, lista de servicios y aviso sobre marcas se tomaron del sitio actual `https://www.lineablanca.co/`. No se incluyeron cifras de experiencia, certificaciones ni testimonios.
+
+## Conversiones de Google Ads
+
+El formulario abre WhatsApp y lleva a `/gracias/`, que sirve como página de conversión (no se indexa). Los clics a WhatsApp y a llamar se publican en `dataLayer`. Para usar etiquetas de Google directamente, llena el bloque `googleAds` de `src/datos/sitio.json` (`id`, `etiquetaGracias`, `etiquetaWhatsapp`, `etiquetaLlamar`); vacío, no se carga nada de Google.

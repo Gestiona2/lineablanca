@@ -1,6 +1,6 @@
 ---
 import Icon from "./Icon.astro";
-import { sitio, servicios, ciudades, marcas, wa } from "../lib/sitio.js";
+import { sitio, servicios, ciudades, marcas, wa, ruta } from "../lib/sitio.js";
 import contacto from "../datos/contacto.json";
 import inicio from "../datos/inicio.json";
 const { servicioPre = "", ciudadPre = "", marcaPre = "", titulo = inicio.agendar.titulo, texto = inicio.agendar.texto } = Astro.props;
@@ -17,7 +17,7 @@ const c = f.campos;
       <a class="solicitud-tel" href={`tel:+${sitio.whatsapp}`}><Icon nombre="phone" tamano={30} />+57 {sitio.telefono}</a>
       <ul class="horario">{sitio.horarioLineas.map((l) => <li>{l}</li>)}</ul>
     </div>
-    <form class="form" id="formAgendar" novalidate data-numero={sitio.whatsapp}>
+    <form class="form" id="formAgendar" novalidate data-numero={sitio.whatsapp} data-gracias={ruta("gracias/")}>
       <label for="f-nombre">{c.nombre[0]}</label>
       <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder={c.nombre[1]} required />
       <label for="f-telefono">{c.telefono[0]}</label>
@@ -86,8 +86,12 @@ const c = f.campos;
         `Nombre: ${v("nombre")}`, `Teléfono: ${v("telefono")}`, `Ciudad: ${v("ciudad")}`, `Equipo: ${v("servicio")}`,
         v("marca") ? `Marca: ${v("marca")}` : "", v("franja") ? `Franja preferida: ${v("franja")}` : "", `Falla: ${v("problema")}`,
       ].filter(Boolean).join("\n");
-      window.open(`https://wa.me/${form.dataset.numero}?text=${encodeURIComponent(lineas)}`, "_blank", "noopener,noreferrer");
+      const enlace = `https://wa.me/${form.dataset.numero}?text=${encodeURIComponent(lineas)}`;
+      try { sessionStorage.setItem("lb-wa", enlace); } catch (err) {}
+      window.open(enlace, "_blank", "noopener,noreferrer");
+      // Página de agradecimiento: sirve de conversión en Google Ads.
       ok.hidden = false;
+      setTimeout(() => { window.location.href = form.dataset.gracias; }, 600);
     });
   })();
 </script>

@@ -2,7 +2,9 @@
 import "../styles/global.css";
 import Icon from "../components/Icon.astro";
 import { sitio, ruta, recurso, wa, categorias } from "../lib/sitio.js";
-const { titulo, descripcion = sitio.descripcion, activa = "", jsonld = null } = Astro.props;
+const { titulo, descripcion = sitio.descripcion, activa = "", jsonld = null, noindex = false } = Astro.props;
+const ads = sitio.googleAds ?? {};
+const adsActivo = Boolean(ads.id);
 const demo = String(Astro.site ?? "").includes("demos.");
 const canonica = new URL(Astro.url.pathname, Astro.site ?? sitio.dominio).href;
 const claveTema = sitio.claveTema;
@@ -15,7 +17,7 @@ const claveTema = sitio.claveTema;
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="description" content={descripcion} />
-    <meta name="robots" content={demo ? "noindex, nofollow" : "index, follow"} />
+    <meta name="robots" content={demo || noindex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonica} />
     <title>{titulo}</title>
     <link rel="icon" href={recurso("brand/logo-linea-blanca.png")} />
@@ -25,6 +27,13 @@ const claveTema = sitio.claveTema;
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:url" content={canonica} />
+    {adsActivo && <script async src={`https://www.googletagmanager.com/gtag/js?id=${ads.id}`}></script>}
+    {adsActivo && <script is:inline define:vars={{ ads }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag; gtag("js", new Date()); gtag("config", ads.id);
+      window.__ads = ads;
+    </script>}
     {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)}></script>}
     <script is:inline define:vars={{ claveTema }}>
       // Claro por defecto. Solo se pasa a oscuro si la persona lo eligió con el botón.
@@ -130,6 +139,19 @@ const claveTema = sitio.claveTema;
       const verCat = (id) => { megaTabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.cat === id))); megaListas.forEach((l) => { l.hidden = l.dataset.cat !== id; }); };
       megaTabs.forEach((t) => { ["mouseenter", "focus", "click"].forEach((ev) => t.addEventListener(ev, () => verCat(t.dataset.cat))); });
       if (megaTabs[0]) verCat(megaTabs[0].dataset.cat);
+      // Clics a WhatsApp y llamada: se avisan al dataLayer (y a Google Ads si hay etiquetas configuradas).
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest && e.target.closest("a[href]");
+        if (!a) return;
+        const h = a.getAttribute("href") || "";
+        const tipo = h.startsWith("https://wa.me/") ? "whatsapp" : h.startsWith("tel:") ? "llamar" : "";
+        if (!tipo) return;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: tipo === "whatsapp" ? "clic_whatsapp" : "clic_llamar" });
+        const conf = window.__ads || {};
+        const et = tipo === "whatsapp" ? conf.etiquetaWhatsapp : conf.etiquetaLlamar;
+        if (window.gtag && conf.id && et) window.gtag("event", "conversion", { send_to: `${conf.id}/${et}` });
+      }, true);
       const nav = document.querySelector("#nav");
       const marcarScroll = () => nav?.classList.toggle("con-scroll", window.scrollY > 8);
       marcarScroll();
