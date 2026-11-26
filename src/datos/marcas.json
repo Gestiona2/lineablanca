@@ -6,7 +6,7 @@
   "encabezado": "Marcas",
   "titulo": "Arreglamos la marca que tienes en casa.",
   "texto": "Cada marca falla a su manera y usa sus propios repuestos. Conocemos los modelos más comunes y buscamos la pieza que corresponde a cada uno.",
-  "nota": "Trabajamos con repuestos originales o equivalentes certificados. Si una referencia no se consigue, te lo decimos antes de abrir el equipo. Los nombres de marca se usan solo para identificar los equipos; Línea Blanca no es el servicio técnico oficial de ninguna de ellas.",
+  "nota": "Trabajamos con repuestos originales o equivalentes de la mejor calidad. Si una referencia no se consigue, te lo decimos antes de abrir el equipo. Los nombres de marca se usan solo para identificar los equipos; Línea Blanca no es el servicio técnico oficial de ninguna de ellas.",
   "verPagina": "Ver la marca",
   "preguntar": "Preguntar por mi marca",
   "detalle": {
@@ -106,7 +106,7 @@
         "reparacion-de-secadoras",
         "reparacion-de-lavavajillas"
       ],
-      "nota": "Lavadoras, neveras, estufas y calentadores. Usamos repuesto certificado para cada referencia.",
+      "nota": "Lavadoras, neveras, estufas y calentadores. Usamos el repuesto adecuado para cada referencia.",
       "focos": [
         "Sistema de frío",
         "Válvulas y bombas",
